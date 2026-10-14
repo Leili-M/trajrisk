@@ -1,0 +1,21 @@
+# Main settings for the whole project.
+# Relative paths start from the project folder.
+
+project:
+  name: trajrisk
+  seed: 42                   # one fixed seed for every random step
+
+paths:
+  data_dir: data
+  output_dir: outputs
+
+data:
+  dataset: hummus
+  positive_threshold: null   # decided in Stage 2, after seeing the rating scale
+  split:                     # shares of the TIME period, not of interactions
+    train: 0.7
+    valid: 0.1
+    test: 0.2
+
+evaluation:
+  k: 10
