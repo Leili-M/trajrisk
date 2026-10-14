@@ -13,6 +13,7 @@ data:
   dataset: hummus
   drop_ratings: [6.0]             # rating 6 = user is the recipe's author (Stage 1)
   positive_ratings: [4.0, 5.0]    # rating 2.5 handling still pending supervisor
+  min_item_train_positives: 5     # keep recipes with >= 5 training positives (Stage 2)
   split:
     method: event_quantile        # 70/10/20 of interactions, not of time (Stage 1)
     train_end: "2010-07-05"       # training: date <= train_end
