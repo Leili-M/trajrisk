@@ -1,0 +1,10 @@
+# Data and results live on Drive or the cluster, not in Git
+data/raw/*
+data/processed/*
+outputs/*
+!**/.gitkeep
+
+# Files Python and Jupyter create automatically
+__pycache__/
+*.egg-info/
+.ipynb_checkpoints/
