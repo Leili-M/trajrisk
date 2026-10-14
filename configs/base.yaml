@@ -3,7 +3,7 @@
 
 project:
   name: trajrisk
-  seed: 42                   # one fixed seed for every random step
+  seed: 42                        # one fixed seed for every random step
 
 paths:
   data_dir: data
@@ -11,11 +11,12 @@ paths:
 
 data:
   dataset: hummus
-  positive_threshold: null   # decided in Stage 2, after seeing the rating scale
-  split:                     # shares of the TIME period, not of interactions
-    train: 0.7
-    valid: 0.1
-    test: 0.2
+  drop_ratings: [6.0]             # rating 6 = user is the recipe's author (Stage 1)
+  positive_ratings: [4.0, 5.0]    # rating 2.5 handling still pending supervisor
+  split:
+    method: event_quantile        # 70/10/20 of interactions, not of time (Stage 1)
+    train_end: "2010-07-05"       # training: date <= train_end
+    valid_end: "2012-02-23"       # validation: train_end < date <= valid_end
 
 evaluation:
   k: 10
