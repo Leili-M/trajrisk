@@ -1,4 +1,8 @@
-"""Load the project settings from configs/base.yaml."""
+"""Load the project settings.
+
+By default configs/base.yaml is read. Set the environment variable
+TRAJRISK_CONFIG to use another settings file (e.g. configs/movielens.yaml).
+"""
 
 import os
 from pathlib import Path
@@ -9,8 +13,14 @@ import yaml
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
-def load_config(path=PROJECT_ROOT / "configs" / "base.yaml"):
+def load_config(path=None):
     """Read the settings file and return it as a dictionary."""
+    if path is None:
+        path = os.environ.get("TRAJRISK_CONFIG", "configs/base.yaml")
+    path = Path(path)
+    if not path.is_absolute():
+        path = PROJECT_ROOT / path
+
     with open(path) as f:
         cfg = yaml.safe_load(f)
 
@@ -27,4 +37,5 @@ def load_config(path=PROJECT_ROOT / "configs" / "base.yaml"):
             p = PROJECT_ROOT / p
         cfg["paths"][key] = p
 
+    cfg["config_file"] = str(path)
     return cfg
