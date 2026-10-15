@@ -1,0 +1,45 @@
+# Settings for the MovieLens-1M trial (branch try-movielens).
+# Same structure as base.yaml; only data-specific values differ.
+
+project:
+  name: trajrisk
+  seed: 42
+
+paths:
+  data_dir: data/movielens
+  output_dir: outputs/movielens
+
+data:
+  dataset: movielens
+  drop_ratings: []                # no special rating values in MovieLens
+  positive_ratings: [4.0, 5.0]    # same rule as HUMMUS
+  min_item_train_positives: 5     # to be checked after the data audit
+  split:
+    method: event_quantile
+    train_end: null               # to be set after the data audit
+    valid_model_end: null
+    valid_end: null
+
+model:
+  dims: [1000]
+  emb_size: 10
+  steps: 5
+  noise_schedule: linear-var
+  noise_scale: 0.0001
+  noise_min: 0.0005
+  noise_max: 0.005
+  reweight: true
+
+train:
+  batch_size: 400
+  lr: 0.0001
+  weight_decay: 0.0
+  max_epochs: 200
+  eval_every: 5
+  patience: 4
+  select_metric: ndcg@10
+
+evaluation:
+  k: 10
+  ks: [10, 20, 50, 100]
+  exclude_seen: true
