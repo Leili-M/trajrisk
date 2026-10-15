@@ -16,8 +16,12 @@ data:
   min_item_train_positives: 5     # keep recipes with >= 5 training positives (Stage 2)
   split:
     method: event_quantile        # 70/10/20 of interactions, not of time (Stage 1)
-    train_end: "2010-07-05"       # training: date <= train_end
-    valid_end: "2012-02-23"       # validation: train_end < date <= valid_end
+    train_end: "2010-07-05"       # train:       date <= train_end
+    valid_model_end: "2011-04-02" # valid_model: train_end < date <= valid_model_end
+    valid_end: "2012-02-23"       # valid_risk:  valid_model_end < date <= valid_end
+                                  # test:        date > valid_end
 
-evaluation:
-  k: 10
+model:                            # official DiffRec, commit e42532f, used unchanged
+  dims: [1000]
+  emb_size: 10
+  steps: 5                        # authors' Amazon-book
