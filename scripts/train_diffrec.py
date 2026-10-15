@@ -13,6 +13,7 @@ from pathlib import Path
 
 import numpy as np
 import torch
+import yaml
 
 from trajrisk import diffrec_data as dd
 from trajrisk.config import load_config
@@ -24,11 +25,21 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--run-name", default="base")
     parser.add_argument("--max-epochs", type=int, default=None)
+    parser.add_argument("--set", nargs="*", default=[],
+                        help="override settings, e.g. model.noise_scale=0.1")
     args = parser.parse_args()
 
     cfg = load_config()
     if args.max_epochs is not None:
         cfg["train"]["max_epochs"] = args.max_epochs
+    for item in args.set:
+        key, value = item.split("=", 1)
+        *parents, last = key.split(".")
+        node = cfg
+        for k in parents:
+            node = node[k]
+        node[last] = yaml.safe_load(value)
+        print(f"Setting {key} = {node[last]}")
     tr, seed = cfg["train"], cfg["project"]["seed"]
     device = "cuda" if torch.cuda.is_available() else "cpu"
     torch.manual_seed(seed)
