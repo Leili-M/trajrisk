@@ -17,6 +17,7 @@ from trajrisk import diffrec_data as dd
 from trajrisk.config import load_config
 
 PERSONAL = ["co-occurrence", "conditional", "itemknn"]
+NON_PERSONAL = ["popularity", "recent popularity"]
 GROUPS = ["all", "1", "2-4", "5-19", "20-99", "100+"]
 
 
@@ -58,10 +59,17 @@ def main():
     if bl_path.exists():
         bl = pd.read_csv(bl_path, dtype={"group": str})
         r = bl.pivot(index="group", columns="method", values="recall@10")
-        headroom = r[PERSONAL].max(axis=1) / r["popularity"] - 1
-        profile["personalisation_headroom"] = {
-            g: round(float(headroom[g]), 3) for g in GROUPS if g in headroom.index}
+        best_personal = r[PERSONAL].max(axis=1)
+        best_non_personal = r[NON_PERSONAL].max(axis=1)
+        groups = [g for g in GROUPS if g in r.index]
+        # Main number: best personal method vs. the best method that ignores the user
+        headroom = best_personal / best_non_personal - 1
+        profile["personalisation_headroom"] = {g: round(float(headroom[g]), 3) for g in groups}
+        # Kept for comparison with Part 12 of the report
+        vs_pop = best_personal / r["popularity"] - 1
+        profile["headroom_vs_popularity_only"] = {g: round(float(vs_pop[g]), 3) for g in groups}
         profile["best_personal_method"] = r.loc["all", PERSONAL].idxmax()
+        profile["best_non_personal_method"] = r.loc["all", NON_PERSONAL].idxmax()
     else:
         print("No baseline results yet: run scripts/run_baselines.py first.")
 
