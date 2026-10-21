@@ -17,7 +17,7 @@ HUMMUS_COLUMNS = {
 }
 
 
-def _load_hummus(raw_dir):
+def _load_hummus(raw_dir, data_cfg):
     df = pd.read_csv(
         raw_dir / "pp_reviews.zip",
         usecols=list(HUMMUS_COLUMNS),
@@ -28,7 +28,7 @@ def _load_hummus(raw_dir):
     return df
 
 
-def _load_movielens(raw_dir):
+def _load_movielens(raw_dir, data_cfg):
     with zipfile.ZipFile(raw_dir / "ml-1m.zip") as z:
         with z.open("ml-1m/ratings.dat") as f:
             df = pd.read_csv(f, sep="::", engine="python", header=None,
@@ -39,13 +39,29 @@ def _load_movielens(raw_dir):
     return df.drop(columns="timestamp")
 
 
-LOADERS = {"hummus": _load_hummus, "movielens": _load_movielens}
+def _load_amazon(raw_dir, data_cfg):
+    """Amazon Reviews 2023, 5-core 'rating only' file.
+
+    Columns: user_id, parent_asin, rating, timestamp (milliseconds).
+    String IDs become integers. Items are numbered in sorted parent_asin order,
+    so an item number can always be traced back to its ASIN (and later its text).
+    """
+    df = pd.read_csv(raw_dir / data_cfg["raw_file"],
+                     dtype={"user_id": str, "parent_asin": str,
+                            "rating": "float32", "timestamp": "int64"})
+    df["user_id"] = pd.Categorical(df["user_id"]).codes.astype("int32")
+    df["item_id"] = pd.Categorical(df["parent_asin"]).codes.astype("int32")
+    df["date"] = pd.to_datetime(df["timestamp"], unit="ms")
+    return df[["user_id", "item_id", "rating", "date"]]
+
+
+LOADERS = {"hummus": _load_hummus, "movielens": _load_movielens, "amazon": _load_amazon}
 
 
 def load_interactions(cfg):
     """Read interactions, drop non-review rows, and sort by user and date."""
     raw_dir = Path(cfg["paths"]["data_dir"]) / "raw"
-    df = LOADERS[cfg["data"]["dataset"]](raw_dir)
+    df = LOADERS[cfg["data"]["dataset"]](raw_dir, cfg["data"])
     df = df[~df["rating"].isin(cfg["data"]["drop_ratings"])]
     df = df[["user_id", "item_id", "rating", "date"]]
     return df.sort_values(["user_id", "date"]).reset_index(drop=True)
