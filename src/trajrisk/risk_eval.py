@@ -82,3 +82,18 @@ def evaluate(df, signal_sets, users, miss="miss", history="history_size"):
         "within_groups": within_group_table(df, all_cols, miss, history),
         "added_value": added_value_table(df, signal_sets, users, miss, history),
     }
+
+
+
+
+
+def cv_predict(df, cols, users, miss="miss", n_folds=5):
+
+    """Out-of-fold probability of a wrong recommendation (folds split by user)."""
+
+    clf = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
+
+    return cross_val_predict(clf, df[cols], df[miss], cv=GroupKFold(n_folds),
+
+                             groups=users, method="predict_proba")[:, 1]
+
