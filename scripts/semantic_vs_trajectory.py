@@ -60,10 +60,11 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--runs", nargs="+", required=True)
     parser.add_argument("--rate", type=int, default=50)
+    parser.add_argument("--splits", nargs="+", default=["valid_model", "valid_risk"])
     args = parser.parse_args()
     out = Path(load_config()["paths"]["output_dir"])
 
-    for split in ["valid_model", "valid_risk"]:
+    for split in args.splits:
         rows = []
         for run in args.runs:
             df = load_run(out, run, split, args.rate)
