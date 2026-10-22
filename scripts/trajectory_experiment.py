@@ -46,7 +46,7 @@ def main():
     noisy_start, sampling_noise = not args.no_noisy_start, not args.no_sampling_noise
     setting = (f"S{args.samples}_" + ("noisystart" if noisy_start else "cleanstart")
                + ("_sampling" if sampling_noise else "_nosampling"))
-
+    setting += "" if args.split == "valid_model" else f"_{args.split}"
     cfg = load_config()
     seed = cfg["project"]["seed"]
     device = "cuda" if torch.cuda.is_available() else "cpu"

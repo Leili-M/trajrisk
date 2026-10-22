@@ -85,7 +85,8 @@ def main():
         print("\n3) Added value over history length (5-fold CV, split by user):")
         print(res["added_value"].round(3).to_string(index=False))
 
-        out = Path(cfg["paths"]["output_dir"]) / "masking" / f"{args.run_name}__r{int(rate * 100)}"
+        split_tag = "" if args.split == "valid_model" else f"_{args.split}"
+        out = Path(cfg["paths"]["output_dir"]) / "masking" / f"{args.run_name}__r{int(rate * 100)}{split_tag}"
         out.mkdir(parents=True, exist_ok=True)
         df.to_parquet(out / "signals.parquet")
         for name, table in res.items():
