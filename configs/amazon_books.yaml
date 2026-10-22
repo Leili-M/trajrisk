@@ -10,7 +10,7 @@ data:
   positive_ratings:
   - 4.0
   - 5.0
-  min_item_train_positives: 5
+  min_item_train_positives: 20
   split:
     method: event_quantile
     train_end: '2018-04-09 13:36:20.892'
