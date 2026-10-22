@@ -94,11 +94,13 @@ def main():
     signals = [c for c in w.columns if c not in {"group", "cases", "wrong", "history_min",
                                                  "history_max", "file"}]
     for s in signals:
-        parts, n_clear = [], 0
+        parts, above, below = [], 0, 0
         for g, sub in w.groupby("group", observed=True):
             m, lo, hi = interval(sub[s])
-            n_clear += int(lo > 0.5 or hi < 0.5)
+            above += int(lo > 0.5)
+            below += int(hi < 0.5)
             parts.append(f"{g} {m:.3f} [{lo:.3f},{hi:.3f}]")
+        n_clear = max(above, below)
         ok = "PASS" if n_clear >= 3 else "fail"
         print(f"  {s:20s} {n_clear}/4 clear  {ok}   " + "  ".join(parts))
 
