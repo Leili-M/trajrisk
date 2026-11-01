@@ -1,0 +1,54 @@
+{
+  "scenarios": 600,
+  "users": 595,
+  "by_split_and_type": {
+    "test": {
+      "few": 180,
+      "many": 180,
+      "none": 40
+    },
+    "valid": {
+      "few": 90,
+      "many": 90,
+      "none": 20
+    }
+  },
+  "by_split_and_soft": {
+    "test": {
+      "aligned": 133,
+      "conflicting": 133,
+      "single": 134
+    },
+    "valid": {
+      "aligned": 67,
+      "conflicting": 66,
+      "single": 67
+    }
+  },
+  "heldout_in_validation": 0,
+  "heldout_in_test": 132,
+  "users_in_both_splits": 5,
+  "feasible_size": {
+    "few": {
+      "min": 10.0,
+      "50%": 23.0,
+      "max": 50.0
+    },
+    "many": {
+      "min": 203.0,
+      "50%": 583.0,
+      "max": 18639.0
+    },
+    "none": {
+      "min": 0.0,
+      "50%": 0.0,
+      "max": 0.0
+    }
+  },
+  "abstain_scenarios": 60,
+  "hard_combinations_available": {
+    "few": 215,
+    "many": 194,
+    "none": 29
+  }
+}
