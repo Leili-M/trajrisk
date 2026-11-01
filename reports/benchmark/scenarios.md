@@ -1,6 +1,6 @@
 # Proposal section 3, step 2: scenario specifications
 
-Scenarios: 600, one per user (595 users; users in both splits: 5).
+Scenarios: 600, one per user (600 users; users in both splits: 0).
 
 | Split | none | few | many |
 |---|---|---|---|

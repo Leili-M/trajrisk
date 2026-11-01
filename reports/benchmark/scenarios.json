@@ -1,6 +1,6 @@
 {
   "scenarios": 600,
-  "users": 595,
+  "users": 600,
   "by_split_and_type": {
     "test": {
       "few": 180,
@@ -27,7 +27,7 @@
   },
   "heldout_in_validation": 0,
   "heldout_in_test": 132,
-  "users_in_both_splits": 5,
+  "users_in_both_splits": 0,
   "feasible_size": {
     "few": {
       "min": 10.0,
