@@ -79,3 +79,49 @@ def all_methods(train, inter, n_items, device, recent_days=365):
         "conditional": conditional(train, device),
         "itemknn": item_knn(train, device),
     }
+
+
+# ---------------------------------------------------------------- tuned baselines (proposal section 4)
+def gram_matrix(train, block=2048):
+    """Dense item x item co-occurrence counts X^T X, built in blocks of items (float32)."""
+    X = train.astype(np.float32).tocsc()
+    XT = X.T.tocsr()
+    n = X.shape[1]
+    G = np.empty((n, n), dtype=np.float32)
+    for start in range(0, n, block):
+        G[start:start + block] = (XT[start:start + block] @ X).toarray()
+    return G
+
+
+def item_knn_pruned(G, counts, k, shrink, device):
+    """ItemKNN with a neighbourhood size and a shrink term (both tuned on validation).
+
+    sim(i, j) = C[i, j] / (sqrt(n_i * n_j) + shrink), diagonal removed, and for every
+    history item i only its k most similar items j are kept.
+    """
+    G = torch.as_tensor(G, device=device)
+    c = torch.as_tensor(counts, device=device)
+    S = G / (torch.sqrt(c[:, None] * c[None, :]) + shrink + 1e-12)
+    S.fill_diagonal_(0)
+    if k is not None and k < S.shape[1]:
+        top = torch.topk(S, k, dim=1)
+        W = torch.zeros_like(S).scatter_(1, top.indices, top.values)
+    else:
+        W = S
+    del S
+    return lambda h: h @ W
+
+
+def ease(G, lam, device):
+    """EASE (Steck, 2019): closed-form item-item linear model with L2 penalty lam.
+
+    P = (X^T X + lam I)^-1,  B = I - P diag(1 / diag(P)),  diag(B) = 0,  scores = H B.
+    """
+    A = torch.as_tensor(G, device=device, dtype=torch.float32).clone()
+    A.diagonal().add_(lam)
+    P = torch.linalg.inv(A)
+    del A
+    B = -P / torch.diagonal(P)[None, :]
+    B.fill_diagonal_(0)
+    del P
+    return lambda h: h @ B
