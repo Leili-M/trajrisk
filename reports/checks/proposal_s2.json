@@ -1,0 +1,904 @@
+{
+  "movielens": {
+    "sources": {
+      "files": {
+        "download_manifest.json": {
+          "bytes": 219,
+          "sha256": null
+        },
+        "ml-1m.zip": {
+          "bytes": 5917549,
+          "sha256": "a6898adb50b9ca05aa231689da44c217cb524e7ebd39d264c56e2832f2c54e20"
+        }
+      },
+      "manifest": {
+        "url": "https://files.grouplens.org/datasets/movielens/ml-1m.zip",
+        "size_mb": 5.64,
+        "sha256": "a6898adb50b9ca05aa231689da44c217cb524e7ebd39d264c56e2832f2c54e20",
+        "downloaded_utc": "2026-10-21T11:55:50+00:00"
+      }
+    },
+    "duplicates": {
+      "identical_rows": 0,
+      "same_user_item_same_time": 0,
+      "user_item_pairs_seen_more_than_once": 0,
+      "extra_rows_from_repeated_pairs": 0
+    },
+    "ratings": {
+      "rating_counts_raw": {
+        "1.0": 56174,
+        "2.0": 107557,
+        "3.0": 261197,
+        "4.0": 348971,
+        "5.0": 226310
+      },
+      "rows_dropped_by_rating_rule": 0,
+      "positive_ratings": [
+        4.0,
+        5.0
+      ],
+      "positive_share": 0.5751607913945985
+    },
+    "provider_filters": {
+      "events": 1000209,
+      "users": 6040,
+      "items": 3706,
+      "min_events_per_user": 20,
+      "min_events_per_item": 1,
+      "first_event": "2000-04-25 23:05:32",
+      "last_event": "2003-02-28 17:49:50"
+    },
+    "split": {
+      "method": "event_quantile",
+      "parts": {
+        "train": {
+          "from": "2000-04-25 23:05:32",
+          "to": "2000-11-22 03:06:26",
+          "events": 700148,
+          "event_share": 0.7000016996447742,
+          "time_share": 0.20232112392981008,
+          "users": 4870
+        },
+        "valid_model": {
+          "from": "2000-11-22 03:06:26",
+          "to": "2000-11-26 06:42:19",
+          "events": 50009,
+          "event_share": 0.04999855030298667,
+          "time_share": 0.003994990209431111,
+          "users": 504
+        },
+        "valid_risk": {
+          "from": "2000-11-26 06:42:19",
+          "to": "2000-12-02 14:52:18",
+          "events": 50011,
+          "event_share": 0.05000054988507402,
+          "time_share": 0.006103565279710819,
+          "users": 557
+        },
+        "test": {
+          "from": "2000-12-02 14:52:18",
+          "to": "2003-02-28 17:49:50",
+          "events": 200041,
+          "event_share": 0.19999920016716508,
+          "time_share": 0.787580320581048,
+          "users": 1783
+        }
+      },
+      "test_eligible_event_split": {
+        "events": 111291,
+        "users": 1762
+      },
+      "time_period_split": {
+        "train_end": "2002-04-23 02:36:32.600000",
+        "test_start": "2002-08-04 23:40:58.400000",
+        "test_eligible": {
+          "events": 5666,
+          "users": 328
+        }
+      }
+    },
+    "attrition": {
+      "valid_model": {
+        "steps": [
+          {
+            "step": "all events",
+            "events": 50009,
+            "users": 504
+          },
+          {
+            "step": "after rating rule",
+            "events": 50009,
+            "users": 504
+          },
+          {
+            "step": "positive",
+            "events": 28217,
+            "users": 488
+          },
+          {
+            "step": "positive on catalog items",
+            "events": 28080,
+            "users": 488
+          },
+          {
+            "step": "with an earlier positive (cases)",
+            "events": 27651,
+            "users": 485
+          }
+        ],
+        "positive_on_catalog_repeating_an_earlier_interaction": 0,
+        "cases_repeating_an_earlier_interaction": 0
+      },
+      "valid_risk": {
+        "steps": [
+          {
+            "step": "all events",
+            "events": 50011,
+            "users": 557
+          },
+          {
+            "step": "after rating rule",
+            "events": 50011,
+            "users": 557
+          },
+          {
+            "step": "positive",
+            "events": 26925,
+            "users": 523
+          },
+          {
+            "step": "positive on catalog items",
+            "events": 26785,
+            "users": 521
+          },
+          {
+            "step": "with an earlier positive (cases)",
+            "events": 26399,
+            "users": 520
+          }
+        ],
+        "positive_on_catalog_repeating_an_earlier_interaction": 0,
+        "cases_repeating_an_earlier_interaction": 0
+      },
+      "test": {
+        "steps": [
+          {
+            "step": "all events",
+            "events": 200041,
+            "users": 1783
+          },
+          {
+            "step": "after rating rule",
+            "events": 200041,
+            "users": 1783
+          },
+          {
+            "step": "positive",
+            "events": 112260,
+            "users": 1762
+          },
+          {
+            "step": "positive on catalog items",
+            "events": 111426,
+            "users": 1759
+          },
+          {
+            "step": "with an earlier positive (cases)",
+            "events": 110457,
+            "users": 1759
+          }
+        ],
+        "positive_on_catalog_repeating_an_earlier_interaction": 0,
+        "cases_repeating_an_earlier_interaction": 0
+      }
+    },
+    "attributes": {
+      "id_column": "item_id",
+      "items_found": 2934,
+      "share_with_value": {
+        "title": 1.0,
+        "genres": 1.0
+      },
+      "catalog_items": 2934
+    }
+  },
+  "base": {
+    "sources": {
+      "files": {
+        "download_manifest.json": {
+          "bytes": 868,
+          "sha256": null
+        },
+        "pp_members.zip": {
+          "bytes": 14178071,
+          "sha256": "2d177ec3fdaf5ee828f799e96ff795154c9c3a72b450e824766596c9047496ad"
+        },
+        "pp_recipes.zip": {
+          "bytes": 316978383,
+          "sha256": "b37ab3e4133c447a36427d6429fad1ed6b459a130123257627137716895d544c"
+        },
+        "pp_reviews.zip": {
+          "bytes": 210415143,
+          "sha256": "c5a1f6ce8db5d20fac1922fdfe6a3f50d59f12409f605158fbadda07fb395246"
+        }
+      },
+      "manifest": {
+        "downloaded_utc": "2026-10-21T11:55:47+00:00",
+        "files": {
+          "pp_reviews.zip": {
+            "url": "https://gitlab.com/felix134/connected-recipe-data-set/-/raw/master/data/hummus_data/preprocessed/pp_reviews.zip",
+            "size_mb": 200.67,
+            "sha256": "c5a1f6ce8db5d20fac1922fdfe6a3f50d59f12409f605158fbadda07fb395246"
+          },
+          "pp_recipes.zip": {
+            "url": "https://gitlab.com/felix134/connected-recipe-data-set/-/raw/master/data/hummus_data/preprocessed/pp_recipes.zip",
+            "size_mb": 302.29,
+            "sha256": "b37ab3e4133c447a36427d6429fad1ed6b459a130123257627137716895d544c"
+          },
+          "pp_members.zip": {
+            "url": "https://gitlab.com/felix134/connected-recipe-data-set/-/raw/master/data/hummus_data/preprocessed/pp_members.zip",
+            "size_mb": 13.52,
+            "sha256": "2d177ec3fdaf5ee828f799e96ff795154c9c3a72b450e824766596c9047496ad"
+          }
+        }
+      }
+    },
+    "duplicates": {
+      "identical_rows": 0,
+      "same_user_item_same_time": 0,
+      "user_item_pairs_seen_more_than_once": 0,
+      "extra_rows_from_repeated_pairs": 0
+    },
+    "ratings": {
+      "rating_counts_raw": {
+        "1.0": 16919,
+        "2.0": 17778,
+        "2.5": 76876,
+        "3.0": 50564,
+        "4.0": 229869,
+        "5.0": 1017908,
+        "6.0": 506510
+      },
+      "rows_dropped_by_rating_rule": 506510,
+      "positive_ratings": [
+        4.0,
+        5.0
+      ],
+      "positive_share": 0.8850022058082976
+    },
+    "provider_filters": {
+      "events": 1916424,
+      "users": 302412,
+      "items": 507335,
+      "min_events_per_user": 1,
+      "min_events_per_item": 1,
+      "first_event": "2000-01-25 00:00:00",
+      "last_event": "2022-09-19 00:00:00"
+    },
+    "split": {
+      "method": "event_quantile",
+      "parts": {
+        "train": {
+          "from": "2000-01-25 00:00:00",
+          "to": "2010-07-05 00:00:00",
+          "events": 987340,
+          "event_share": 0.700283847099894,
+          "time_share": 0.4610177686449897,
+          "users": 121584
+        },
+        "valid_model": {
+          "from": "2010-07-05 00:00:00",
+          "to": "2011-04-02 00:00:00",
+          "events": 68148,
+          "event_share": 0.0483348629774582,
+          "time_share": 0.03275716185180708,
+          "users": 21395
+        },
+        "valid_risk": {
+          "from": "2011-04-02 00:00:00",
+          "to": "2012-02-23 00:00:00",
+          "events": 72612,
+          "event_share": 0.05150101353699588,
+          "time_share": 0.03952616946694065,
+          "users": 21563
+        },
+        "test": {
+          "from": "2012-02-23 00:00:00",
+          "to": "2022-09-19 00:00:00",
+          "events": 281814,
+          "event_share": 0.1998802763856519,
+          "time_share": 0.4666989000362625,
+          "users": 144198
+        }
+      },
+      "test_eligible_event_split": {
+        "events": 128527,
+        "users": 19351
+      },
+      "time_period_split": {
+        "train_end": "2015-12-03 02:24:00",
+        "test_start": "2018-03-09 09:36:00",
+        "test_eligible": {
+          "events": 12658,
+          "users": 3792
+        }
+      }
+    },
+    "attrition": {
+      "valid_model": {
+        "steps": [
+          {
+            "step": "all events",
+            "events": 97328,
+            "users": 26953
+          },
+          {
+            "step": "after rating rule",
+            "events": 68148,
+            "users": 21395
+          },
+          {
+            "step": "positive",
+            "events": 57867,
+            "users": 17469
+          },
+          {
+            "step": "positive on catalog items",
+            "events": 30602,
+            "users": 12370
+          },
+          {
+            "step": "with an earlier positive (cases)",
+            "events": 24317,
+            "users": 7284
+          }
+        ],
+        "positive_on_catalog_repeating_an_earlier_interaction": 0,
+        "cases_repeating_an_earlier_interaction": 0
+      },
+      "valid_risk": {
+        "steps": [
+          {
+            "step": "all events",
+            "events": 106323,
+            "users": 27641
+          },
+          {
+            "step": "after rating rule",
+            "events": 72612,
+            "users": 21563
+          },
+          {
+            "step": "positive",
+            "events": 63424,
+            "users": 17501
+          },
+          {
+            "step": "positive on catalog items",
+            "events": 30417,
+            "users": 12156
+          },
+          {
+            "step": "with an earlier positive (cases)",
+            "events": 23891,
+            "users": 6613
+          }
+        ],
+        "positive_on_catalog_repeating_an_earlier_interaction": 0,
+        "cases_repeating_an_earlier_interaction": 0
+      },
+      "test": {
+        "steps": [
+          {
+            "step": "all events",
+            "events": 439720,
+            "users": 164110
+          },
+          {
+            "step": "after rating rule",
+            "events": 281814,
+            "users": 144198
+          },
+          {
+            "step": "positive",
+            "events": 223509,
+            "users": 103793
+          },
+          {
+            "step": "positive on catalog items",
+            "events": 119954,
+            "users": 66508
+          },
+          {
+            "step": "with an earlier positive (cases)",
+            "events": 60458,
+            "users": 13182
+          }
+        ],
+        "positive_on_catalog_repeating_an_earlier_interaction": 0,
+        "cases_repeating_an_earlier_interaction": 0
+      }
+    },
+    "attributes": {
+      "id_column": "new_recipe_id",
+      "items_found": 43529,
+      "share_with_value": {
+        "Unnamed: 0": 1.0,
+        "recipe_id": 1.0,
+        "title": 1.0,
+        "description": 0.969537549679524,
+        "author_id": 1.0,
+        "duration": 0.9867674423947254,
+        "directions": 1.0,
+        "ingredients": 1.0,
+        "serves": 0.8344551907923453,
+        "last_changed_date": 1.0,
+        "food_kg_locator": 1.0,
+        "recipe_url": 1.0,
+        "tags": 0.8172712444577178,
+        "new_author_id": 1.0,
+        "average_rating": 1.0,
+        "number_of_ratings": 1.0,
+        "servingsPerRecipe": 1.0,
+        "servingSize [g]": 1.0,
+        "calories [cal]": 1.0,
+        "caloriesFromFat [cal]": 1.0,
+        "totalFat [g]": 1.0,
+        "saturatedFat [g]": 1.0,
+        "cholesterol [mg]": 1.0,
+        "sodium [mg]": 1.0,
+        "totalCarbohydrate [g]": 1.0,
+        "dietaryFiber [g]": 1.0,
+        "sugars [g]": 1.0,
+        "protein [g]": 1.0,
+        "direction_size": 1.0,
+        "ingredients_sizes": 1.0,
+        "who_score": 0.9979324128741759,
+        "fsa_score": 0.9723173057042431,
+        "nutri_score": 1.0,
+        "normalization_comment": 0.025615107169932688,
+        "ingredient_food_kg_urls": 0.8391417216108801,
+        "ingredient_food_kg_names": 0.8391417216108801
+      },
+      "catalog_items": 43529
+    }
+  },
+  "amazon_video_games": {
+    "sources": {
+      "files": {
+        "Video_Games.csv.gz": {
+          "bytes": 12801967,
+          "sha256": "a2bde5f3b945960d161538c200dd87845e6ee471b46da96410dde61613c6901c"
+        },
+        "download_manifest.json": {
+          "bytes": 304,
+          "sha256": null
+        },
+        "meta_Video_Games.jsonl.gz": {
+          "bytes": 103096082,
+          "sha256": "ced9696b0874121327a438bfe9d3d01aba45da158e58f94f4920352d75fc1fc9"
+        }
+      },
+      "manifest": {
+        "source": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_2023/benchmark/5core/rating_only/Video_Games.csv.gz",
+        "file": "Video_Games.csv.gz",
+        "bytes": 12801967,
+        "sha256": "a2bde5f3b945960d161538c200dd87845e6ee471b46da96410dde61613c6901c",
+        "checked_utc": "2026-10-21T12:57:22+00:00"
+      }
+    },
+    "duplicates": {
+      "identical_rows": 0,
+      "same_user_item_same_time": 0,
+      "user_item_pairs_seen_more_than_once": 0,
+      "extra_rows_from_repeated_pairs": 0
+    },
+    "ratings": {
+      "rating_counts_raw": {
+        "1.0": 52563,
+        "2.0": 36809,
+        "3.0": 70347,
+        "4.0": 134800,
+        "5.0": 520067
+      },
+      "rows_dropped_by_rating_rule": 0,
+      "positive_ratings": [
+        4.0,
+        5.0
+      ],
+      "positive_share": 0.8039261661752105
+    },
+    "provider_filters": {
+      "events": 814586,
+      "users": 94762,
+      "items": 25612,
+      "min_events_per_user": 5,
+      "min_events_per_item": 5,
+      "first_event": "1999-10-22 21:43:15",
+      "last_event": "2023-09-02 18:14:28.630000"
+    },
+    "split": {
+      "method": "event_quantile",
+      "parts": {
+        "train": {
+          "from": "1999-10-22 21:43:15",
+          "to": "2018-08-21 20:11:02.455000",
+          "events": 570210,
+          "event_share": 0.6999997544765071,
+          "time_share": 0.7891292306981753,
+          "users": 79333
+        },
+        "valid_model": {
+          "from": "2018-08-21 20:11:02.455000",
+          "to": "2019-04-07 12:15:06.767000",
+          "events": 40729,
+          "event_share": 0.04999963171476063,
+          "time_share": 0.026236036952988498,
+          "users": 17586
+        },
+        "valid_risk": {
+          "from": "2019-04-07 12:15:06.767000",
+          "to": "2019-12-10 03:23:20.749000",
+          "events": 40729,
+          "event_share": 0.04999963171476063,
+          "time_share": 0.028296789798639303,
+          "users": 17207
+        },
+        "test": {
+          "from": "2019-12-10 03:23:20.749000",
+          "to": "2023-09-02 18:14:28.630000",
+          "events": 162918,
+          "event_share": 0.20000098209397166,
+          "time_share": 0.15633794255019692,
+          "users": 41569
+        }
+      },
+      "test_eligible_event_split": {
+        "events": 120841,
+        "users": 35892
+      },
+      "time_period_split": {
+        "train_end": "2016-07-06 00:05:06.540999936",
+        "test_start": "2018-11-24 14:08:13.904000",
+        "test_eligible": {
+          "events": 171098,
+          "users": 45335
+        }
+      }
+    },
+    "attrition": {
+      "valid_model": {
+        "steps": [
+          {
+            "step": "all events",
+            "events": 40729,
+            "users": 17586
+          },
+          {
+            "step": "after rating rule",
+            "events": 40729,
+            "users": 17586
+          },
+          {
+            "step": "positive",
+            "events": 33630,
+            "users": 14855
+          },
+          {
+            "step": "positive on catalog items",
+            "events": 22348,
+            "users": 10633
+          },
+          {
+            "step": "with an earlier positive (cases)",
+            "events": 19085,
+            "users": 9369
+          }
+        ],
+        "positive_on_catalog_repeating_an_earlier_interaction": 0,
+        "cases_repeating_an_earlier_interaction": 0
+      },
+      "valid_risk": {
+        "steps": [
+          {
+            "step": "all events",
+            "events": 40729,
+            "users": 17207
+          },
+          {
+            "step": "after rating rule",
+            "events": 40729,
+            "users": 17207
+          },
+          {
+            "step": "positive",
+            "events": 33827,
+            "users": 14680
+          },
+          {
+            "step": "positive on catalog items",
+            "events": 17668,
+            "users": 8864
+          },
+          {
+            "step": "with an earlier positive (cases)",
+            "events": 14835,
+            "users": 7668
+          }
+        ],
+        "positive_on_catalog_repeating_an_earlier_interaction": 0,
+        "cases_repeating_an_earlier_interaction": 0
+      },
+      "test": {
+        "steps": [
+          {
+            "step": "all events",
+            "events": 162918,
+            "users": 41569
+          },
+          {
+            "step": "after rating rule",
+            "events": 162918,
+            "users": 41569
+          },
+          {
+            "step": "positive",
+            "events": 130457,
+            "users": 36283
+          },
+          {
+            "step": "positive on catalog items",
+            "events": 32527,
+            "users": 16654
+          },
+          {
+            "step": "with an earlier positive (cases)",
+            "events": 26350,
+            "users": 13977
+          }
+        ],
+        "positive_on_catalog_repeating_an_earlier_interaction": 0,
+        "cases_repeating_an_earlier_interaction": 0
+      }
+    },
+    "attributes": {
+      "metadata_file": "meta_Video_Games.jsonl.gz",
+      "items_found": 13608,
+      "share_with_value": {
+        "title": 0.9999265138154027,
+        "description": 0.8780864197530864,
+        "features": 0.8647119341563786,
+        "categories": 0.9645061728395061,
+        "main_category": 0.9804526748971193,
+        "details": 0.9738389182833628,
+        "store": 0.9953703703703703,
+        "price": 0.6514550264550265,
+        "images": 1.0,
+        "videos": 0.30584950029394475
+      },
+      "note": "average_rating and rating_number are not used (they include future reviews)",
+      "catalog_items": 13608
+    }
+  },
+  "amazon_books": {
+    "sources": {
+      "files": {
+        "Books.csv.gz": {
+          "bytes": 144479502,
+          "sha256": "28c5104d0c2f7a7e842da3431606e21a245d8fb317e3434cd20b5c5a7b521615"
+        },
+        "download_manifest.json": {
+          "bytes": 293,
+          "sha256": null
+        },
+        "meta_Books.jsonl.gz": {
+          "bytes": 4942125770,
+          "sha256": "d41f2348d3e0f3099d2a7ee45b304970282199f92a7ccdfe8ba4b1f753009a10"
+        },
+        "meta_Books_kept.jsonl.gz": {
+          "bytes": 1155523717,
+          "sha256": "2454d45c92111e714127e8feb3ee8d502cbc5e3b7b3f910149f05e6b2c357193"
+        }
+      },
+      "manifest": {
+        "source": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_2023/benchmark/5core/rating_only/Books.csv.gz",
+        "file": "Books.csv.gz",
+        "bytes": 144479502,
+        "sha256": "28c5104d0c2f7a7e842da3431606e21a245d8fb317e3434cd20b5c5a7b521615",
+        "checked_utc": "2026-10-22T13:49:56+00:00"
+      }
+    },
+    "duplicates": {
+      "identical_rows": 0,
+      "same_user_item_same_time": 0,
+      "user_item_pairs_seen_more_than_once": 0,
+      "extra_rows_from_repeated_pairs": 0
+    },
+    "ratings": {
+      "rating_counts_raw": {
+        "1.0": 274462,
+        "2.0": 356264,
+        "3.0": 818836,
+        "4.0": 1920017,
+        "5.0": 6118718
+      },
+      "rows_dropped_by_rating_rule": 0,
+      "positive_ratings": [
+        4.0,
+        5.0
+      ],
+      "positive_share": 0.8472263252299121
+    },
+    "provider_filters": {
+      "events": 9488297,
+      "users": 776370,
+      "items": 495063,
+      "min_events_per_user": 5,
+      "min_events_per_item": 5,
+      "first_event": "1996-08-17 16:01:38",
+      "last_event": "2023-09-12 00:22:22.061000"
+    },
+    "split": {
+      "method": "event_quantile",
+      "parts": {
+        "train": {
+          "from": "1996-08-17 16:01:38",
+          "to": "2018-04-09 13:36:20.892000",
+          "events": 6641807,
+          "event_share": 0.6999999051463082,
+          "time_share": 0.7995772879614483,
+          "users": 699115
+        },
+        "valid_model": {
+          "from": "2018-04-09 13:36:20.892000",
+          "to": "2018-12-07 22:22:31.655000",
+          "events": 474415,
+          "event_share": 0.050000015808948646,
+          "time_share": 0.024515160594691134,
+          "users": 177043
+        },
+        "valid_risk": {
+          "from": "2018-12-07 22:22:31.655000",
+          "to": "2019-07-31 13:10:12.512000",
+          "events": 474415,
+          "event_share": 0.050000015808948646,
+          "time_share": 0.023832506349848275,
+          "users": 177760
+        },
+        "test": {
+          "from": "2019-07-31 13:10:12.512000",
+          "to": "2023-09-12 00:22:22.061000",
+          "events": 1897660,
+          "event_share": 0.20000006323579458,
+          "time_share": 0.15207504509401226,
+          "users": 358036
+        }
+      },
+      "test_eligible_event_split": {
+        "events": 1596311,
+        "users": 329618
+      },
+      "time_period_split": {
+        "train_end": "2015-07-30 02:40:08.842699904",
+        "test_start": "2018-04-13 17:54:13.248800",
+        "test_eligible": {
+          "events": 2374791,
+          "users": 428013
+        }
+      }
+    },
+    "attrition": {
+      "valid_model": {
+        "steps": [
+          {
+            "step": "all events",
+            "events": 474415,
+            "users": 177043
+          },
+          {
+            "step": "after rating rule",
+            "events": 474415,
+            "users": 177043
+          },
+          {
+            "step": "positive",
+            "events": 412143,
+            "users": 160239
+          },
+          {
+            "step": "positive on catalog items",
+            "events": 154278,
+            "users": 84474
+          },
+          {
+            "step": "with an earlier positive (cases)",
+            "events": 136077,
+            "users": 74562
+          }
+        ],
+        "positive_on_catalog_repeating_an_earlier_interaction": 0,
+        "cases_repeating_an_earlier_interaction": 0
+      },
+      "valid_risk": {
+        "steps": [
+          {
+            "step": "all events",
+            "events": 474415,
+            "users": 177760
+          },
+          {
+            "step": "after rating rule",
+            "events": 474415,
+            "users": 177760
+          },
+          {
+            "step": "positive",
+            "events": 413948,
+            "users": 161236
+          },
+          {
+            "step": "positive on catalog items",
+            "events": 121175,
+            "users": 69084
+          },
+          {
+            "step": "with an earlier positive (cases)",
+            "events": 104919,
+            "users": 60269
+          }
+        ],
+        "positive_on_catalog_repeating_an_earlier_interaction": 0,
+        "cases_repeating_an_earlier_interaction": 0
+      },
+      "test": {
+        "steps": [
+          {
+            "step": "all events",
+            "events": 1897660,
+            "users": 358036
+          },
+          {
+            "step": "after rating rule",
+            "events": 1897660,
+            "users": 358036
+          },
+          {
+            "step": "positive",
+            "events": 1642459,
+            "users": 330997
+          },
+          {
+            "step": "positive on catalog items",
+            "events": 294167,
+            "users": 140864
+          },
+          {
+            "step": "with an earlier positive (cases)",
+            "events": 253631,
+            "users": 122397
+          }
+        ],
+        "positive_on_catalog_repeating_an_earlier_interaction": 0,
+        "cases_repeating_an_earlier_interaction": 0
+      }
+    },
+    "attributes": {
+      "metadata_file": "meta_Books_kept.jsonl.gz",
+      "items_found": 57262,
+      "share_with_value": {
+        "title": 1.0,
+        "description": 0.8568858929132758,
+        "features": 0.9961580105480075,
+        "categories": 0.9959484474869896,
+        "main_category": 0.9995983374663826,
+        "details": 0.9676923614264259,
+        "store": 0.9983060319234396,
+        "price": 0.9001432014250288,
+        "images": 0.8949390520764207,
+        "videos": 0.12886381893751528
+      },
+      "note": "average_rating and rating_number are not used (they include future reviews)",
+      "catalog_items": 57262
+    }
+  }
+}
