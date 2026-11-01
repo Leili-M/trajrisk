@@ -1,0 +1,149 @@
+{
+  "coverage": {
+    "recipes": 43529,
+    "with_tags": 35575,
+    "with_ingredients": 43529,
+    "with_duration": 42953,
+    "with_n_ingredients": 43529,
+    "with_n_steps": 43529,
+    "with_calories": 43529,
+    "with_protein": 43529,
+    "with_fat": 43529,
+    "with_sugar": 43529,
+    "with_fsa_score": 42324,
+    "with_who_score": 43439
+  },
+  "tag_counts": {
+    "vegetarian": 6005,
+    "vegan": 1599,
+    "main-dish": 11647,
+    "desserts": 6102,
+    "breakfast": 2330,
+    "lunch": 4523,
+    "appetizers": 3074,
+    "salads": 2187,
+    "soups-stews": 1522,
+    "side-dishes": 4973,
+    "brunch": 3148,
+    "beverages": 1801,
+    "north-american": 9013,
+    "european": 4232,
+    "asian": 2092,
+    "mexican": 1240,
+    "italian": 1305,
+    "african": 424,
+    "middle-eastern": 307,
+    "south-american": 153,
+    "indian": 354,
+    "15-minutes-or-less": 7114,
+    "30-minutes-or-less": 8507,
+    "60-minutes-or-less": 10659,
+    "4-hours-or-less": 7252
+  },
+  "tag_reliability": {
+    "vegetarian_tagged": 6005,
+    "vegetarian_tagged_mentioning_meat": 146,
+    "vegan_tagged": 1599,
+    "vegan_tagged_mentioning_animal_product": 208,
+    "not_tagged_vegetarian_but_no_meat_word": 15978,
+    "examples_vegetarian_with_meat_word": [
+      {
+        "title": "Perfect Potato, Leek and Onion Soup With Garlic Cheese Toasts",
+        "ingredients": "extra virgin olive oil; large garlic cloves, chopped; grated swiss cheese; slices sourdough bread; chopped fresh chives or 1/2 cup $template2$, chopped; extra virgin olive oil; large leeks, sliced white and pale green parts only; russet potatoes, peeled and diced; large white onion, chopped; vegetable broth or chicken broth; garlic cloves, chopped"
+      },
+      {
+        "title": "Chef Flower's Cracked Wheat Pilaf  - Kibrisli Bulgur Pilavi",
+        "ingredients": "olive oil; onion, medium size and very finely diced; vermicelli, crushed (please do not substitute to another pasta); bulgur (cracked wheat); chicken stock or 1 1/2 cups vegetable stock; tomatoes, canned and diced; salt and pepper, to taste"
+      },
+      {
+        "title": "Mexican Eggs and Rice",
+        "ingredients": "cooked rice (leftover); eggs; oil or 1 tablespoon bacon grease; grated cheddar cheese; salsa"
+      },
+      {
+        "title": "An Avocado-Licious Sandwich",
+        "ingredients": "slices whole wheat bread, toasted; small avocado, sliced; roma tomato, sliced; slices lightlife turkey slices (or tofurkey...or real turkey if that's your thing); salt & pepper"
+      },
+      {
+        "title": "Asian Green Beans in a Snap",
+        "ingredients": "cut green beans, well drained (french cut or regular in a can); minced onion (instant dried minced onion works well too); garlic clove, minced; soy sauce (depending on taste); bacon, crumbled (bacon bits work well)"
+      },
+      {
+        "title": "Thick Spinach Soup",
+        "ingredients": "oil; butter; onion, chopped; potatoes, diced; spinach, chopped; pints vegetable stock or 1 1/2 pints chicken stock; grated nutmeg; salt; fresh ground black pepper; creme fraiche or cream"
+      },
+      {
+        "title": "Black Bean and Avocado Soup",
+        "ingredients": "olive oil; red onion, diced; garlic cloves, minced; ground cumin (i use the full 2 tsp); cayenne powder (to taste); ground cinnamon; salt; sugar; chopped fresh cilantro; plum tomatoes, seeded and coarsely chopped; black beans, drained; vegetable broth, depending how thin you want it (or chicken broth); hass avocadoes, peeled, pitted and diced; fresh lime, juice of; shredded cheddar cheese, for garnish"
+      },
+      {
+        "title": "Leek, Mushroom and Lemon Risotto",
+        "ingredients": "leek; cremini mushroom; olive oil; garlic cloves, minced; butter; small yellow onion, chopped; arborio rice; fresh vegetable stock or 5 cups fresh chicken stock; lemon, juice and zest of; parmesan cheese; fresh chives, minced; fresh italian parsley, chopped; salt; fresh ground black pepper; lemon wedge; fresh italian parsley (to garnish)"
+      },
+      {
+        "title": "Hungarian Noodles With Vegetarian Sausage",
+        "ingredients": "olive oil; vegetarian sausages (morningstar or boca are good); large sweet onion, quartered and thinly sliced; package shredded mixed cabbage (or 1 lb. you shred yourself); vegetable broth; wide egg noodles, yolk-free if desired (6 1/2 cups); chopped fresh parsley; poppy seed, as desired; paprika"
+      },
+      {
+        "title": "Crispy Noodle Salad With Sweet and Sour Dressing",
+        "ingredients": "mixed baby greens, 1 sack; fresh bean sprout; shredded carrot; radishes, sliced; scallions, chopped; red bell pepper, cut into thin strips; fried chinese noodles (such as rice noodles, chow mein noodles or fried wontons); sweet plum sauce or 2 tablespoons chinese duck sauce; cider vinegar or 2 tablespoons $template2$, may be substituted; canola oil (eyeball the amount) or 1/3 cup vegetable oil (eyeball the amount); salt and pepper"
+      },
+      {
+        "title": "Family Favorite Healthy Minestrone Soup!",
+        "ingredients": "vegetable stock or 4 cups vegetarian chicken stock; also use fresh-i usually one can along with chopped fresh tomatoes) or (14 1/2 ounce) cans $template2$ (can also use fresh-i usually one can along with chopped fresh tomatoes); large potato, cubed; onion, chopped; celery ribs, chopped; carrots, chopped; large cabbage, finely chopped; italian seasoning; kidney beans (i use fresh kidney beans often also); fresh corn kernels (or canned will work); large zucchini, sliced; pasta, uncooked (your choice of favorite style pasta. i usually use spirals or penne, but really it depends mostly on); salt, to taste; pepper, to taste"
+      },
+      {
+        "title": "Mixed Beans With Bacon and Almonds",
+        "ingredients": "or 4 slices bacon; package frozen sugar snap peas; package frozen green beans; package frozen butter beans; package frozen lima beans; slivered almonds; salt & freshly ground black pepper; olive oil"
+      },
+      {
+        "title": "Broccoli Kugel",
+        "ingredients": "frozen chopped broccoli, thawed; margarine; flour; water; parve chicken soup powder; mayonnaise; onion soup mix; eggs; pepper; pine nuts"
+      },
+      {
+        "title": "Lone Star Steakhouse Spicy Ranch Dip Copycat",
+        "ingredients": "prepared ranch salad dressing; onion powder; lemon pepper; crushed red pepper flakes; cayenne pepper; chili powder; beef bouillon powder; cocoa powder; ground cumin; garlic powder; cornstarch; salt"
+      },
+      {
+        "title": "Arroz Brasileiro (Brazilian Rice)",
+        "ingredients": "olive oil; onions, finely chopped; rice; hot chicken broth (to make this vegetarian or vegan i use 3 cups hot water and 3 full tsp of mckays vegan chicken seaso); italian plum tomatoes, canned drained and chopped; salt, to taste; cilantro, to garnish; tomatoes, wedges to garnish"
+      }
+    ],
+    "time_tags": {
+      "15-minutes-or-less": {
+        "tagged_with_duration": 6929,
+        "duration_within_limit": 0.9974022225429355
+      },
+      "30-minutes-or-less": {
+        "tagged_with_duration": 8507,
+        "duration_within_limit": 0.9991771482308687
+      },
+      "60-minutes-or-less": {
+        "tagged_with_duration": 10659,
+        "duration_within_limit": 0.9997185477061638
+      },
+      "4-hours-or-less": {
+        "tagged_with_duration": 7252,
+        "duration_within_limit": 0.9998621070049641
+      }
+    }
+  },
+  "soft_correlations": {
+    "shorter time vs fewer ingredients": 0.36264764834210056,
+    "shorter time vs fewer calories": 0.2718156541709682,
+    "shorter time vs more protein": -0.3074854339389876,
+    "shorter time vs healthier (FSA)": 0.1932988667094564,
+    "fewer ingredients vs fewer calories": 0.25094438434205735,
+    "fewer ingredients vs more protein": -0.3013064073421299,
+    "fewer ingredients vs healthier (FSA)": 0.16768648668076122,
+    "fewer calories vs more protein": -0.7245588499285515,
+    "fewer calories vs healthier (FSA)": 0.6168963018877912,
+    "more protein vs healthier (FSA)": -0.36874791416752667
+  },
+  "feasible_histogram": {
+    "0": 51,
+    "1-9": 332,
+    "10-50": 453,
+    "51-200": 254,
+    ">200": 205
+  }
+}
