@@ -5,6 +5,10 @@ The same three checks as Part 10 of the progress report:
 2. AUROC inside groups of cases with similar history length (4 quartiles).
 3. Cross-validated AUROC of history length alone vs. history length plus the signals,
    with folds split by user so one user never sits in both the training and the test fold.
+
+Proposal section 1: "The target rank is retained separately for evaluation, never as an
+input feature." Columns that describe the outcome (LABEL_COLUMNS) are rejected as
+predictors by check_predictors(), which every fitting function calls.
 """
 
 import numpy as np
@@ -16,6 +20,16 @@ from sklearn.model_selection import GroupKFold, cross_val_predict
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
+# Columns that describe the outcome of a case. They may be used as the label, never as input.
+LABEL_COLUMNS = frozenset({"miss", "miss_one_sample", "hit", "target_idx", "target_rank"})
+
+
+def check_predictors(cols):
+    """Raise if any outcome column is about to be used as a predictor."""
+    bad = sorted(set(cols) & LABEL_COLUMNS)
+    if bad:
+        raise ValueError(f"Outcome columns cannot be used as predictors: {bad}")
+
 
 def usable(df, cols):
     """Drop signals that are constant (e.g. sample disagreement with one noise-free sample)."""
@@ -23,6 +37,7 @@ def usable(df, cols):
 
 
 def single_signal_table(df, cols, miss="miss", history="history_size"):
+    check_predictors(cols)
     rows = []
     for c in cols:
         rows.append({"signal": c,
@@ -34,6 +49,7 @@ def single_signal_table(df, cols, miss="miss", history="history_size"):
 
 
 def within_group_table(df, cols, miss="miss", history="history_size", n_groups=4):
+    check_predictors(cols)
     labels = [f"Q{i + 1}" for i in range(n_groups)]
     try:                                   # same grouping as Part 10
         groups = pd.qcut(df[history], n_groups, labels=labels)
@@ -51,6 +67,7 @@ def within_group_table(df, cols, miss="miss", history="history_size", n_groups=4
 
 
 def cv_auroc(df, cols, users, miss="miss", n_folds=5):
+    check_predictors(cols)
     clf = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
     p = cross_val_predict(clf, df[cols], df[miss], cv=GroupKFold(n_folds),
                           groups=users, method="predict_proba")[:, 1]
@@ -77,6 +94,7 @@ def evaluate(df, signal_sets, users, miss="miss", history="history_size"):
     df = df.copy()
     df[miss] = df[miss].astype(bool)
     all_cols = usable(df, sorted({c for cols in signal_sets.values() for c in cols}))
+    check_predictors(all_cols)
     return {
         "single": single_signal_table(df, all_cols, miss, history),
         "within_groups": within_group_table(df, all_cols, miss, history),
@@ -84,16 +102,9 @@ def evaluate(df, signal_sets, users, miss="miss", history="history_size"):
     }
 
 
-
-
-
 def cv_predict(df, cols, users, miss="miss", n_folds=5):
-
     """Out-of-fold probability of a wrong recommendation (folds split by user)."""
-
+    check_predictors(cols)
     clf = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
-
     return cross_val_predict(clf, df[cols], df[miss], cv=GroupKFold(n_folds),
-
                              groups=users, method="predict_proba")[:, 1]
-

@@ -1,0 +1,186 @@
+{
+  "movielens": {
+    "k": 5,
+    "boundaries": {
+      "interactions_inside_split_boundaries": true,
+      "cases_inside_split_boundaries": true,
+      "no_case_in_training_period": true
+    },
+    "catalog": {
+      "catalog_items": 2934,
+      "min_positive_training_interactions_per_item": 5,
+      "every_item_has_k_training_positives": true,
+      "every_target_in_catalog": true
+    },
+    "history": {
+      "cases_checked": 60000,
+      "history_items_all_strictly_earlier": true,
+      "history_size_matches_recomputation": true,
+      "n_prior_matches_earlier_positive_events": true,
+      "every_case_has_history": true,
+      "target_never_hidden_as_seen": true,
+      "target_never_in_history": true
+    },
+    "attrition": {
+      "valid_model": {
+        "interactions": 50009,
+        "positive": 28217,
+        "positive_on_kept_recipes": 28080,
+        "cases_with_earlier_history": 27651,
+        "users": 485
+      },
+      "valid_risk": {
+        "interactions": 50011,
+        "positive": 26925,
+        "positive_on_kept_recipes": 26785,
+        "cases_with_earlier_history": 26399,
+        "users": 520
+      },
+      "test": {
+        "interactions": 200041,
+        "positive": 112260,
+        "positive_on_kept_recipes": 111426,
+        "cases_with_earlier_history": 110457,
+        "users": 1759
+      }
+    }
+  },
+  "base": {
+    "k": 5,
+    "boundaries": {
+      "interactions_inside_split_boundaries": true,
+      "cases_inside_split_boundaries": true,
+      "no_case_in_training_period": true
+    },
+    "catalog": {
+      "catalog_items": 43529,
+      "min_positive_training_interactions_per_item": 5,
+      "every_item_has_k_training_positives": true,
+      "every_target_in_catalog": true
+    },
+    "history": {
+      "cases_checked": 60000,
+      "history_items_all_strictly_earlier": true,
+      "history_size_matches_recomputation": true,
+      "n_prior_matches_earlier_positive_events": true,
+      "every_case_has_history": true,
+      "target_never_hidden_as_seen": true,
+      "target_never_in_history": true
+    },
+    "attrition": {
+      "valid_model": {
+        "interactions": 68148,
+        "positive": 57867,
+        "positive_on_kept_recipes": 30602,
+        "cases_with_earlier_history": 24317,
+        "users": 7284
+      },
+      "valid_risk": {
+        "interactions": 72612,
+        "positive": 63424,
+        "positive_on_kept_recipes": 30417,
+        "cases_with_earlier_history": 23891,
+        "users": 6613
+      },
+      "test": {
+        "interactions": 281814,
+        "positive": 223509,
+        "positive_on_kept_recipes": 119954,
+        "cases_with_earlier_history": 60458,
+        "users": 13182
+      }
+    }
+  },
+  "amazon_video_games": {
+    "k": 5,
+    "boundaries": {
+      "interactions_inside_split_boundaries": true,
+      "cases_inside_split_boundaries": true,
+      "no_case_in_training_period": true
+    },
+    "catalog": {
+      "catalog_items": 13608,
+      "min_positive_training_interactions_per_item": 5,
+      "every_item_has_k_training_positives": true,
+      "every_target_in_catalog": true
+    },
+    "history": {
+      "cases_checked": 53920,
+      "history_items_all_strictly_earlier": true,
+      "history_size_matches_recomputation": true,
+      "n_prior_matches_earlier_positive_events": true,
+      "every_case_has_history": true,
+      "target_never_hidden_as_seen": true,
+      "target_never_in_history": true
+    },
+    "attrition": {
+      "valid_model": {
+        "interactions": 40729,
+        "positive": 33630,
+        "positive_on_kept_recipes": 22348,
+        "cases_with_earlier_history": 19085,
+        "users": 9369
+      },
+      "valid_risk": {
+        "interactions": 40729,
+        "positive": 33827,
+        "positive_on_kept_recipes": 17668,
+        "cases_with_earlier_history": 14835,
+        "users": 7668
+      },
+      "test": {
+        "interactions": 162918,
+        "positive": 130457,
+        "positive_on_kept_recipes": 32527,
+        "cases_with_earlier_history": 26350,
+        "users": 13977
+      }
+    }
+  },
+  "amazon_books": {
+    "k": 20,
+    "boundaries": {
+      "interactions_inside_split_boundaries": true,
+      "cases_inside_split_boundaries": true,
+      "no_case_in_training_period": true
+    },
+    "catalog": {
+      "catalog_items": 57262,
+      "min_positive_training_interactions_per_item": 20,
+      "every_item_has_k_training_positives": true,
+      "every_target_in_catalog": true
+    },
+    "history": {
+      "cases_checked": 60000,
+      "history_items_all_strictly_earlier": true,
+      "history_size_matches_recomputation": true,
+      "n_prior_matches_earlier_positive_events": true,
+      "every_case_has_history": true,
+      "target_never_hidden_as_seen": true,
+      "target_never_in_history": true
+    },
+    "attrition": {
+      "valid_model": {
+        "interactions": 474415,
+        "positive": 412143,
+        "positive_on_kept_recipes": 154278,
+        "cases_with_earlier_history": 136077,
+        "users": 74562
+      },
+      "valid_risk": {
+        "interactions": 474415,
+        "positive": 413948,
+        "positive_on_kept_recipes": 121175,
+        "cases_with_earlier_history": 104919,
+        "users": 60269
+      },
+      "test": {
+        "interactions": 1897660,
+        "positive": 1642459,
+        "positive_on_kept_recipes": 294167,
+        "cases_with_earlier_history": 253631,
+        "users": 122397
+      }
+    }
+  }
+}
