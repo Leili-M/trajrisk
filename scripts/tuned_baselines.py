@@ -34,10 +34,14 @@ from trajrisk import evaluate as ev
 REPO = Path(__file__).resolve().parents[1]
 GRID = {
     "recent popularity": [{"days": d} for d in (30, 90, 180, 365)],
-    "itemknn": [{"k": k, "shrink": s} for k in (20, 50, 100, 200, 500, None) for s in (0, 10, 100)],
-    "ease": [{"lam": lam} for lam in (50, 200, 500, 1000, 3000, 10000)],
+    "itemknn": [{"k": k, "shrink": s} for k in (5, 10, 20, 50, 100, 200, 500, None)
+                for s in (0, 10, 100, 300, 1000)],
+    "ease": [{"lam": lam} for lam in (5, 10, 20, 50, 200, 500, 1000, 3000, 10000, 30000, 100000)],
 }
 FIXED = ["popularity", "co-occurrence", "conditional"]
+# Values that are natural limits rather than arbitrary grid ends: a shrink term
+# cannot be negative, and k = all items is the largest possible neighbourhood.
+NATURAL_LIMITS = {"shrink": {0}, "k": {None}}
 KS = [10, 50]
 
 
@@ -93,6 +97,21 @@ def diffrec_fn(cfg, run, n_items, device):
     return lambda h: recommend_scores(model, diffusion, h)
 
 
+def at_grid_edge(method, setting):
+    """True if the chosen value of any setting is the smallest or largest value tried."""
+    grid = GRID.get(method)
+    if not grid:
+        return False
+    chosen = json.loads(setting)
+    for key, val in chosen.items():
+        if val in NATURAL_LIMITS.get(key, set()):
+            continue
+        values = [float("inf") if g[key] is None else g[key] for g in grid]   # k=None: all items
+        if len(set(values)) > 1 and val in (min(values), max(values)):
+            return True
+    return False
+
+
 def to_markdown(name, tuning, test, chosen, n_valid, n_test):
     L = [f"# Proposal section 4: tuned baselines and DiffRec on {name}", "",
          f"Settings chosen on valid_model ({n_valid:,} cases) by NDCG@10; "
@@ -100,6 +119,10 @@ def to_markdown(name, tuning, test, chosen, n_valid, n_test):
          "## Test results", "", "| Method | Setting | Recall@10 | NDCG@10 | Recall@50 |", "|---|---|---|---|---|"]
     for m, r in test.items():
         L.append(f"| {m} | {r.get('setting', '')} | {r['recall@10']:.4f} | {r['ndcg@10']:.4f} | {r['recall@50']:.4f} |")
+    edges = [m for m in chosen if at_grid_edge(m, chosen[m])]
+    if edges:
+        L += ["", f"Warning: the chosen setting lies at the edge of the grid for {', '.join(edges)}; "
+                  "the grid may need to be extended."]
     L += ["", "## Tuning on valid_model (NDCG@10)", "", "| Method | Setting | NDCG@10 | Recall@10 |", "|---|---|---|---|"]
     for r in tuning:
         star = " **(chosen)**" if chosen.get(r["method"]) == r["setting"] else ""
@@ -112,8 +135,20 @@ def main():
     parser.add_argument("--config", required=True)
     parser.add_argument("--diffrec-runs", nargs="*", default=[])
     parser.add_argument("--only", nargs="*", help="limit to these methods (quick test)")
+    parser.add_argument("--report-only", action="store_true",
+                        help="rewrite the .md report from the saved .json, without running anything")
     args = parser.parse_args()
     cfg = load_cfg(args.config)
+    if args.report_only:
+        name = Path(args.config).stem
+        rep = REPO / "reports" / "baselines"
+        saved = json.loads((rep / f"{name}.json").read_text())
+        n_valid, n_test = (int((dd.load_processed(cfg)[2]["split"] == s).sum())
+                           for s in ("valid_model", "test"))
+        (rep / f"{name}.md").write_text(to_markdown(name, saved["tuning"], saved["test"],
+                                                    saved["chosen"], n_valid, n_test))
+        print((rep / f"{name}.md").read_text())
+        return
     device = "cuda" if torch.cuda.is_available() else "cpu"
     name = Path(args.config).stem
 

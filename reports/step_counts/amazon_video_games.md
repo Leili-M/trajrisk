@@ -1,13 +1,13 @@
 # Proposal section 4: number of sampling steps (amazon_video_games, valid_risk)
 
-5 models trained with 5 steps, sampled on subsets of their steps; 14,835 cases. Controls: log history length and final-score margin (5-fold CV, folds by user).
+5 models trained with 5 steps, sampled on subsets of their steps; 14,835 cases. Controls: log history length, final-score margin and mean popularity of the history items, the three controls of the main analysis (5-fold CV, folds by user).
 
 | Steps | Recall@10 | Final list same as 5 steps | Mean step change@10 | AUROC | Gain over controls (sd) |
 |---|---|---|---|---|---|
-| 5 | 0.0811 | 100.0% | 0.083 | 0.562 | +0.033 (0.016) |
-| 4 | 0.0811 | 100.0% | 0.080 | 0.560 | +0.031 (0.016) |
-| 3 | 0.0811 | 100.0% | 0.087 | 0.561 | +0.033 (0.016) |
-| 2 | 0.0812 | 99.9% | 0.084 | 0.552 | +0.027 (0.015) |
+| 5 | 0.0811 | 100.0% | 0.083 | 0.562 | +0.017 (0.007) |
+| 4 | 0.0811 | 100.0% | 0.080 | 0.560 | +0.016 (0.007) |
+| 3 | 0.0811 | 100.0% | 0.087 | 0.561 | +0.017 (0.008) |
+| 2 | 0.0812 | 99.9% | 0.084 | 0.552 | +0.013 (0.007) |
 
 Overlap of each checkpoint's top-10 with the final top-10, by normalized noise level (1 = noisiest visited step, 0 = final; mean over models):
 

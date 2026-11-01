@@ -6,8 +6,9 @@ with evenly spaced subsets (3 steps: [4, 2, 0]; 2 steps: [4, 0]). For each setti
     5-step list (does sampling with fewer steps change the recommendation?)
   - the step-change signal: mean over non-final checkpoints of 1 - overlap@10
     between the checkpoint's list and the final list
-  - its AUROC for predicting a miss, and its added value over history length and
-    the final-score margin (5-fold cross-validation, folds split by user)
+  - its AUROC for predicting a miss, and its added value over the three controls of
+    the main analysis: history length, final-score margin and mean popularity of the
+    history items (5-fold cross-validation, folds split by user)
   - the overlap with the final list at each checkpoint, by normalized noise level
     (1 = noisiest step, 0 = final), so settings with different step counts can be
     compared at the same noise level
@@ -105,6 +106,10 @@ def main():
     targets = part["target_idx"].to_numpy()
     users = part["user_id"].to_numpy()
     log_hist = np.log1p(part["n_prior"].to_numpy())
+    # third control of the main analysis: mean log training popularity of the history items
+    tr = inter[(inter["split"] == "train") & inter["positive"]]
+    log_pop = np.log1p(np.bincount(tr["item_idx"], minlength=len(items))).astype(np.float64)
+    hist_pop = np.asarray(hist @ log_pop).ravel() / np.maximum(np.asarray(hist.sum(1)).ravel(), 1)
 
     rows, level_rows = [], []
     for run in args.runs:
@@ -114,9 +119,11 @@ def main():
         res = run_one(model, diffusion, hist, seen, targets, subsets, device, args.batch_size)
         for s, d in res.items():
             df = pd.DataFrame({"miss": d["miss"], "step_change@10": d["change"],
-                               "small_margin": d["margin"], "log_history": log_hist})
-            base = risk_eval.cv_auroc(df, ["log_history", "small_margin"], users)
-            both = risk_eval.cv_auroc(df, ["log_history", "small_margin", "step_change@10"], users)
+                               "small_margin": d["margin"], "log_history": log_hist,
+                               "history_popularity": hist_pop})
+            controls = ["log_history", "small_margin", "history_popularity"]
+            base = risk_eval.cv_auroc(df, controls, users)
+            both = risk_eval.cv_auroc(df, controls + ["step_change@10"], users)
             rows.append({"run": run, "steps": s, "visited": str(subsets[s]),
                          "recall@10": float(1 - d["miss"].mean()),
                          "final_list_overlap_with_5_steps": float(d["same_as_full"].mean()),
@@ -140,7 +147,8 @@ def main():
 
     L = [f"# Proposal section 4: number of sampling steps ({name}, {args.split})", "",
          f"{len(args.runs)} models trained with 5 steps, sampled on subsets of their steps; "
-         f"{len(part):,} cases. Controls: log history length and final-score margin "
+         f"{len(part):,} cases. Controls: log history length, final-score margin "
+         "and mean popularity of the history items, the three controls of the main analysis "
          "(5-fold CV, folds by user).", "",
          "| Steps | Recall@10 | Final list same as 5 steps | Mean step change@10 | AUROC | Gain over controls (sd) |",
          "|---|---|---|---|---|---|"]
