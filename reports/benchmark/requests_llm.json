@@ -1,0 +1,33 @@
+{
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "paraphrases_per_scenario": 2,
+  "paraphrase_sampling": {
+    "temperature": 0.9,
+    "top_p": 0.95
+  },
+  "parsing": "greedy",
+  "seconds": 276,
+  "accuracy": {
+    "template": {
+      "texts": 1800,
+      "rule_hard_exact": 1.0,
+      "rule_soft_order": 1.0,
+      "rule_all_correct": 1.0,
+      "llm_hard_exact": 0.9927777777777778,
+      "llm_soft_order": 0.9922222222222222,
+      "llm_all_correct": 0.985,
+      "llm_valid_json": 1.0
+    },
+    "llm": {
+      "texts": 1200,
+      "rule_hard_exact": 0.9733333333333334,
+      "rule_soft_order": 0.3491666666666667,
+      "rule_all_correct": 0.3441666666666667,
+      "llm_hard_exact": 0.98,
+      "llm_soft_order": 0.8466666666666667,
+      "llm_all_correct": 0.8291666666666667,
+      "llm_valid_json": 1.0
+    }
+  }
+}
