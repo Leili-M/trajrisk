@@ -1,0 +1,37 @@
+{
+  "reviewed": 100,
+  "clear": {
+    "judged": 30,
+    "pass_share": 1.0
+  },
+  "feasible_ok": {
+    "judged": 20,
+    "pass_share": 1.0
+  },
+  "attributes_ok": {
+    "judged": 30,
+    "pass_share": 1.0
+  },
+  "para1_same": {
+    "judged": 30,
+    "pass_share": 0.8
+  },
+  "para2_same": {
+    "judged": 30,
+    "pass_share": 0.8333333333333334
+  },
+  "paraphrases_judged": 60,
+  "paraphrases_meaning_kept": 0.8166666666666667,
+  "llm_parser_correct_when_meaning_kept": 0.7755102040816326,
+  "rule_parser_correct_when_meaning_kept": 0.5714285714285714,
+  "table_meaning_vs_llm_parser": {
+    "false": {
+      "0": 1,
+      "1": 11
+    },
+    "true": {
+      "0": 10,
+      "1": 38
+    }
+  }
+}

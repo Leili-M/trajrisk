@@ -1,0 +1,526 @@
+run,policy,rate,ndcg@10
+hm_seed42,judge: controls + lists,0.0,0.00796363490385666
+hm_seed42,judge: controls + lists,0.05,0.007972760736702073
+hm_seed42,judge: controls + lists,0.1,0.007927215236943265
+hm_seed42,judge: controls + lists,0.15,0.007875649125711051
+hm_seed42,judge: controls + lists,0.2,0.007896978140605599
+hm_seed42,judge: controls + lists,0.25,0.007949048417877478
+hm_seed42,judge: controls + lists,0.3,0.007890099759317058
+hm_seed42,judge: controls + lists,0.35,0.007893715266450739
+hm_seed42,judge: controls + lists,0.4,0.007927877699559027
+hm_seed42,judge: controls + lists,0.45,0.007939101559136462
+hm_seed42,judge: controls + lists,0.5,0.00790150294559725
+hm_seed42,judge: controls + lists,0.55,0.007962879757838218
+hm_seed42,judge: controls + lists,0.6,0.007972772223847012
+hm_seed42,judge: controls + lists,0.65,0.007963344377781298
+hm_seed42,judge: controls + lists,0.7,0.007903021689607886
+hm_seed42,judge: controls + lists,0.75,0.007909044810548615
+hm_seed42,judge: controls + lists,0.8,0.008054820947439877
+hm_seed42,judge: controls + lists,0.85,0.008189956297830467
+hm_seed42,judge: controls + lists,0.9,0.008280647020913733
+hm_seed42,judge: controls + lists,0.95,0.008334111164227952
+hm_seed42,judge: controls + lists,1.0,0.008426263094625842
+hm_seed42,judge: controls,0.0,0.00796363490385666
+hm_seed42,judge: controls,0.05,0.00796498774275815
+hm_seed42,judge: controls,0.1,0.007915809955252814
+hm_seed42,judge: controls,0.15,0.00792964533525849
+hm_seed42,judge: controls,0.2,0.007967292449981034
+hm_seed42,judge: controls,0.25,0.007976779926782489
+hm_seed42,judge: controls,0.3,0.007952499834189601
+hm_seed42,judge: controls,0.35,0.007937941016815735
+hm_seed42,judge: controls,0.4,0.007903381921428006
+hm_seed42,judge: controls,0.45,0.007999258261793018
+hm_seed42,judge: controls,0.5,0.008032079326690408
+hm_seed42,judge: controls,0.55,0.007947480562441683
+hm_seed42,judge: controls,0.6,0.007878336345502019
+hm_seed42,judge: controls,0.65,0.007982563650140271
+hm_seed42,judge: controls,0.7,0.0078828282570017
+hm_seed42,judge: controls,0.75,0.007984518312574755
+hm_seed42,judge: controls,0.8,0.008094260510252747
+hm_seed42,judge: controls,0.85,0.008184566058570026
+hm_seed42,judge: controls,0.9,0.008268086112513366
+hm_seed42,judge: controls,0.95,0.008341724909590228
+hm_seed42,judge: controls,1.0,0.008426263094625842
+hm_seed42,entropy,0.0,0.00796363490385666
+hm_seed42,entropy,0.05,0.00798192740289739
+hm_seed42,entropy,0.1,0.008052792126627918
+hm_seed42,entropy,0.15,0.008026484978832345
+hm_seed42,entropy,0.2,0.008129358986984208
+hm_seed42,entropy,0.25,0.008190458511838498
+hm_seed42,entropy,0.3,0.008290014361841447
+hm_seed42,entropy,0.35,0.008312121611239273
+hm_seed42,entropy,0.4,0.008371205286892813
+hm_seed42,entropy,0.45,0.008403612222801506
+hm_seed42,entropy,0.5,0.00849393723235298
+hm_seed42,entropy,0.55,0.008513705832066159
+hm_seed42,entropy,0.6,0.008562633027673057
+hm_seed42,entropy,0.65,0.008558098646192662
+hm_seed42,entropy,0.7,0.008578754722357702
+hm_seed42,entropy,0.75,0.00857201526607562
+hm_seed42,entropy,0.8,0.008561506324593614
+hm_seed42,entropy,0.85,0.0085547124367174
+hm_seed42,entropy,0.9,0.008498659015121687
+hm_seed42,entropy,0.95,0.008461256657822415
+hm_seed42,entropy,1.0,0.008426263094625842
+hm_seed42,random (expected),0.0,0.00796363490385666
+hm_seed42,oracle (diagnostic),0.0,0.00796363490385666
+hm_seed42,random (expected),0.05,0.007986766313395118
+hm_seed42,oracle (diagnostic),0.05,0.012011154790734918
+hm_seed42,random (expected),0.1,0.00800989772293358
+hm_seed42,oracle (diagnostic),0.1,0.012011154790734918
+hm_seed42,random (expected),0.15,0.008033029132472037
+hm_seed42,oracle (diagnostic),0.15,0.012011154790734918
+hm_seed42,random (expected),0.2,0.008056160542010497
+hm_seed42,oracle (diagnostic),0.2,0.012011154790734918
+hm_seed42,random (expected),0.25,0.008079291951548957
+hm_seed42,oracle (diagnostic),0.25,0.012011154790734918
+hm_seed42,random (expected),0.3,0.008102423361087414
+hm_seed42,oracle (diagnostic),0.3,0.012011154790734918
+hm_seed42,random (expected),0.35,0.008125554770625874
+hm_seed42,oracle (diagnostic),0.35,0.012011154790734918
+hm_seed42,random (expected),0.4,0.008148686180164334
+hm_seed42,oracle (diagnostic),0.4,0.012011154790734918
+hm_seed42,random (expected),0.45,0.008171817589702793
+hm_seed42,oracle (diagnostic),0.45,0.012011154790734918
+hm_seed42,random (expected),0.5,0.008194948999241251
+hm_seed42,oracle (diagnostic),0.5,0.012011154790734918
+hm_seed42,random (expected),0.55,0.00821808040877971
+hm_seed42,oracle (diagnostic),0.55,0.012011154790734918
+hm_seed42,random (expected),0.6,0.008241211818318168
+hm_seed42,oracle (diagnostic),0.6,0.012011154790734918
+hm_seed42,random (expected),0.65,0.008264343227856628
+hm_seed42,oracle (diagnostic),0.65,0.012011154790734918
+hm_seed42,random (expected),0.7,0.008287474637395088
+hm_seed42,oracle (diagnostic),0.7,0.012011154790734918
+hm_seed42,random (expected),0.75,0.008310606046933545
+hm_seed42,oracle (diagnostic),0.75,0.012011154790734918
+hm_seed42,random (expected),0.8,0.008333737456472005
+hm_seed42,oracle (diagnostic),0.8,0.012011154790734918
+hm_seed42,random (expected),0.85,0.008356868866010465
+hm_seed42,oracle (diagnostic),0.85,0.012011154790734918
+hm_seed42,random (expected),0.9,0.008380000275548924
+hm_seed42,oracle (diagnostic),0.9,0.012011154790734918
+hm_seed42,random (expected),0.95,0.008403131685087382
+hm_seed42,oracle (diagnostic),0.95,0.012011154790734918
+hm_seed42,random (expected),1.0,0.008426263094625842
+hm_seed42,oracle (diagnostic),1.0,0.012011154790734918
+hm_seed1,judge: controls + lists,0.0,0.007663174718262335
+hm_seed1,judge: controls + lists,0.05,0.0077204541361751144
+hm_seed1,judge: controls + lists,0.1,0.00773898298394571
+hm_seed1,judge: controls + lists,0.15,0.007768242194707548
+hm_seed1,judge: controls + lists,0.2,0.007760127998956785
+hm_seed1,judge: controls + lists,0.25,0.007786056967128398
+hm_seed1,judge: controls + lists,0.3,0.007869786667714545
+hm_seed1,judge: controls + lists,0.35,0.00793212034747202
+hm_seed1,judge: controls + lists,0.4,0.0079097016124497
+hm_seed1,judge: controls + lists,0.45,0.007927389100114212
+hm_seed1,judge: controls + lists,0.5,0.007919521746310153
+hm_seed1,judge: controls + lists,0.55,0.007934511036476487
+hm_seed1,judge: controls + lists,0.6,0.00801069627786327
+hm_seed1,judge: controls + lists,0.65,0.008078812849110854
+hm_seed1,judge: controls + lists,0.7,0.00812664523638514
+hm_seed1,judge: controls + lists,0.75,0.008077088082940654
+hm_seed1,judge: controls + lists,0.8,0.007972954514902403
+hm_seed1,judge: controls + lists,0.85,0.008096630299284539
+hm_seed1,judge: controls + lists,0.9,0.008196099495354228
+hm_seed1,judge: controls + lists,0.95,0.008320643857707134
+hm_seed1,judge: controls + lists,1.0,0.008426263094625842
+hm_seed1,judge: controls,0.0,0.007663174718262335
+hm_seed1,judge: controls,0.05,0.007698793452897727
+hm_seed1,judge: controls,0.1,0.007764920355447886
+hm_seed1,judge: controls,0.15,0.007782662912251486
+hm_seed1,judge: controls,0.2,0.007838910354249468
+hm_seed1,judge: controls,0.25,0.007899241630398717
+hm_seed1,judge: controls,0.3,0.007855264244665075
+hm_seed1,judge: controls,0.35,0.007763478997832454
+hm_seed1,judge: controls,0.4,0.007818112925376156
+hm_seed1,judge: controls,0.45,0.007894136685647837
+hm_seed1,judge: controls,0.5,0.007920158963949733
+hm_seed1,judge: controls,0.55,0.007976517672776774
+hm_seed1,judge: controls,0.6,0.007917903567172082
+hm_seed1,judge: controls,0.65,0.007907820805889152
+hm_seed1,judge: controls,0.7,0.00789652828700743
+hm_seed1,judge: controls,0.75,0.007994862449609234
+hm_seed1,judge: controls,0.8,0.008008358758960195
+hm_seed1,judge: controls,0.85,0.008056717240623889
+hm_seed1,judge: controls,0.9,0.008159398681160501
+hm_seed1,judge: controls,0.95,0.008313422443300814
+hm_seed1,judge: controls,1.0,0.008426263094625842
+hm_seed1,entropy,0.0,0.007663174718262335
+hm_seed1,entropy,0.05,0.007711253902028683
+hm_seed1,entropy,0.1,0.0076344040675751165
+hm_seed1,entropy,0.15,0.007791674791270834
+hm_seed1,entropy,0.2,0.00792655715556632
+hm_seed1,entropy,0.25,0.007998931848667094
+hm_seed1,entropy,0.3,0.00798285865241425
+hm_seed1,entropy,0.35,0.008081099977045968
+hm_seed1,entropy,0.4,0.008161561568450871
+hm_seed1,entropy,0.45,0.008269230625390527
+hm_seed1,entropy,0.5,0.008306473665936839
+hm_seed1,entropy,0.55,0.00834591389961167
+hm_seed1,entropy,0.6,0.008336567797977538
+hm_seed1,entropy,0.65,0.008394697985564319
+hm_seed1,entropy,0.7,0.008370731934706362
+hm_seed1,entropy,0.75,0.008412134212864415
+hm_seed1,entropy,0.8,0.00840905899200893
+hm_seed1,entropy,0.85,0.008412494204275024
+hm_seed1,entropy,0.9,0.008411814963561252
+hm_seed1,entropy,0.95,0.00842014312203857
+hm_seed1,entropy,1.0,0.008426263094625842
+hm_seed1,random (expected),0.0,0.007663174718262335
+hm_seed1,oracle (diagnostic),0.0,0.007663174718262335
+hm_seed1,random (expected),0.05,0.007701329137080511
+hm_seed1,oracle (diagnostic),0.05,0.011474434518897382
+hm_seed1,random (expected),0.1,0.007739483555898686
+hm_seed1,oracle (diagnostic),0.1,0.011474434518897382
+hm_seed1,random (expected),0.15,0.0077776379747168615
+hm_seed1,oracle (diagnostic),0.15,0.011474434518897382
+hm_seed1,random (expected),0.2,0.007815792393535036
+hm_seed1,oracle (diagnostic),0.2,0.011474434518897382
+hm_seed1,random (expected),0.25,0.007853946812353213
+hm_seed1,oracle (diagnostic),0.25,0.011474434518897382
+hm_seed1,random (expected),0.3,0.007892101231171386
+hm_seed1,oracle (diagnostic),0.3,0.011474434518897382
+hm_seed1,random (expected),0.35,0.007930255649989563
+hm_seed1,oracle (diagnostic),0.35,0.011474434518897382
+hm_seed1,random (expected),0.4,0.007968410068807738
+hm_seed1,oracle (diagnostic),0.4,0.011474434518897382
+hm_seed1,random (expected),0.45,0.008006564487625913
+hm_seed1,oracle (diagnostic),0.45,0.011474434518897382
+hm_seed1,random (expected),0.5,0.00804471890644409
+hm_seed1,oracle (diagnostic),0.5,0.011474434518897382
+hm_seed1,random (expected),0.55,0.008082873325262264
+hm_seed1,oracle (diagnostic),0.55,0.011474434518897382
+hm_seed1,random (expected),0.6,0.008121027744080439
+hm_seed1,oracle (diagnostic),0.6,0.011474434518897382
+hm_seed1,random (expected),0.65,0.008159182162898614
+hm_seed1,oracle (diagnostic),0.65,0.011474434518897382
+hm_seed1,random (expected),0.7,0.008197336581716789
+hm_seed1,oracle (diagnostic),0.7,0.011474434518897382
+hm_seed1,random (expected),0.75,0.008235491000534965
+hm_seed1,oracle (diagnostic),0.75,0.011474434518897382
+hm_seed1,random (expected),0.8,0.00827364541935314
+hm_seed1,oracle (diagnostic),0.8,0.011474434518897382
+hm_seed1,random (expected),0.85,0.008311799838171315
+hm_seed1,oracle (diagnostic),0.85,0.011474434518897382
+hm_seed1,random (expected),0.9,0.008349954256989492
+hm_seed1,oracle (diagnostic),0.9,0.011474434518897382
+hm_seed1,random (expected),0.95,0.008388108675807665
+hm_seed1,oracle (diagnostic),0.95,0.011474434518897382
+hm_seed1,random (expected),1.0,0.008426263094625842
+hm_seed1,oracle (diagnostic),1.0,0.011474434518897382
+hm_seed2,judge: controls + lists,0.0,0.008466082509922425
+hm_seed2,judge: controls + lists,0.05,0.008499330209182593
+hm_seed2,judge: controls + lists,0.1,0.008546069821050453
+hm_seed2,judge: controls + lists,0.15,0.008522501449800797
+hm_seed2,judge: controls + lists,0.2,0.008560288518940033
+hm_seed2,judge: controls + lists,0.25,0.008625318558712014
+hm_seed2,judge: controls + lists,0.3,0.008651141029292085
+hm_seed2,judge: controls + lists,0.35,0.00859043767205989
+hm_seed2,judge: controls + lists,0.4,0.00867476479866209
+hm_seed2,judge: controls + lists,0.45,0.008625884408458209
+hm_seed2,judge: controls + lists,0.5,0.00861101998758892
+hm_seed2,judge: controls + lists,0.55,0.00862770226807703
+hm_seed2,judge: controls + lists,0.6,0.008642909031274517
+hm_seed2,judge: controls + lists,0.65,0.008699506257824152
+hm_seed2,judge: controls + lists,0.7,0.008642618698780798
+hm_seed2,judge: controls + lists,0.75,0.008528050459323358
+hm_seed2,judge: controls + lists,0.8,0.008491602179919549
+hm_seed2,judge: controls + lists,0.85,0.00843175579597866
+hm_seed2,judge: controls + lists,0.9,0.008388140378972595
+hm_seed2,judge: controls + lists,0.95,0.008411079770638983
+hm_seed2,judge: controls + lists,1.0,0.008426263094625842
+hm_seed2,judge: controls,0.0,0.008466082509922425
+hm_seed2,judge: controls,0.05,0.008499330209182593
+hm_seed2,judge: controls,0.1,0.008536814770881368
+hm_seed2,judge: controls,0.15,0.008503345422926826
+hm_seed2,judge: controls,0.2,0.008539597392915545
+hm_seed2,judge: controls,0.25,0.00863216299620554
+hm_seed2,judge: controls,0.3,0.00865886964626706
+hm_seed2,judge: controls,0.35,0.008588977607200314
+hm_seed2,judge: controls,0.4,0.00861323470911617
+hm_seed2,judge: controls,0.45,0.008626425915753168
+hm_seed2,judge: controls,0.5,0.008595836274720235
+hm_seed2,judge: controls,0.55,0.00862355654790186
+hm_seed2,judge: controls,0.6,0.008639584361148886
+hm_seed2,judge: controls,0.65,0.008662661820043722
+hm_seed2,judge: controls,0.7,0.008588869427178049
+hm_seed2,judge: controls,0.75,0.00851325432539592
+hm_seed2,judge: controls,0.8,0.008467332749543869
+hm_seed2,judge: controls,0.85,0.008394258098830668
+hm_seed2,judge: controls,0.9,0.008337003578903358
+hm_seed2,judge: controls,0.95,0.008370536483844594
+hm_seed2,judge: controls,1.0,0.008426263094625842
+hm_seed2,entropy,0.0,0.008466082509922425
+hm_seed2,entropy,0.05,0.008321654223289326
+hm_seed2,entropy,0.1,0.008368178224038653
+hm_seed2,entropy,0.15,0.008275530170778093
+hm_seed2,entropy,0.2,0.008242252336474683
+hm_seed2,entropy,0.25,0.008252414005186703
+hm_seed2,entropy,0.3,0.008375161966640461
+hm_seed2,entropy,0.35,0.008407598592220686
+hm_seed2,entropy,0.4,0.00841671825109137
+hm_seed2,entropy,0.45,0.008444315000698033
+hm_seed2,entropy,0.5,0.008485226017908102
+hm_seed2,entropy,0.55,0.008491964517560928
+hm_seed2,entropy,0.6,0.008468216543539579
+hm_seed2,entropy,0.65,0.008429461652828919
+hm_seed2,entropy,0.7,0.008417357971651392
+hm_seed2,entropy,0.75,0.008441513661177479
+hm_seed2,entropy,0.8,0.008424450444795019
+hm_seed2,entropy,0.85,0.008434784398160157
+hm_seed2,entropy,0.9,0.00840331612043245
+hm_seed2,entropy,0.95,0.00840820830402488
+hm_seed2,entropy,1.0,0.008426263094625842
+hm_seed2,random (expected),0.0,0.008466082509922425
+hm_seed2,oracle (diagnostic),0.0,0.008466082509922425
+hm_seed2,random (expected),0.05,0.008464091539157595
+hm_seed2,oracle (diagnostic),0.05,0.01152153121833111
+hm_seed2,random (expected),0.1,0.008462100568392767
+hm_seed2,oracle (diagnostic),0.1,0.01152153121833111
+hm_seed2,random (expected),0.15,0.008460109597627937
+hm_seed2,oracle (diagnostic),0.15,0.01152153121833111
+hm_seed2,random (expected),0.2,0.008458118626863109
+hm_seed2,oracle (diagnostic),0.2,0.01152153121833111
+hm_seed2,random (expected),0.25,0.00845612765609828
+hm_seed2,oracle (diagnostic),0.25,0.01152153121833111
+hm_seed2,random (expected),0.3,0.008454136685333449
+hm_seed2,oracle (diagnostic),0.3,0.01152153121833111
+hm_seed2,random (expected),0.35,0.00845214571456862
+hm_seed2,oracle (diagnostic),0.35,0.01152153121833111
+hm_seed2,random (expected),0.4,0.00845015474380379
+hm_seed2,oracle (diagnostic),0.4,0.01152153121833111
+hm_seed2,random (expected),0.45,0.008448163773038963
+hm_seed2,oracle (diagnostic),0.45,0.01152153121833111
+hm_seed2,random (expected),0.5,0.008446172802274134
+hm_seed2,oracle (diagnostic),0.5,0.01152153121833111
+hm_seed2,random (expected),0.55,0.008444181831509304
+hm_seed2,oracle (diagnostic),0.55,0.01152153121833111
+hm_seed2,random (expected),0.6,0.008442190860744474
+hm_seed2,oracle (diagnostic),0.6,0.01152153121833111
+hm_seed2,random (expected),0.65,0.008440199889979646
+hm_seed2,oracle (diagnostic),0.65,0.01152153121833111
+hm_seed2,random (expected),0.7,0.008438208919214816
+hm_seed2,oracle (diagnostic),0.7,0.01152153121833111
+hm_seed2,random (expected),0.75,0.008436217948449988
+hm_seed2,oracle (diagnostic),0.75,0.01152153121833111
+hm_seed2,random (expected),0.8,0.008434226977685158
+hm_seed2,oracle (diagnostic),0.8,0.01152153121833111
+hm_seed2,random (expected),0.85,0.00843223600692033
+hm_seed2,oracle (diagnostic),0.85,0.01152153121833111
+hm_seed2,random (expected),0.9,0.0084302450361555
+hm_seed2,oracle (diagnostic),0.9,0.01152153121833111
+hm_seed2,random (expected),0.95,0.00842825406539067
+hm_seed2,oracle (diagnostic),0.95,0.01152153121833111
+hm_seed2,random (expected),1.0,0.008426263094625842
+hm_seed2,oracle (diagnostic),1.0,0.01152153121833111
+hm_seed3,judge: controls + lists,0.0,0.007974568291307566
+hm_seed3,judge: controls + lists,0.05,0.00799905968255693
+hm_seed3,judge: controls + lists,0.1,0.008044473272689288
+hm_seed3,judge: controls + lists,0.15,0.0080863264254758
+hm_seed3,judge: controls + lists,0.2,0.008087966523855178
+hm_seed3,judge: controls + lists,0.25,0.00809256436164595
+hm_seed3,judge: controls + lists,0.3,0.008097307019842091
+hm_seed3,judge: controls + lists,0.35,0.008051769531617238
+hm_seed3,judge: controls + lists,0.4,0.008074559485396347
+hm_seed3,judge: controls + lists,0.45,0.00810498950146401
+hm_seed3,judge: controls + lists,0.5,0.008226367448765702
+hm_seed3,judge: controls + lists,0.55,0.00821836509217655
+hm_seed3,judge: controls + lists,0.6,0.00824913503323254
+hm_seed3,judge: controls + lists,0.65,0.008224817520118848
+hm_seed3,judge: controls + lists,0.7,0.008287801226477785
+hm_seed3,judge: controls + lists,0.75,0.008259726374541719
+hm_seed3,judge: controls + lists,0.8,0.008235899513091761
+hm_seed3,judge: controls + lists,0.85,0.008320039876689741
+hm_seed3,judge: controls + lists,0.9,0.008390548724709724
+hm_seed3,judge: controls + lists,0.95,0.00843088625662418
+hm_seed3,judge: controls + lists,1.0,0.008426263094625842
+hm_seed3,judge: controls,0.0,0.007974568291307566
+hm_seed3,judge: controls,0.05,0.008001653093298196
+hm_seed3,judge: controls,0.1,0.008053656130068691
+hm_seed3,judge: controls,0.15,0.008063660220216108
+hm_seed3,judge: controls,0.2,0.008134788089121858
+hm_seed3,judge: controls,0.25,0.008145153549259166
+hm_seed3,judge: controls,0.3,0.008142734049999451
+hm_seed3,judge: controls,0.35,0.008160581441330847
+hm_seed3,judge: controls,0.4,0.008264797038853118
+hm_seed3,judge: controls,0.45,0.008236781369366302
+hm_seed3,judge: controls,0.5,0.00826925629884955
+hm_seed3,judge: controls,0.55,0.008307178258252884
+hm_seed3,judge: controls,0.6,0.008273541719924003
+hm_seed3,judge: controls,0.65,0.008271977669455045
+hm_seed3,judge: controls,0.7,0.008272497381565267
+hm_seed3,judge: controls,0.75,0.00823477297099711
+hm_seed3,judge: controls,0.8,0.008333354658457528
+hm_seed3,judge: controls,0.85,0.008337100015166472
+hm_seed3,judge: controls,0.9,0.008389475003759563
+hm_seed3,judge: controls,0.95,0.008450018217491249
+hm_seed3,judge: controls,1.0,0.008426263094625842
+hm_seed3,entropy,0.0,0.007974568291307566
+hm_seed3,entropy,0.05,0.00784675552977292
+hm_seed3,entropy,0.1,0.007764703433598053
+hm_seed3,entropy,0.15,0.007771533118675535
+hm_seed3,entropy,0.2,0.007892520176372817
+hm_seed3,entropy,0.25,0.007947922621951905
+hm_seed3,entropy,0.3,0.008103126825287826
+hm_seed3,entropy,0.35,0.008301733364656705
+hm_seed3,entropy,0.4,0.00830714803657874
+hm_seed3,entropy,0.45,0.008394001458671939
+hm_seed3,entropy,0.5,0.008483234943062341
+hm_seed3,entropy,0.55,0.00841034986806401
+hm_seed3,entropy,0.6,0.008426603355763241
+hm_seed3,entropy,0.65,0.00841155985523784
+hm_seed3,entropy,0.7,0.008407028630189549
+hm_seed3,entropy,0.75,0.00839788861951184
+hm_seed3,entropy,0.8,0.008401846741745319
+hm_seed3,entropy,0.85,0.008429377223114248
+hm_seed3,entropy,0.9,0.008436492460871461
+hm_seed3,entropy,0.95,0.008435767270350189
+hm_seed3,entropy,1.0,0.008426263094625842
+hm_seed3,random (expected),0.0,0.007974568291307566
+hm_seed3,oracle (diagnostic),0.0,0.007974568291307566
+hm_seed3,random (expected),0.05,0.00799715303147348
+hm_seed3,oracle (diagnostic),0.05,0.011481520102684047
+hm_seed3,random (expected),0.1,0.008019737771639394
+hm_seed3,oracle (diagnostic),0.1,0.011481520102684047
+hm_seed3,random (expected),0.15,0.008042322511805308
+hm_seed3,oracle (diagnostic),0.15,0.011481520102684047
+hm_seed3,random (expected),0.2,0.008064907251971221
+hm_seed3,oracle (diagnostic),0.2,0.011481520102684047
+hm_seed3,random (expected),0.25,0.008087491992137135
+hm_seed3,oracle (diagnostic),0.25,0.011481520102684047
+hm_seed3,random (expected),0.3,0.008110076732303049
+hm_seed3,oracle (diagnostic),0.3,0.011481520102684047
+hm_seed3,random (expected),0.35,0.008132661472468963
+hm_seed3,oracle (diagnostic),0.35,0.011481520102684047
+hm_seed3,random (expected),0.4,0.008155246212634876
+hm_seed3,oracle (diagnostic),0.4,0.011481520102684047
+hm_seed3,random (expected),0.45,0.00817783095280079
+hm_seed3,oracle (diagnostic),0.45,0.011481520102684047
+hm_seed3,random (expected),0.5,0.008200415692966704
+hm_seed3,oracle (diagnostic),0.5,0.011481520102684047
+hm_seed3,random (expected),0.55,0.008223000433132618
+hm_seed3,oracle (diagnostic),0.55,0.011481520102684047
+hm_seed3,random (expected),0.6,0.008245585173298531
+hm_seed3,oracle (diagnostic),0.6,0.011481520102684047
+hm_seed3,random (expected),0.65,0.008268169913464445
+hm_seed3,oracle (diagnostic),0.65,0.011481520102684047
+hm_seed3,random (expected),0.7,0.008290754653630359
+hm_seed3,oracle (diagnostic),0.7,0.011481520102684047
+hm_seed3,random (expected),0.75,0.008313339393796273
+hm_seed3,oracle (diagnostic),0.75,0.011481520102684047
+hm_seed3,random (expected),0.8,0.008335924133962187
+hm_seed3,oracle (diagnostic),0.8,0.011481520102684047
+hm_seed3,random (expected),0.85,0.0083585088741281
+hm_seed3,oracle (diagnostic),0.85,0.011481520102684047
+hm_seed3,random (expected),0.9,0.008381093614294014
+hm_seed3,oracle (diagnostic),0.9,0.011481520102684047
+hm_seed3,random (expected),0.95,0.008403678354459928
+hm_seed3,oracle (diagnostic),0.95,0.011481520102684047
+hm_seed3,random (expected),1.0,0.008426263094625842
+hm_seed3,oracle (diagnostic),1.0,0.011481520102684047
+hm_seed4,judge: controls + lists,0.0,0.008588252863565501
+hm_seed4,judge: controls + lists,0.05,0.008601719285337763
+hm_seed4,judge: controls + lists,0.1,0.008573590605088135
+hm_seed4,judge: controls + lists,0.15,0.008571663732342598
+hm_seed4,judge: controls + lists,0.2,0.008617866895705257
+hm_seed4,judge: controls + lists,0.25,0.008715741903126552
+hm_seed4,judge: controls + lists,0.3,0.008738469529042147
+hm_seed4,judge: controls + lists,0.35,0.008703422305264838
+hm_seed4,judge: controls + lists,0.4,0.008778032745702819
+hm_seed4,judge: controls + lists,0.45,0.008745687047482754
+hm_seed4,judge: controls + lists,0.5,0.00868380046652784
+hm_seed4,judge: controls + lists,0.55,0.00874544137164339
+hm_seed4,judge: controls + lists,0.6,0.00863437801932353
+hm_seed4,judge: controls + lists,0.65,0.008618005738977638
+hm_seed4,judge: controls + lists,0.7,0.008588677646336041
+hm_seed4,judge: controls + lists,0.75,0.008518311633752624
+hm_seed4,judge: controls + lists,0.8,0.008528760553144454
+hm_seed4,judge: controls + lists,0.85,0.008525847372211093
+hm_seed4,judge: controls + lists,0.9,0.008459812387693291
+hm_seed4,judge: controls + lists,0.95,0.008383490970425017
+hm_seed4,judge: controls + lists,1.0,0.008426263094625842
+hm_seed4,judge: controls,0.0,0.008588252863565501
+hm_seed4,judge: controls,0.05,0.008598230331457677
+hm_seed4,judge: controls,0.1,0.008567698792803441
+hm_seed4,judge: controls,0.15,0.008616637466363337
+hm_seed4,judge: controls,0.2,0.008633452750224264
+hm_seed4,judge: controls,0.25,0.00866713049424498
+hm_seed4,judge: controls,0.3,0.008755891738180472
+hm_seed4,judge: controls,0.35,0.008809938925320874
+hm_seed4,judge: controls,0.4,0.008891430865149357
+hm_seed4,judge: controls,0.45,0.008823552305611876
+hm_seed4,judge: controls,0.5,0.008774965909379918
+hm_seed4,judge: controls,0.55,0.00874506865296085
+hm_seed4,judge: controls,0.6,0.008672914408462998
+hm_seed4,judge: controls,0.65,0.008679477383238935
+hm_seed4,judge: controls,0.7,0.008607178629188654
+hm_seed4,judge: controls,0.75,0.008573019470223214
+hm_seed4,judge: controls,0.8,0.008628502188797585
+hm_seed4,judge: controls,0.85,0.008479758606109635
+hm_seed4,judge: controls,0.9,0.008470474168607637
+hm_seed4,judge: controls,0.95,0.00843905299700224
+hm_seed4,judge: controls,1.0,0.008426263094625842
+hm_seed4,entropy,0.0,0.008588252863565501
+hm_seed4,entropy,0.05,0.008559373462419641
+hm_seed4,entropy,0.1,0.008358320328975669
+hm_seed4,entropy,0.15,0.008234153615512323
+hm_seed4,entropy,0.2,0.008133368926790764
+hm_seed4,entropy,0.25,0.00815936765902292
+hm_seed4,entropy,0.3,0.00824890032947182
+hm_seed4,entropy,0.35,0.008253614428360654
+hm_seed4,entropy,0.4,0.008300701364073602
+hm_seed4,entropy,0.45,0.008344310418006363
+hm_seed4,entropy,0.5,0.008425669654428146
+hm_seed4,entropy,0.55,0.00838729014297228
+hm_seed4,entropy,0.6,0.008418872303171539
+hm_seed4,entropy,0.65,0.008465741196825001
+hm_seed4,entropy,0.7,0.008445149201308042
+hm_seed4,entropy,0.75,0.00838071401580728
+hm_seed4,entropy,0.8,0.008395621997024741
+hm_seed4,entropy,0.85,0.008416423964750645
+hm_seed4,entropy,0.9,0.008421930521974434
+hm_seed4,entropy,0.95,0.008414776405605515
+hm_seed4,entropy,1.0,0.008426263094625842
+hm_seed4,random (expected),0.0,0.008588252863565501
+hm_seed4,oracle (diagnostic),0.0,0.008588252863565501
+hm_seed4,random (expected),0.05,0.008580153375118518
+hm_seed4,oracle (diagnostic),0.05,0.0115885337578704
+hm_seed4,random (expected),0.1,0.008572053886671536
+hm_seed4,oracle (diagnostic),0.1,0.0115885337578704
+hm_seed4,random (expected),0.15,0.008563954398224553
+hm_seed4,oracle (diagnostic),0.15,0.0115885337578704
+hm_seed4,random (expected),0.2,0.00855585490977757
+hm_seed4,oracle (diagnostic),0.2,0.0115885337578704
+hm_seed4,random (expected),0.25,0.008547755421330586
+hm_seed4,oracle (diagnostic),0.25,0.0115885337578704
+hm_seed4,random (expected),0.3,0.008539655932883604
+hm_seed4,oracle (diagnostic),0.3,0.0115885337578704
+hm_seed4,random (expected),0.35,0.00853155644443662
+hm_seed4,oracle (diagnostic),0.35,0.0115885337578704
+hm_seed4,random (expected),0.4,0.008523456955989637
+hm_seed4,oracle (diagnostic),0.4,0.0115885337578704
+hm_seed4,random (expected),0.45,0.008515357467542655
+hm_seed4,oracle (diagnostic),0.45,0.0115885337578704
+hm_seed4,random (expected),0.5,0.008507257979095672
+hm_seed4,oracle (diagnostic),0.5,0.0115885337578704
+hm_seed4,random (expected),0.55,0.008499158490648688
+hm_seed4,oracle (diagnostic),0.55,0.0115885337578704
+hm_seed4,random (expected),0.6,0.008491059002201706
+hm_seed4,oracle (diagnostic),0.6,0.0115885337578704
+hm_seed4,random (expected),0.65,0.008482959513754723
+hm_seed4,oracle (diagnostic),0.65,0.0115885337578704
+hm_seed4,random (expected),0.7,0.00847486002530774
+hm_seed4,oracle (diagnostic),0.7,0.0115885337578704
+hm_seed4,random (expected),0.75,0.008466760536860757
+hm_seed4,oracle (diagnostic),0.75,0.0115885337578704
+hm_seed4,random (expected),0.8,0.008458661048413774
+hm_seed4,oracle (diagnostic),0.8,0.0115885337578704
+hm_seed4,random (expected),0.85,0.00845056155996679
+hm_seed4,oracle (diagnostic),0.85,0.0115885337578704
+hm_seed4,random (expected),0.9,0.008442462071519807
+hm_seed4,oracle (diagnostic),0.9,0.0115885337578704
+hm_seed4,random (expected),0.95,0.008434362583072823
+hm_seed4,oracle (diagnostic),0.95,0.0115885337578704
+hm_seed4,random (expected),1.0,0.008426263094625842
+hm_seed4,oracle (diagnostic),1.0,0.0115885337578704

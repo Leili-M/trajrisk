@@ -1,0 +1,316 @@
+run,policy,rate,ndcg@10
+bk_giff_s1,judge: controls + lists,0.0,0.07748458977565065
+bk_giff_s1,judge: controls + lists,0.05,0.07792343850724817
+bk_giff_s1,judge: controls + lists,0.1,0.07814583267239232
+bk_giff_s1,judge: controls + lists,0.15,0.07828348615173956
+bk_giff_s1,judge: controls + lists,0.2,0.07846077599856681
+bk_giff_s1,judge: controls + lists,0.25,0.07869815817978168
+bk_giff_s1,judge: controls + lists,0.3,0.07884350465994408
+bk_giff_s1,judge: controls + lists,0.35,0.07895276118015536
+bk_giff_s1,judge: controls + lists,0.4,0.07906811901807369
+bk_giff_s1,judge: controls + lists,0.45,0.0791801044379843
+bk_giff_s1,judge: controls + lists,0.5,0.0793056429420582
+bk_giff_s1,judge: controls + lists,0.55,0.07945278699498518
+bk_giff_s1,judge: controls + lists,0.6,0.07961103064328567
+bk_giff_s1,judge: controls + lists,0.65,0.07980490267965577
+bk_giff_s1,judge: controls + lists,0.7,0.07988600939762511
+bk_giff_s1,judge: controls + lists,0.75,0.07994325132116012
+bk_giff_s1,judge: controls + lists,0.8,0.08005873280071556
+bk_giff_s1,judge: controls + lists,0.85,0.08014940069066173
+bk_giff_s1,judge: controls + lists,0.9,0.08024853153955303
+bk_giff_s1,judge: controls + lists,0.95,0.0803557535845023
+bk_giff_s1,judge: controls + lists,1.0,0.08058961899703393
+bk_giff_s1,judge: controls,0.0,0.07748458977565065
+bk_giff_s1,judge: controls,0.05,0.07789114859297862
+bk_giff_s1,judge: controls,0.1,0.07805472068782023
+bk_giff_s1,judge: controls,0.15,0.0781898385057728
+bk_giff_s1,judge: controls,0.2,0.07841456037277915
+bk_giff_s1,judge: controls,0.25,0.07857719644463534
+bk_giff_s1,judge: controls,0.3,0.07868273159137379
+bk_giff_s1,judge: controls,0.35,0.0788296766370506
+bk_giff_s1,judge: controls,0.4,0.07897329223581527
+bk_giff_s1,judge: controls,0.45,0.07906189672781795
+bk_giff_s1,judge: controls,0.5,0.07924872252858225
+bk_giff_s1,judge: controls,0.55,0.07931314606538338
+bk_giff_s1,judge: controls,0.6,0.07939928443503218
+bk_giff_s1,judge: controls,0.65,0.07954149264414287
+bk_giff_s1,judge: controls,0.7,0.07972777156222306
+bk_giff_s1,judge: controls,0.75,0.07980316147038077
+bk_giff_s1,judge: controls,0.8,0.07997162094291234
+bk_giff_s1,judge: controls,0.85,0.08011475819878318
+bk_giff_s1,judge: controls,0.9,0.08022144019699615
+bk_giff_s1,judge: controls,0.95,0.08033274017257624
+bk_giff_s1,judge: controls,1.0,0.08058961899703393
+bk_giff_s1,entropy,0.0,0.07748458977565065
+bk_giff_s1,entropy,0.05,0.07792741607622311
+bk_giff_s1,entropy,0.1,0.0781743273710572
+bk_giff_s1,entropy,0.15,0.07836327376382657
+bk_giff_s1,entropy,0.2,0.07852611186569647
+bk_giff_s1,entropy,0.25,0.0786378428965627
+bk_giff_s1,entropy,0.3,0.07873691956698065
+bk_giff_s1,entropy,0.35,0.0787544263248974
+bk_giff_s1,entropy,0.4,0.07882477387924525
+bk_giff_s1,entropy,0.45,0.07887072066836281
+bk_giff_s1,entropy,0.5,0.0789822029484521
+bk_giff_s1,entropy,0.55,0.0790785496379722
+bk_giff_s1,entropy,0.6,0.07917319247641794
+bk_giff_s1,entropy,0.65,0.07920927208415658
+bk_giff_s1,entropy,0.7,0.07922026681114662
+bk_giff_s1,entropy,0.75,0.0792792271064533
+bk_giff_s1,entropy,0.8,0.0794749133730201
+bk_giff_s1,entropy,0.85,0.07963907103877615
+bk_giff_s1,entropy,0.9,0.07969753811890888
+bk_giff_s1,entropy,0.95,0.08011496918099993
+bk_giff_s1,entropy,1.0,0.08058961899703393
+bk_giff_s1,random (expected),0.0,0.07748458977565065
+bk_giff_s1,oracle (diagnostic),0.0,0.07748458977565065
+bk_giff_s1,random (expected),0.05,0.07763984123671981
+bk_giff_s1,oracle (diagnostic),0.05,0.09094209901162467
+bk_giff_s1,random (expected),0.1,0.07779509269778899
+bk_giff_s1,oracle (diagnostic),0.1,0.09094209901162467
+bk_giff_s1,random (expected),0.15,0.07795034415885813
+bk_giff_s1,oracle (diagnostic),0.15,0.09094209901162467
+bk_giff_s1,random (expected),0.2,0.0781055956199273
+bk_giff_s1,oracle (diagnostic),0.2,0.09094209901162467
+bk_giff_s1,random (expected),0.25,0.07826084708099647
+bk_giff_s1,oracle (diagnostic),0.25,0.09094209901162467
+bk_giff_s1,random (expected),0.3,0.07841609854206563
+bk_giff_s1,oracle (diagnostic),0.3,0.09094209901162467
+bk_giff_s1,random (expected),0.35,0.0785713500031348
+bk_giff_s1,oracle (diagnostic),0.35,0.09094209901162467
+bk_giff_s1,random (expected),0.4,0.07872660146420396
+bk_giff_s1,oracle (diagnostic),0.4,0.09094209901162467
+bk_giff_s1,random (expected),0.45,0.07888185292527314
+bk_giff_s1,oracle (diagnostic),0.45,0.09094209901162467
+bk_giff_s1,random (expected),0.5,0.07903710438634229
+bk_giff_s1,oracle (diagnostic),0.5,0.09094209901162467
+bk_giff_s1,random (expected),0.55,0.07919235584741145
+bk_giff_s1,oracle (diagnostic),0.55,0.09094209901162467
+bk_giff_s1,random (expected),0.6,0.07934760730848062
+bk_giff_s1,oracle (diagnostic),0.6,0.09094209901162467
+bk_giff_s1,random (expected),0.65,0.07950285876954978
+bk_giff_s1,oracle (diagnostic),0.65,0.09094209901162467
+bk_giff_s1,random (expected),0.7,0.07965811023061894
+bk_giff_s1,oracle (diagnostic),0.7,0.09094209901162467
+bk_giff_s1,random (expected),0.75,0.07981336169168811
+bk_giff_s1,oracle (diagnostic),0.75,0.09094209901162467
+bk_giff_s1,random (expected),0.8,0.07996861315275727
+bk_giff_s1,oracle (diagnostic),0.8,0.09094209901162467
+bk_giff_s1,random (expected),0.85,0.08012386461382642
+bk_giff_s1,oracle (diagnostic),0.85,0.09094209901162467
+bk_giff_s1,random (expected),0.9,0.0802791160748956
+bk_giff_s1,oracle (diagnostic),0.9,0.09094209901162467
+bk_giff_s1,random (expected),0.95,0.08043436753596477
+bk_giff_s1,oracle (diagnostic),0.95,0.09094209901162467
+bk_giff_s1,random (expected),1.0,0.08058961899703393
+bk_giff_s1,oracle (diagnostic),1.0,0.09094209901162467
+bk_giff_s2,judge: controls + lists,0.0,0.07744001116650479
+bk_giff_s2,judge: controls + lists,0.05,0.07779094764914019
+bk_giff_s2,judge: controls + lists,0.1,0.07801461314497865
+bk_giff_s2,judge: controls + lists,0.15,0.07820572670008775
+bk_giff_s2,judge: controls + lists,0.2,0.07839682563986762
+bk_giff_s2,judge: controls + lists,0.25,0.07860623727324277
+bk_giff_s2,judge: controls + lists,0.3,0.0787056630446172
+bk_giff_s2,judge: controls + lists,0.35,0.07885426069012719
+bk_giff_s2,judge: controls + lists,0.4,0.0789541263790848
+bk_giff_s2,judge: controls + lists,0.45,0.07911672841087918
+bk_giff_s2,judge: controls + lists,0.5,0.07916101269728347
+bk_giff_s2,judge: controls + lists,0.55,0.07926998280801076
+bk_giff_s2,judge: controls + lists,0.6,0.079412314838877
+bk_giff_s2,judge: controls + lists,0.65,0.07951247166880404
+bk_giff_s2,judge: controls + lists,0.7,0.07962986556867446
+bk_giff_s2,judge: controls + lists,0.75,0.07975140893790725
+bk_giff_s2,judge: controls + lists,0.8,0.07984617308962759
+bk_giff_s2,judge: controls + lists,0.85,0.07997282631591035
+bk_giff_s2,judge: controls + lists,0.9,0.08007866361924978
+bk_giff_s2,judge: controls + lists,0.95,0.0801978536300035
+bk_giff_s2,judge: controls + lists,1.0,0.08058961899703393
+bk_giff_s2,judge: controls,0.0,0.07744001116650479
+bk_giff_s2,judge: controls,0.05,0.07784523609067559
+bk_giff_s2,judge: controls,0.1,0.07797709093440773
+bk_giff_s2,judge: controls,0.15,0.0782339334880721
+bk_giff_s2,judge: controls,0.2,0.07841964865932717
+bk_giff_s2,judge: controls,0.25,0.0785215271501582
+bk_giff_s2,judge: controls,0.3,0.07867330277949053
+bk_giff_s2,judge: controls,0.35,0.07883178729125934
+bk_giff_s2,judge: controls,0.4,0.07893544468581944
+bk_giff_s2,judge: controls,0.45,0.07903067777253846
+bk_giff_s2,judge: controls,0.5,0.07909287402186414
+bk_giff_s2,judge: controls,0.55,0.07923281742238802
+bk_giff_s2,judge: controls,0.6,0.07936982329333059
+bk_giff_s2,judge: controls,0.65,0.07945785431429404
+bk_giff_s2,judge: controls,0.7,0.07955011156219297
+bk_giff_s2,judge: controls,0.75,0.07965490789962645
+bk_giff_s2,judge: controls,0.8,0.0797716121185623
+bk_giff_s2,judge: controls,0.85,0.0799028468499834
+bk_giff_s2,judge: controls,0.9,0.08003580764623251
+bk_giff_s2,judge: controls,0.95,0.08017905127860209
+bk_giff_s2,judge: controls,1.0,0.08058961899703393
+bk_giff_s2,entropy,0.0,0.07744001116650479
+bk_giff_s2,entropy,0.05,0.07780734984450818
+bk_giff_s2,entropy,0.1,0.07807529111789634
+bk_giff_s2,entropy,0.15,0.07819994104509138
+bk_giff_s2,entropy,0.2,0.07830899919333324
+bk_giff_s2,entropy,0.25,0.07839110798193684
+bk_giff_s2,entropy,0.3,0.0785083881690761
+bk_giff_s2,entropy,0.35,0.07852645070924415
+bk_giff_s2,entropy,0.4,0.0786059511002085
+bk_giff_s2,entropy,0.45,0.07867762806903598
+bk_giff_s2,entropy,0.5,0.07881202517276553
+bk_giff_s2,entropy,0.55,0.07889329334845725
+bk_giff_s2,entropy,0.6,0.07898291375136149
+bk_giff_s2,entropy,0.65,0.07898033649526848
+bk_giff_s2,entropy,0.7,0.0790353232311449
+bk_giff_s2,entropy,0.75,0.07910556699384054
+bk_giff_s2,entropy,0.8,0.07928276705338935
+bk_giff_s2,entropy,0.85,0.07942596821208672
+bk_giff_s2,entropy,0.9,0.07961423648133173
+bk_giff_s2,entropy,0.95,0.08009942202873589
+bk_giff_s2,entropy,1.0,0.08058961899703393
+bk_giff_s2,random (expected),0.0,0.07744001116650479
+bk_giff_s2,oracle (diagnostic),0.0,0.07744001116650479
+bk_giff_s2,random (expected),0.05,0.07759749155803124
+bk_giff_s2,oracle (diagnostic),0.05,0.09101317213888228
+bk_giff_s2,random (expected),0.1,0.0777549719495577
+bk_giff_s2,oracle (diagnostic),0.1,0.09101317213888228
+bk_giff_s2,random (expected),0.15,0.07791245234108415
+bk_giff_s2,oracle (diagnostic),0.15,0.09101317213888228
+bk_giff_s2,random (expected),0.2,0.07806993273261062
+bk_giff_s2,oracle (diagnostic),0.2,0.09101317213888228
+bk_giff_s2,random (expected),0.25,0.07822741312413707
+bk_giff_s2,oracle (diagnostic),0.25,0.09101317213888228
+bk_giff_s2,random (expected),0.3,0.07838489351566352
+bk_giff_s2,oracle (diagnostic),0.3,0.09101317213888228
+bk_giff_s2,random (expected),0.35,0.07854237390718999
+bk_giff_s2,oracle (diagnostic),0.35,0.09101317213888228
+bk_giff_s2,random (expected),0.4,0.07869985429871644
+bk_giff_s2,oracle (diagnostic),0.4,0.09101317213888228
+bk_giff_s2,random (expected),0.45,0.0788573346902429
+bk_giff_s2,oracle (diagnostic),0.45,0.09101317213888228
+bk_giff_s2,random (expected),0.5,0.07901481508176936
+bk_giff_s2,oracle (diagnostic),0.5,0.09101317213888228
+bk_giff_s2,random (expected),0.55,0.07917229547329582
+bk_giff_s2,oracle (diagnostic),0.55,0.09101317213888228
+bk_giff_s2,random (expected),0.6,0.07932977586482227
+bk_giff_s2,oracle (diagnostic),0.6,0.09101317213888228
+bk_giff_s2,random (expected),0.65,0.07948725625634873
+bk_giff_s2,oracle (diagnostic),0.65,0.09101317213888228
+bk_giff_s2,random (expected),0.7,0.07964473664787519
+bk_giff_s2,oracle (diagnostic),0.7,0.09101317213888228
+bk_giff_s2,random (expected),0.75,0.07980221703940164
+bk_giff_s2,oracle (diagnostic),0.75,0.09101317213888228
+bk_giff_s2,random (expected),0.8,0.0799596974309281
+bk_giff_s2,oracle (diagnostic),0.8,0.09101317213888228
+bk_giff_s2,random (expected),0.85,0.08011717782245455
+bk_giff_s2,oracle (diagnostic),0.85,0.09101317213888228
+bk_giff_s2,random (expected),0.9,0.08027465821398103
+bk_giff_s2,oracle (diagnostic),0.9,0.09101317213888228
+bk_giff_s2,random (expected),0.95,0.08043213860550748
+bk_giff_s2,oracle (diagnostic),0.95,0.09101317213888228
+bk_giff_s2,random (expected),1.0,0.08058961899703393
+bk_giff_s2,oracle (diagnostic),1.0,0.09101317213888228
+bk_giff_s3,judge: controls + lists,0.0,0.07758137618336645
+bk_giff_s3,judge: controls + lists,0.05,0.07800986401947084
+bk_giff_s3,judge: controls + lists,0.1,0.07825943346858748
+bk_giff_s3,judge: controls + lists,0.15,0.07846086244352413
+bk_giff_s3,judge: controls + lists,0.2,0.07867412495816803
+bk_giff_s3,judge: controls + lists,0.25,0.07879697763820837
+bk_giff_s3,judge: controls + lists,0.3,0.0789883426549445
+bk_giff_s3,judge: controls + lists,0.35,0.0790996677649744
+bk_giff_s3,judge: controls + lists,0.4,0.07925910500705863
+bk_giff_s3,judge: controls + lists,0.45,0.07938250128541276
+bk_giff_s3,judge: controls + lists,0.5,0.07950721052599756
+bk_giff_s3,judge: controls + lists,0.55,0.07963040222244881
+bk_giff_s3,judge: controls + lists,0.6,0.07972469929776303
+bk_giff_s3,judge: controls + lists,0.65,0.07988415269146454
+bk_giff_s3,judge: controls + lists,0.7,0.08002236580712613
+bk_giff_s3,judge: controls + lists,0.75,0.08008782072708487
+bk_giff_s3,judge: controls + lists,0.8,0.080225856008815
+bk_giff_s3,judge: controls + lists,0.85,0.08028644119043854
+bk_giff_s3,judge: controls + lists,0.9,0.08028641498697069
+bk_giff_s3,judge: controls + lists,0.95,0.08035724996863125
+bk_giff_s3,judge: controls + lists,1.0,0.08058961899703393
+bk_giff_s3,judge: controls,0.0,0.07758137618336645
+bk_giff_s3,judge: controls,0.05,0.07795202667905425
+bk_giff_s3,judge: controls,0.1,0.0781930801448013
+bk_giff_s3,judge: controls,0.15,0.0783456667849685
+bk_giff_s3,judge: controls,0.2,0.07854357342831109
+bk_giff_s3,judge: controls,0.25,0.07874051515356824
+bk_giff_s3,judge: controls,0.3,0.07891812416006734
+bk_giff_s3,judge: controls,0.35,0.07904560456409307
+bk_giff_s3,judge: controls,0.4,0.07917742097193894
+bk_giff_s3,judge: controls,0.45,0.07929992690302835
+bk_giff_s3,judge: controls,0.5,0.07937609088092035
+bk_giff_s3,judge: controls,0.55,0.07949975354555541
+bk_giff_s3,judge: controls,0.6,0.07962707013469132
+bk_giff_s3,judge: controls,0.65,0.07977559299132442
+bk_giff_s3,judge: controls,0.7,0.07990216211151571
+bk_giff_s3,judge: controls,0.75,0.08000172334523689
+bk_giff_s3,judge: controls,0.8,0.08005870045012373
+bk_giff_s3,judge: controls,0.85,0.08016522511154611
+bk_giff_s3,judge: controls,0.9,0.08027122394664273
+bk_giff_s3,judge: controls,0.95,0.08033982605935218
+bk_giff_s3,judge: controls,1.0,0.08058961899703393
+bk_giff_s3,entropy,0.0,0.07758137618336645
+bk_giff_s3,entropy,0.05,0.07798982569032771
+bk_giff_s3,entropy,0.1,0.0782365283582094
+bk_giff_s3,entropy,0.15,0.07839910177152408
+bk_giff_s3,entropy,0.2,0.07852216665249236
+bk_giff_s3,entropy,0.25,0.07859862149213429
+bk_giff_s3,entropy,0.3,0.07868262507788595
+bk_giff_s3,entropy,0.35,0.07871117278441143
+bk_giff_s3,entropy,0.4,0.07876337798018626
+bk_giff_s3,entropy,0.45,0.07884156647486482
+bk_giff_s3,entropy,0.5,0.07895031546096105
+bk_giff_s3,entropy,0.55,0.07908597803787765
+bk_giff_s3,entropy,0.6,0.07914752625235871
+bk_giff_s3,entropy,0.65,0.07915559185864474
+bk_giff_s3,entropy,0.7,0.0792149491694472
+bk_giff_s3,entropy,0.75,0.07929967130965684
+bk_giff_s3,entropy,0.8,0.07944888824898709
+bk_giff_s3,entropy,0.85,0.07958392654733697
+bk_giff_s3,entropy,0.9,0.07983137781792714
+bk_giff_s3,entropy,0.95,0.08019534594341289
+bk_giff_s3,entropy,1.0,0.08058961899703393
+bk_giff_s3,random (expected),0.0,0.07758137618336645
+bk_giff_s3,oracle (diagnostic),0.0,0.07758137618336645
+bk_giff_s3,random (expected),0.05,0.07773178832404982
+bk_giff_s3,oracle (diagnostic),0.05,0.09102244825386306
+bk_giff_s3,random (expected),0.1,0.07788220046473321
+bk_giff_s3,oracle (diagnostic),0.1,0.09102244825386306
+bk_giff_s3,random (expected),0.15,0.07803261260541657
+bk_giff_s3,oracle (diagnostic),0.15,0.09102244825386306
+bk_giff_s3,random (expected),0.2,0.07818302474609995
+bk_giff_s3,oracle (diagnostic),0.2,0.09102244825386306
+bk_giff_s3,random (expected),0.25,0.07833343688678332
+bk_giff_s3,oracle (diagnostic),0.25,0.09102244825386306
+bk_giff_s3,random (expected),0.3,0.07848384902746669
+bk_giff_s3,oracle (diagnostic),0.3,0.09102244825386306
+bk_giff_s3,random (expected),0.35,0.07863426116815007
+bk_giff_s3,oracle (diagnostic),0.35,0.09102244825386306
+bk_giff_s3,random (expected),0.4,0.07878467330883344
+bk_giff_s3,oracle (diagnostic),0.4,0.09102244825386306
+bk_giff_s3,random (expected),0.45,0.07893508544951683
+bk_giff_s3,oracle (diagnostic),0.45,0.09102244825386306
+bk_giff_s3,random (expected),0.5,0.0790854975902002
+bk_giff_s3,oracle (diagnostic),0.5,0.09102244825386306
+bk_giff_s3,random (expected),0.55,0.07923590973088357
+bk_giff_s3,oracle (diagnostic),0.55,0.09102244825386306
+bk_giff_s3,random (expected),0.6,0.07938632187156694
+bk_giff_s3,oracle (diagnostic),0.6,0.09102244825386306
+bk_giff_s3,random (expected),0.65,0.07953673401225031
+bk_giff_s3,oracle (diagnostic),0.65,0.09102244825386306
+bk_giff_s3,random (expected),0.7,0.07968714615293368
+bk_giff_s3,oracle (diagnostic),0.7,0.09102244825386306
+bk_giff_s3,random (expected),0.75,0.07983755829361706
+bk_giff_s3,oracle (diagnostic),0.75,0.09102244825386306
+bk_giff_s3,random (expected),0.8,0.07998797043430043
+bk_giff_s3,oracle (diagnostic),0.8,0.09102244825386306
+bk_giff_s3,random (expected),0.85,0.0801383825749838
+bk_giff_s3,oracle (diagnostic),0.85,0.09102244825386306
+bk_giff_s3,random (expected),0.9,0.08028879471566719
+bk_giff_s3,oracle (diagnostic),0.9,0.09102244825386306
+bk_giff_s3,random (expected),0.95,0.08043920685635056
+bk_giff_s3,oracle (diagnostic),0.95,0.09102244825386306
+bk_giff_s3,random (expected),1.0,0.08058961899703393
+bk_giff_s3,oracle (diagnostic),1.0,0.09102244825386306

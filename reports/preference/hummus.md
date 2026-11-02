@@ -1,105 +1,171 @@
 # Section 6: preference-aware comparison (HUMMUS benchmark, DiffRec)
 
-Runs: hm_seed42, hm_seed1, hm_seed2, hm_seed3, hm_seed4. Reranker (formula 9) chosen on validation scenarios: beta = 4, gamma = 10. Failure = regret >= 0.5. Detection rows: scenarios with feasible recipes; thresholds and judge from validation.
+Runs: hm_seed42, hm_seed1, hm_seed2, hm_seed3, hm_seed4. Reranker (formula 9) chosen on validation scenarios: beta = 8, gamma = 20. Failure = regret >= 0.5. Detection rows: scenarios with feasible recipes; thresholds and judge from validation.
 
 ## Reranker grid (validation, soft pipeline)
 
 | beta | gamma | valid mean regret |
 |---|---|---|
 | 0.000 | 0.000 | 0.995 |
-| 0.000 | 1.000 | 0.986 |
-| 0.000 | 10.000 | 0.956 |
-| 0.250 | 0.000 | 0.995 |
-| 0.250 | 1.000 | 0.985 |
-| 0.250 | 10.000 | 0.955 |
-| 0.500 | 0.000 | 0.995 |
-| 0.500 | 1.000 | 0.984 |
-| 0.500 | 10.000 | 0.954 |
-| 1.000 | 0.000 | 0.994 |
-| 1.000 | 1.000 | 0.983 |
-| 1.000 | 10.000 | 0.953 |
-| 2.000 | 0.000 | 0.992 |
-| 2.000 | 1.000 | 0.980 |
-| 2.000 | 10.000 | 0.950 |
-| 4.000 | 0.000 | 0.989 |
-| 4.000 | 1.000 | 0.976 |
-| 4.000 | 10.000 | 0.947 |
+| 0.000 | 0.250 | 0.419 |
+| 0.000 | 0.500 | 0.324 |
+| 0.000 | 1.000 | 0.284 |
+| 0.000 | 2.000 | 0.284 |
+| 0.000 | 5.000 | 0.284 |
+| 0.000 | 20.000 | 0.284 |
+| 0.250 | 0.000 | 0.980 |
+| 0.250 | 0.250 | 0.307 |
+| 0.250 | 0.500 | 0.193 |
+| 0.250 | 1.000 | 0.144 |
+| 0.250 | 2.000 | 0.142 |
+| 0.250 | 5.000 | 0.142 |
+| 0.250 | 20.000 | 0.142 |
+| 0.500 | 0.000 | 0.981 |
+| 0.500 | 0.250 | 0.319 |
+| 0.500 | 0.500 | 0.179 |
+| 0.500 | 1.000 | 0.114 |
+| 0.500 | 2.000 | 0.112 |
+| 0.500 | 5.000 | 0.112 |
+| 0.500 | 20.000 | 0.112 |
+| 1.000 | 0.000 | 0.983 |
+| 1.000 | 0.250 | 0.387 |
+| 1.000 | 0.500 | 0.202 |
+| 1.000 | 1.000 | 0.089 |
+| 1.000 | 2.000 | 0.080 |
+| 1.000 | 5.000 | 0.080 |
+| 1.000 | 20.000 | 0.080 |
+| 2.000 | 0.000 | 0.984 |
+| 2.000 | 0.250 | 0.534 |
+| 2.000 | 0.500 | 0.286 |
+| 2.000 | 1.000 | 0.090 |
+| 2.000 | 2.000 | 0.049 |
+| 2.000 | 5.000 | 0.048 |
+| 2.000 | 20.000 | 0.048 |
+| 4.000 | 0.000 | 0.985 |
+| 4.000 | 0.250 | 0.691 |
+| 4.000 | 0.500 | 0.461 |
+| 4.000 | 1.000 | 0.176 |
+| 4.000 | 2.000 | 0.043 |
+| 4.000 | 5.000 | 0.024 |
+| 4.000 | 20.000 | 0.024 |
+| 8.000 | 0.000 | 0.985 |
+| 8.000 | 0.250 | 0.787 |
+| 8.000 | 0.500 | 0.633 |
+| 8.000 | 1.000 | 0.380 |
+| 8.000 | 2.000 | 0.111 |
+| 8.000 | 5.000 | 0.014 |
+| 8.000 | 20.000 | 0.010 |
 
 ## Outcomes on test
 
 | pipeline | mean regret (many) | mean regret (few) | failure rate | lists with a violation | abstained when nothing feasible | regret, held-out combinations | regret, other | diversity |
 |---|---|---|---|---|---|---|---|---|
-| hard | 0.199 | 0.094 | 0.008 | 0.000 | 1.000 | 0.160 | 0.142 | 0.229 |
+| hard | 0.013 | 0.007 | 0.000 | 0.000 | 1.000 | 0.010 | 0.010 | 0.191 |
 | plain | 0.990 | 1.000 | 1.000 | 1.000 | 0.000 | 0.995 | 0.995 | 0.298 |
-| soft | 0.916 | 0.992 | 0.994 | 0.217 | 0.000 | 0.959 | 0.952 | 0.266 |
+| soft | 0.013 | 0.007 | 0.000 | 0.000 | 0.000 | 0.010 | 0.010 | 0.191 |
 
 ## Pipeline: soft
 
-Test detection rows: 1800 (1789 failures).
+Test detection rows: 1800 (0 failures).
+
+### Agreement with list quality (test): Spearman correlation with regret
+
+| signal | spearman with regret |
+|---|---|
+| u_set | 0.298 |
+| u_rank | 0.296 |
+| u_attr | 0.417 |
+| u_util | 0.416 |
+| u_attr_rank | 0.403 |
+| u_dist | 0.446 |
+| u_generic | 0.303 |
+| util_final | -0.129 |
+
+### Flags at a fixed rate: each signal flags lists above its validation 75th percentile (test). False alarm = flagged list that is suitable (regret < 0.5).
+
+| signal | flag rate | suitable lists flagged | flags that are false alarms | regret flagged | regret not flagged | failures flagged |
+|---|---|---|---|---|---|---|
+| u_set | 0.155 | 0.155 | 1.000 | 0.014 | 0.009 | nan |
+| u_rank | 0.319 | 0.319 | 1.000 | 0.012 | 0.009 | nan |
+| u_attr | 0.306 | 0.306 | 1.000 | 0.014 | 0.008 | nan |
+| u_util | 0.304 | 0.304 | 1.000 | 0.014 | 0.008 | nan |
+| u_attr_rank | 0.302 | 0.302 | 1.000 | 0.013 | 0.009 | nan |
+| u_dist | 0.294 | 0.294 | 1.000 | 0.014 | 0.008 | nan |
+| u_generic | 0.306 | 0.306 | 1.000 | 0.013 | 0.009 | nan |
+| util_final | 0.238 | 0.238 | 1.000 | 0.008 | 0.011 | nan |
 
 ### Single signals (test)
 
 | signal | auroc | auroc_mean_over_runs | recall at matched threshold | false alarms among suitable |
 |---|---|---|---|---|
-| u_set | 0.322 | 0.285 | 1.000 | 1.000 |
-| u_rank | 0.337 | 0.279 | 0.879 | 1.000 |
-| u_attr | 0.292 | 0.253 | 1.000 | 1.000 |
-| u_util | 0.387 | 0.391 | 1.000 | 1.000 |
-| u_attr_rank | 0.323 | 0.293 | 0.911 | 1.000 |
-| u_dist | 0.341 | 0.311 | 0.869 | 1.000 |
-| u_generic | 0.266 | 0.211 | 1.000 | 1.000 |
-| viol_traj | 0.494 | 0.505 | 1.000 | 1.000 |
-| viol_final | 0.609 | 0.609 | 1.000 | 1.000 |
-| unknown_final | 0.999 | 0.999 | 0.793 | 0.000 |
-| util_final | 0.565 | 0.533 | 0.832 | 0.818 |
+| u_set | nan | nan | nan | 0.000 |
+| u_rank | nan | nan | nan | 0.000 |
+| u_attr | nan | nan | nan | 0.000 |
+| u_util | nan | nan | nan | 0.000 |
+| u_attr_rank | nan | nan | nan | 0.000 |
+| u_dist | nan | nan | nan | 0.000 |
+| u_generic | nan | nan | nan | 0.000 |
+| util_final | nan | nan | nan | 0.000 |
 
-### Judge fitted on validation scenarios (test AUROC)
 
-| predictors | auroc |
-|---|---|
-| final checks | 1.000 |
-| final checks + identity | 1.000 |
-| final checks + preference | 1.000 |
-| final checks + identity + preference | 1.000 |
-
-Paired scenario bootstrap (95% interval of the AUROC gain):
-
-- final checks + identity over final checks: +0.000 [+0.000, +0.000]
-- final checks + preference over final checks: +0.000 [+0.000, +0.001]
-- final checks + identity + preference over final checks + identity: +0.000 [+0.000, +0.000]
-
-### Diagnostic subsets (changing = membership change > 0.100, the validation median)
+### Diagnostic subsets (changing = membership change > 0.000, the validation median; flags at the fixed-rate thresholds above)
 
 | subset | cases | mean regret | flagged by u_set | flagged by u_rank | flagged by u_attr | flagged by u_util |
 |---|---|---|---|---|---|---|
-| changing but suitable | 9 | 0.291 | 1.000 | 1.000 | 1.000 | 1.000 |
-| consequentially unstable | 1005 | 0.954 | 1.000 | 0.999 | 1.000 | 1.000 |
-| stable but unsuitable | 784 | 0.963 | 1.000 | 0.726 | 1.000 | 1.000 |
-| stable and suitable | 2 | 0.412 | 1.000 | 1.000 | 1.000 | 1.000 |
+| changing but suitable | 862 | 0.012 | 0.324 | 0.570 | 0.638 | 0.635 |
+| consequentially unstable | 0 | nan | nan | nan | nan | nan |
+| stable but unsuitable | 0 | nan | nan | nan | nan | nan |
+| stable and suitable | 938 | 0.008 | 0.000 | 0.088 | 0.000 | 0.000 |
 
 ## Pipeline: hard
 
-Test detection rows: 1800 (14 failures).
+Test detection rows: 1800 (0 failures).
+
+### Agreement with list quality (test): Spearman correlation with regret
+
+| signal | spearman with regret |
+|---|---|
+| u_set | 0.298 |
+| u_rank | 0.296 |
+| u_attr | 0.417 |
+| u_util | 0.416 |
+| u_attr_rank | 0.403 |
+| u_dist | 0.446 |
+| u_generic | 0.303 |
+| util_final | -0.129 |
+
+### Flags at a fixed rate: each signal flags lists above its validation 75th percentile (test). False alarm = flagged list that is suitable (regret < 0.5).
+
+| signal | flag rate | suitable lists flagged | flags that are false alarms | regret flagged | regret not flagged | failures flagged |
+|---|---|---|---|---|---|---|
+| u_set | 0.155 | 0.155 | 1.000 | 0.014 | 0.009 | nan |
+| u_rank | 0.319 | 0.319 | 1.000 | 0.012 | 0.009 | nan |
+| u_attr | 0.306 | 0.306 | 1.000 | 0.014 | 0.008 | nan |
+| u_util | 0.304 | 0.304 | 1.000 | 0.014 | 0.008 | nan |
+| u_attr_rank | 0.302 | 0.302 | 1.000 | 0.013 | 0.009 | nan |
+| u_dist | 0.294 | 0.294 | 1.000 | 0.014 | 0.008 | nan |
+| u_generic | 0.306 | 0.306 | 1.000 | 0.013 | 0.009 | nan |
+| util_final | 0.238 | 0.238 | 1.000 | 0.008 | 0.011 | nan |
 
 ### Single signals (test)
 
 | signal | auroc | auroc_mean_over_runs | recall at matched threshold | false alarms among suitable |
 |---|---|---|---|---|
-| u_set | 0.347 | 0.365 | 0.000 | 0.000 |
-| u_rank | 0.246 | 0.253 | 0.000 | 0.000 |
-| u_attr | 0.427 | 0.468 | 0.000 | 0.000 |
-| u_util | 0.434 | 0.474 | 0.000 | 0.000 |
-| u_attr_rank | 0.451 | 0.483 | 0.000 | 0.000 |
-| u_dist | 0.439 | 0.483 | 0.000 | 0.000 |
-| u_generic | 0.376 | 0.412 | 0.000 | 0.000 |
-| util_final | 0.963 | 0.968 | 0.000 | 0.000 |
+| u_set | nan | nan | nan | 0.000 |
+| u_rank | nan | nan | nan | 0.000 |
+| u_attr | nan | nan | nan | 0.000 |
+| u_util | nan | nan | nan | 0.000 |
+| u_attr_rank | nan | nan | nan | 0.000 |
+| u_dist | nan | nan | nan | 0.000 |
+| u_generic | nan | nan | nan | 0.000 |
+| util_final | nan | nan | nan | 0.000 |
 
 
-### Diagnostic subsets (changing = membership change > 0.075, the validation median)
+### Diagnostic subsets (changing = membership change > 0.000, the validation median; flags at the fixed-rate thresholds above)
 
 | subset | cases | mean regret | flagged by u_set | flagged by u_rank | flagged by u_attr | flagged by u_util |
 |---|---|---|---|---|---|---|
-| changing but suitable | 977 | 0.159 | 0.000 | 0.000 | 0.000 | 0.000 |
-| consequentially unstable | 5 | 0.546 | 0.000 | 0.000 | 0.000 | 0.000 |
-| stable but unsuitable | 9 | 0.572 | 0.000 | 0.000 | 0.000 | 0.000 |
-| stable and suitable | 809 | 0.125 | 0.000 | 0.000 | 0.000 | 0.000 |
+| changing but suitable | 862 | 0.012 | 0.324 | 0.570 | 0.638 | 0.635 |
+| consequentially unstable | 0 | nan | nan | nan | nan | nan |
+| stable but unsuitable | 0 | nan | nan | nan | nan | nan |
+| stable and suitable | 938 | 0.008 | 0.000 | 0.088 | 0.000 | 0.000 |
