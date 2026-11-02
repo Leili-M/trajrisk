@@ -62,10 +62,14 @@ def predictor_sets(chosen):
     trajectory = [u_set, u_rank, score, "score_change_first", "cons_set", "cons_rank",
                   "reversal_set"]
     trajectory = list(dict.fromkeys(trajectory))
+    # ablation: list-based signals only (no score-level change), see the section-5 note
+    lists = list(dict.fromkeys([u_set, u_rank, "cons_set", "cons_rank", "reversal_set"]))
     return {"controls3": controls3, "controls": controls, "trajectory": trajectory,
             "controls3 + trajectory": controls3 + trajectory,
-            "combined": controls + trajectory}, [u_set, u_rank, score, "score_change_first",
-                                                  "cons_set", "small_margin"]
+            "combined": controls + trajectory,
+            "controls3 + lists": controls3 + lists,
+            "controls + lists": controls + lists}, [u_set, u_rank, score, "score_change_first",
+                                                    "cons_set", "small_margin"]
 
 
 def evaluate_run(cfg, run, sets, singles, out_dir):
@@ -101,7 +105,8 @@ def summarise(per_run, sets):
         rows.append(row)
     gains = {}
     for base, top in (("controls3", "combined"), ("controls3", "controls3 + trajectory"),
-                      ("controls", "combined")):
+                      ("controls", "combined"), ("controls3", "controls3 + lists"),
+                      ("controls", "controls + lists")):
         g = [per_run[r]["sets"][top]["auroc"] - per_run[r]["sets"][base]["auroc"] for r in runs]
         gains[f"{top} over {base}"] = je.t_interval(g)
     cv = [per_run[r]["cv_in_test"]["controls3 + trajectory"] - per_run[r]["cv_in_test"]["controls3"]

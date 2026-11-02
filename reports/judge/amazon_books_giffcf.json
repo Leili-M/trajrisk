@@ -52,6 +52,29 @@
       "cons_set",
       "cons_rank",
       "reversal_set"
+    ],
+    "controls3 + lists": [
+      "log_history",
+      "small_margin",
+      "history_popularity",
+      "u_set_unif",
+      "u_rank_unif",
+      "cons_set",
+      "cons_rank",
+      "reversal_set"
+    ],
+    "controls + lists": [
+      "log_history",
+      "small_margin",
+      "history_popularity",
+      "rec_popularity",
+      "top_margin",
+      "entropy_t1",
+      "u_set_unif",
+      "u_rank_unif",
+      "cons_set",
+      "cons_rank",
+      "reversal_set"
     ]
   },
   "gains": {
@@ -69,6 +92,16 @@
       0.035803014046168445,
       -0.01030695365302764,
       0.08191298174536453
+    ],
+    "controls3 + lists over controls3": [
+      0.024691586913844026,
+      0.006192371613463317,
+      0.043190802214224736
+    ],
+    "controls + lists over controls": [
+      0.006474392042000658,
+      0.0025548337237653214,
+      0.010393950360235995
     ],
     "CV inside test (earlier protocol): controls3 + trajectory over controls3": [
       0.09233637090946072,
@@ -129,6 +162,22 @@
           "brier": 0.10240492009343233,
           "aurc_miss": 0.7879575626621278,
           "aurc_ndcg": 0.8647480371258802
+        },
+        "controls3 + lists": {
+          "auroc": 0.5870831892036483,
+          "auprc": 0.9032312916074821,
+          "prevalence": 0.8745342643446582,
+          "brier": 0.1085133375788628,
+          "aurc_miss": 0.8359757807068744,
+          "aurc_ndcg": 0.8990677274723642
+        },
+        "controls + lists": {
+          "auroc": 0.6708025863547104,
+          "auprc": 0.9246666953775412,
+          "prevalence": 0.8745342643446582,
+          "brier": 0.10367920184875919,
+          "aurc_miss": 0.7959587015703272,
+          "aurc_ndcg": 0.869258757823095
         }
       },
       "single": {
@@ -226,6 +275,22 @@
           "brier": 0.10106089591585755,
           "aurc_miss": 0.7787869885819036,
           "aurc_ndcg": 0.8589851523434766
+        },
+        "controls3 + lists": {
+          "auroc": 0.5894969353352802,
+          "auprc": 0.9031960107316865,
+          "prevalence": 0.8740926779455193,
+          "brier": 0.10872485799370572,
+          "aurc_miss": 0.8333438229500915,
+          "aurc_ndcg": 0.8992758037321448
+        },
+        "controls + lists": {
+          "auroc": 0.6596808842018898,
+          "auprc": 0.9213811315214315,
+          "prevalence": 0.8740926779455193,
+          "brier": 0.10490910207550172,
+          "aurc_miss": 0.8004951771560576,
+          "aurc_ndcg": 0.8728459404246286
         }
       },
       "single": {
@@ -323,6 +388,22 @@
           "brier": 0.10184025128856743,
           "aurc_miss": 0.7825952013622697,
           "aurc_ndcg": 0.8616869941415843
+        },
+        "controls3 + lists": {
+          "auroc": 0.6052213157629872,
+          "auprc": 0.9070546688373342,
+          "prevalence": 0.874222788223837,
+          "brier": 0.10820632317752643,
+          "aurc_miss": 0.8277176474413173,
+          "aurc_ndcg": 0.895564803180035
+        },
+        "controls + lists": {
+          "auroc": 0.682531367588594,
+          "auprc": 0.9274420220600135,
+          "prevalence": 0.874222788223837,
+          "brier": 0.1032250477578089,
+          "aurc_miss": 0.7908823113269725,
+          "aurc_ndcg": 0.8666383841170054
         }
       },
       "single": {

@@ -52,6 +52,29 @@
       "cons_set",
       "cons_rank",
       "reversal_set"
+    ],
+    "controls3 + lists": [
+      "log_history",
+      "small_margin",
+      "history_popularity",
+      "u_set_r0.75",
+      "u_rank_unif",
+      "cons_set",
+      "cons_rank",
+      "reversal_set"
+    ],
+    "controls + lists": [
+      "log_history",
+      "small_margin",
+      "history_popularity",
+      "rec_popularity",
+      "top_margin",
+      "entropy_t1",
+      "u_set_r0.75",
+      "u_rank_unif",
+      "cons_set",
+      "cons_rank",
+      "reversal_set"
     ]
   },
   "gains": {
@@ -69,6 +92,16 @@
       0.019950834789808924,
       0.016056745528621904,
       0.023844924050995944
+    ],
+    "controls3 + lists over controls3": [
+      0.05187460841837468,
+      0.048748741521640965,
+      0.05500047531510839
+    ],
+    "controls + lists over controls": [
+      0.02044058182433812,
+      0.016672804367861845,
+      0.024208359280814398
     ],
     "CV inside test (earlier protocol): controls3 + trajectory over controls3": [
       0.055188201094679055,
@@ -129,6 +162,22 @@
           "brier": 0.06378968853196397,
           "aurc_miss": 0.886742000320473,
           "aurc_ndcg": 0.9340854359206393
+        },
+        "controls3 + lists": {
+          "auroc": 0.6503797640097645,
+          "auprc": 0.9560062122372032,
+          "prevalence": 0.9295635673624288,
+          "brier": 0.06416644652184815,
+          "aurc_miss": 0.8915722329990112,
+          "aurc_ndcg": 0.938116616861454
+        },
+        "controls + lists": {
+          "auroc": 0.6621232715682659,
+          "auprc": 0.9579862914094872,
+          "prevalence": 0.9295635673624288,
+          "brier": 0.06381538380892689,
+          "aurc_miss": 0.8870921022620629,
+          "aurc_ndcg": 0.9343463864488302
         }
       },
       "single": {
@@ -226,6 +275,22 @@
           "brier": 0.06475634816449372,
           "aurc_miss": 0.8844269560306428,
           "aurc_ndcg": 0.9325712043409796
+        },
+        "controls3 + lists": {
+          "auroc": 0.6451634838504272,
+          "auprc": 0.9546783663979971,
+          "prevalence": 0.9283491461100569,
+          "brier": 0.06529405584678619,
+          "aurc_miss": 0.8911030258571263,
+          "aurc_ndcg": 0.9374672165413431
+        },
+        "controls + lists": {
+          "auroc": 0.661425291770425,
+          "auprc": 0.9566413287873905,
+          "prevalence": 0.9283491461100569,
+          "brier": 0.06478262565430605,
+          "aurc_miss": 0.8846547517858107,
+          "aurc_ndcg": 0.9327285484382265
         }
       },
       "single": {
@@ -323,6 +388,22 @@
           "brier": 0.06455976438259031,
           "aurc_miss": 0.8845119028444585,
           "aurc_ndcg": 0.9339306729998995
+        },
+        "controls3 + lists": {
+          "auroc": 0.6507857216041323,
+          "auprc": 0.9557280589532147,
+          "prevalence": 0.9284629981024668,
+          "brier": 0.06513231278261772,
+          "aurc_miss": 0.8908361885874705,
+          "aurc_ndcg": 0.9384328202732397
+        },
+        "controls + lists": {
+          "auroc": 0.6616147899261706,
+          "auprc": 0.9573038788917411,
+          "prevalence": 0.9284629981024668,
+          "brier": 0.06458070743145168,
+          "aurc_miss": 0.8847374914175133,
+          "aurc_ndcg": 0.9339860685669198
         }
       },
       "single": {
@@ -420,6 +501,22 @@
           "brier": 0.06242101461969695,
           "aurc_miss": 0.8875918439420462,
           "aurc_ndcg": 0.9350147033347341
+        },
+        "controls3 + lists": {
+          "auroc": 0.6498631010626861,
+          "auprc": 0.9579951684743423,
+          "prevalence": 0.9311195445920304,
+          "brier": 0.06304065150662379,
+          "aurc_miss": 0.8958236557227163,
+          "aurc_ndcg": 0.9408181764750448
+        },
+        "controls + lists": {
+          "auroc": 0.6656812525649253,
+          "auprc": 0.9598353045521937,
+          "prevalence": 0.9311195445920304,
+          "brier": 0.06247658072710615,
+          "aurc_miss": 0.8881655321385409,
+          "aurc_ndcg": 0.9353415486363492
         }
       },
       "single": {
@@ -517,6 +614,22 @@
           "brier": 0.06427022440168595,
           "aurc_miss": 0.8852061021212374,
           "aurc_ndcg": 0.9328148778558593
+        },
+        "controls3 + lists": {
+          "auroc": 0.6471844416057688,
+          "auprc": 0.9547216644248921,
+          "prevalence": 0.9288804554079696,
+          "brier": 0.06486663581034108,
+          "aurc_miss": 0.8924166884519832,
+          "aurc_ndcg": 0.9382314892601188
+        },
+        "controls + lists": {
+          "auroc": 0.6615465819935911,
+          "auprc": 0.9567766821989889,
+          "prevalence": 0.9288804554079696,
+          "brier": 0.06429014694246561,
+          "aurc_miss": 0.8853334777374157,
+          "aurc_ndcg": 0.9328978258229774
         }
       },
       "single": {
