@@ -1,0 +1,10 @@
+run,backbone,split,cases,recall@10,lists_match_full,sec_trajectory,sec_sorting_and_summaries,sec_storage,sec_total,sec_ms_per_case
+bk_giff_s1,GiffCF,valid_model,136077,0.1332554362603526,True,47.66,1.9,0.35,59.86,0.44
+bk_giff_s1,GiffCF,valid_risk,104919,0.13201612672633173,True,39.67,1.37,0.31,54.75,0.522
+bk_giff_s1,GiffCF,test,253631,0.1254657356553418,True,77.07,3.39,0.64,83.96,0.331
+bk_giff_s2,GiffCF,valid_model,136077,0.1334465045525695,True,41.46,1.84,0.38,45.23,0.332
+bk_giff_s2,GiffCF,valid_risk,104919,0.13277861969709967,True,31.99,1.38,0.34,34.9,0.333
+bk_giff_s2,GiffCF,test,253631,0.1259073220544807,True,87.35,3.39,0.6,109.66,0.432
+bk_giff_s3,GiffCF,valid_model,136077,0.13315990211424414,True,41.46,1.85,0.4,45.26,0.333
+bk_giff_s3,GiffCF,valid_risk,104919,0.13219721880688912,True,31.95,1.39,0.31,34.88,0.332
+bk_giff_s3,GiffCF,test,253631,0.125777211776163,True,87.21,3.39,0.61,109.29,0.431
