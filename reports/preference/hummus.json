@@ -1,0 +1,350 @@
+{
+  "beta": 4.0,
+  "gamma": 10.0,
+  "grid": [
+    {
+      "beta": 0.0,
+      "gamma": 0.0,
+      "valid mean regret": 0.9948270241028709
+    },
+    {
+      "beta": 0.0,
+      "gamma": 1.0,
+      "valid mean regret": 0.9860803643803171
+    },
+    {
+      "beta": 0.0,
+      "gamma": 10.0,
+      "valid mean regret": 0.956271053179068
+    },
+    {
+      "beta": 0.25,
+      "gamma": 0.0,
+      "valid mean regret": 0.994786360327983
+    },
+    {
+      "beta": 0.25,
+      "gamma": 1.0,
+      "valid mean regret": 0.985413867126864
+    },
+    {
+      "beta": 0.25,
+      "gamma": 10.0,
+      "valid mean regret": 0.9552779376636741
+    },
+    {
+      "beta": 0.5,
+      "gamma": 0.0,
+      "valid mean regret": 0.9945594115287026
+    },
+    {
+      "beta": 0.5,
+      "gamma": 1.0,
+      "valid mean regret": 0.9844484538605934
+    },
+    {
+      "beta": 0.5,
+      "gamma": 10.0,
+      "valid mean regret": 0.954185553724048
+    },
+    {
+      "beta": 1.0,
+      "gamma": 0.0,
+      "valid mean regret": 0.9941502182883182
+    },
+    {
+      "beta": 1.0,
+      "gamma": 1.0,
+      "valid mean regret": 0.9827063116085065
+    },
+    {
+      "beta": 1.0,
+      "gamma": 10.0,
+      "valid mean regret": 0.9527231211050222
+    },
+    {
+      "beta": 2.0,
+      "gamma": 0.0,
+      "valid mean regret": 0.9922795825342939
+    },
+    {
+      "beta": 2.0,
+      "gamma": 1.0,
+      "valid mean regret": 0.9799264027209089
+    },
+    {
+      "beta": 2.0,
+      "gamma": 10.0,
+      "valid mean regret": 0.9499938342868597
+    },
+    {
+      "beta": 4.0,
+      "gamma": 0.0,
+      "valid mean regret": 0.9891731595219072
+    },
+    {
+      "beta": 4.0,
+      "gamma": 1.0,
+      "valid mean regret": 0.9755780182848595
+    },
+    {
+      "beta": 4.0,
+      "gamma": 10.0,
+      "valid mean regret": 0.9470791989393994
+    }
+  ],
+  "soft": {
+    "single": [
+      {
+        "signal": "u_set",
+        "auroc": 0.32206921083388385,
+        "auroc_mean_over_runs": 0.28508442443446536,
+        "recall at matched threshold": 1.0,
+        "false alarms among suitable": 1.0
+      },
+      {
+        "signal": "u_rank",
+        "auroc": 0.33680573199857716,
+        "auroc_mean_over_runs": 0.27858524346079094,
+        "recall at matched threshold": 0.8792621576299608,
+        "false alarms among suitable": 1.0
+      },
+      {
+        "signal": "u_attr",
+        "auroc": 0.29208801260226636,
+        "auroc_mean_over_runs": 0.2533865233506164,
+        "recall at matched threshold": 1.0,
+        "false alarms among suitable": 1.0
+      },
+      {
+        "signal": "u_util",
+        "auroc": 0.38711316631942677,
+        "auroc_mean_over_runs": 0.3909451169193209,
+        "recall at matched threshold": 1.0,
+        "false alarms among suitable": 1.0
+      },
+      {
+        "signal": "u_attr_rank",
+        "auroc": 0.32283144468723,
+        "auroc_mean_over_runs": 0.29277129254893486,
+        "recall at matched threshold": 0.9111235326998323,
+        "false alarms among suitable": 1.0
+      },
+      {
+        "signal": "u_dist",
+        "auroc": 0.3408201636262005,
+        "auroc_mean_over_runs": 0.31060024770721795,
+        "recall at matched threshold": 0.868641699273337,
+        "false alarms among suitable": 1.0
+      },
+      {
+        "signal": "u_generic",
+        "auroc": 0.2664261395396108,
+        "auroc_mean_over_runs": 0.2113554823097356,
+        "recall at matched threshold": 1.0,
+        "false alarms among suitable": 1.0
+      },
+      {
+        "signal": "viol_traj",
+        "auroc": 0.4936734590172265,
+        "auroc_mean_over_runs": 0.505174980280078,
+        "recall at matched threshold": 1.0,
+        "false alarms among suitable": 1.0
+      },
+      {
+        "signal": "viol_final",
+        "auroc": 0.6092789267747345,
+        "auroc_mean_over_runs": 0.6092289835654735,
+        "recall at matched threshold": 1.0,
+        "false alarms among suitable": 1.0
+      },
+      {
+        "signal": "unknown_final",
+        "auroc": 0.998780425834646,
+        "auroc_mean_over_runs": 0.9991619980595287,
+        "recall at matched threshold": 0.7926215762996087,
+        "false alarms among suitable": 0.0
+      },
+      {
+        "signal": "util_final",
+        "auroc": 0.5645612073784237,
+        "auroc_mean_over_runs": 0.5325160259415057,
+        "recall at matched threshold": 0.8323085522638345,
+        "false alarms among suitable": 0.8181818181818182
+      }
+    ],
+    "judge": [
+      {
+        "predictors": "final checks",
+        "auroc": 0.9996951064586616
+      },
+      {
+        "predictors": "final checks + identity",
+        "auroc": 0.9997459220488847
+      },
+      {
+        "predictors": "final checks + preference",
+        "auroc": 0.9998475532293307
+      },
+      {
+        "predictors": "final checks + identity + preference",
+        "auroc": 0.9998475532293307
+      }
+    ],
+    "gains": {
+      "final checks + identity over final checks": [
+        5.081559022312998e-05,
+        0.0,
+        0.0002731657201246601
+      ],
+      "final checks + preference over final checks": [
+        0.0001524467706691679,
+        0.0,
+        0.000556057592247805
+      ],
+      "final checks + identity + preference over final checks + identity": [
+        0.00010163118044603792,
+        0.0,
+        0.0004464605281586237
+      ]
+    },
+    "subsets": [
+      {
+        "subset": "changing but suitable",
+        "cases": 9,
+        "mean regret": 0.29129713800852053,
+        "flagged by u_set": 1.0,
+        "flagged by u_rank": 1.0,
+        "flagged by u_attr": 1.0,
+        "flagged by u_util": 1.0
+      },
+      {
+        "subset": "consequentially unstable",
+        "cases": 1005,
+        "mean regret": 0.9536286996666172,
+        "flagged by u_set": 1.0,
+        "flagged by u_rank": 0.9990049751243781,
+        "flagged by u_attr": 1.0,
+        "flagged by u_util": 1.0
+      },
+      {
+        "subset": "stable but unsuitable",
+        "cases": 784,
+        "mean regret": 0.9628124083527685,
+        "flagged by u_set": 1.0,
+        "flagged by u_rank": 0.7257653061224489,
+        "flagged by u_attr": 1.0,
+        "flagged by u_util": 1.0
+      },
+      {
+        "subset": "stable and suitable",
+        "cases": 2,
+        "mean regret": 0.41162570830953416,
+        "flagged by u_set": 1.0,
+        "flagged by u_rank": 1.0,
+        "flagged by u_attr": 1.0,
+        "flagged by u_util": 1.0
+      }
+    ]
+  },
+  "hard": {
+    "single": [
+      {
+        "signal": "u_set",
+        "auroc": 0.3467045272756359,
+        "auroc_mean_over_runs": 0.36490097922289877,
+        "recall at matched threshold": 0.0,
+        "false alarms among suitable": 0.0
+      },
+      {
+        "signal": "u_rank",
+        "auroc": 0.2460006398976164,
+        "auroc_mean_over_runs": 0.2530679178959262,
+        "recall at matched threshold": 0.0,
+        "false alarms among suitable": 0.0
+      },
+      {
+        "signal": "u_attr",
+        "auroc": 0.42661174212126063,
+        "auroc_mean_over_runs": 0.46833610570585654,
+        "recall at matched threshold": 0.0,
+        "false alarms among suitable": 0.0
+      },
+      {
+        "signal": "u_util",
+        "auroc": 0.4336106223004319,
+        "auroc_mean_over_runs": 0.47370770824179276,
+        "recall at matched threshold": 0.0,
+        "false alarms among suitable": 0.0
+      },
+      {
+        "signal": "u_attr_rank",
+        "auroc": 0.4508878579427292,
+        "auroc_mean_over_runs": 0.482918523633168,
+        "recall at matched threshold": 0.0,
+        "false alarms among suitable": 0.0
+      },
+      {
+        "signal": "u_dist",
+        "auroc": 0.43878979363301873,
+        "auroc_mean_over_runs": 0.48326219320821046,
+        "recall at matched threshold": 0.0,
+        "false alarms among suitable": 0.0
+      },
+      {
+        "signal": "u_generic",
+        "auroc": 0.37609982402815545,
+        "auroc_mean_over_runs": 0.41193898688092395,
+        "recall at matched threshold": 0.0,
+        "false alarms among suitable": 0.0
+      },
+      {
+        "signal": "util_final",
+        "auroc": 0.9632458806590944,
+        "auroc_mean_over_runs": 0.9676252275437826,
+        "recall at matched threshold": 0.0,
+        "false alarms among suitable": 0.0
+      }
+    ],
+    "judge": [],
+    "gains": {},
+    "subsets": [
+      {
+        "subset": "changing but suitable",
+        "cases": 977,
+        "mean regret": 0.15932475457376377,
+        "flagged by u_set": 0.0,
+        "flagged by u_rank": 0.0,
+        "flagged by u_attr": 0.0,
+        "flagged by u_util": 0.0
+      },
+      {
+        "subset": "consequentially unstable",
+        "cases": 5,
+        "mean regret": 0.5463479364304342,
+        "flagged by u_set": 0.0,
+        "flagged by u_rank": 0.0,
+        "flagged by u_attr": 0.0,
+        "flagged by u_util": 0.0
+      },
+      {
+        "subset": "stable but unsuitable",
+        "cases": 9,
+        "mean regret": 0.5723065999143552,
+        "flagged by u_set": 0.0,
+        "flagged by u_rank": 0.0,
+        "flagged by u_attr": 0.0,
+        "flagged by u_util": 0.0
+      },
+      {
+        "subset": "stable and suitable",
+        "cases": 809,
+        "mean regret": 0.12453417015017156,
+        "flagged by u_set": 0.0,
+        "flagged by u_rank": 0.0,
+        "flagged by u_attr": 0.0,
+        "flagged by u_util": 0.0
+      }
+    ]
+  }
+}
