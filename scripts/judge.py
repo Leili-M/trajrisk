@@ -45,6 +45,9 @@ def load_cfg(path):
 def load_split(cfg, run, split):
     d = Path(cfg["paths"]["output_dir"]) / "trajlogs" / f"{run}__{split}"
     sig = pd.read_parquet(d / "signals.parquet")
+    if (d / "perturb.parquet").exists():                 # repeated sampling and masking
+        sig = sig.merge(pd.read_parquet(d / "perturb.parquet"), on="case_id",
+                        how="inner", validate="one_to_one")
     lab = pd.read_parquet(d / "labels.parquet")[["case_id", "target_rank_final"]]
     df = sig.merge(lab, on="case_id", how="inner", validate="one_to_one")
     if len(df) != len(sig):
@@ -70,6 +73,32 @@ def predictor_sets(chosen):
             "controls3 + lists": controls3 + lists,
             "controls + lists": controls + lists}, [u_set, u_rank, score, "score_change_first",
                                                     "cons_set", "small_margin"]
+
+
+def perturbation_sets(sets):
+    """Section 7 baselines: repeated sampling (2, 5, 10) and masked histories."""
+    controls3, controls = sets["controls3"], sets["controls"]
+    lists = [c for c in sets["controls + lists"] if c not in controls]
+    samp = {n: [f"samp{n}_set", f"samp{n}_rank", f"samp{n}_score"] for n in (2, 5, 10)}
+    mask = ["mask_set", "mask_rank", "mask_score", "mask_unstable"]
+    extra = {f"controls3 + sampling{n}": controls3 + samp[n] for n in (2, 5, 10)}
+    extra.update({f"controls + sampling{n}": controls + samp[n] for n in (2, 5, 10)})
+    extra.update({"controls3 + masking": controls3 + mask, "controls + masking": controls + mask,
+                  "controls + lists + sampling10": controls + lists + samp[10],
+                  "controls + lists + masking": controls + lists + mask,
+                  "all": controls + sets["trajectory"] + samp[10] + mask})
+    return extra
+
+
+GAIN_PAIRS = [("controls3", "combined"), ("controls3", "controls3 + trajectory"),
+              ("controls", "combined"), ("controls3", "controls3 + lists"),
+              ("controls", "controls + lists"),
+              ("controls3", "controls3 + sampling2"), ("controls3", "controls3 + sampling5"),
+              ("controls3", "controls3 + sampling10"), ("controls", "controls + sampling2"),
+              ("controls", "controls + sampling5"), ("controls", "controls + sampling10"),
+              ("controls3", "controls3 + masking"), ("controls", "controls + masking"),
+              ("controls + lists", "controls + lists + sampling10"),
+              ("controls + lists", "controls + lists + masking"), ("controls", "all")]
 
 
 def evaluate_run(cfg, run, sets, singles, out_dir):
@@ -104,9 +133,9 @@ def summarise(per_run, sets):
             row[m], row[f"{m}_lo"], row[f"{m}_hi"] = mean, lo, hi
         rows.append(row)
     gains = {}
-    for base, top in (("controls3", "combined"), ("controls3", "controls3 + trajectory"),
-                      ("controls", "combined"), ("controls3", "controls3 + lists"),
-                      ("controls", "controls + lists")):
+    for base, top in GAIN_PAIRS:
+        if base not in sets or top not in sets:
+            continue
         g = [per_run[r]["sets"][top]["auroc"] - per_run[r]["sets"][base]["auroc"] for r in runs]
         gains[f"{top} over {base}"] = je.t_interval(g)
     cv = [per_run[r]["cv_in_test"]["controls3 + trajectory"] - per_run[r]["cv_in_test"]["controls3"]
@@ -179,6 +208,13 @@ def main():
     if chosen["split"] != FIT_SPLIT:
         raise SystemExit("Section-5 choices must come from the risk-validation split.")
     sets, singles = predictor_sets(chosen["chosen"])
+    has_perturb = [(log / f"{r}__{s}" / "perturb.parquet").exists()
+                   for r in args.runs for s in (FIT_SPLIT, EVAL_SPLIT)]
+    if all(has_perturb):
+        sets.update(perturbation_sets(sets))
+        singles += ["samp10_set", "samp10_rank", "samp10_score", "mask_set", "mask_rank"]
+    elif any(has_perturb):
+        raise SystemExit("perturb.parquet exists for some runs/splits only; finish them first.")
 
     out = REPO / "reports" / "judge"
     out.mkdir(parents=True, exist_ok=True)

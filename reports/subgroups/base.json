@@ -1,0 +1,607 @@
+{
+  "rows": [
+    {
+      "run": "hm_seed42",
+      "kind": "history",
+      "group": "1",
+      "cases": 6653,
+      "share": 0.11004333586952926,
+      "miss_rate": 0.9750488501427927,
+      "auroc controls3": 0.6555971070964914,
+      "gain controls3 + lists over controls3": 0.0016005133529338744,
+      "auroc controls": 0.6697551729965956,
+      "gain controls + lists over controls": -0.002240811558241518,
+      "gain combined over controls": -0.01107404800332823
+    },
+    {
+      "run": "hm_seed42",
+      "kind": "history",
+      "group": "10-29",
+      "cases": 9085,
+      "share": 0.15026960865394157,
+      "miss_rate": 0.9816180517336268,
+      "auroc controls3": 0.6647273965189155,
+      "gain controls3 + lists over controls3": -0.011263635545683659,
+      "auroc controls": 0.6678664424906633,
+      "gain controls + lists over controls": -0.0077371607983851565,
+      "gain combined over controls": -0.0050070301200692
+    },
+    {
+      "run": "hm_seed42",
+      "kind": "history",
+      "group": "2-3",
+      "cases": 5383,
+      "share": 0.08903701743359026,
+      "miss_rate": 0.979007988110719,
+      "auroc controls3": 0.6387214320498396,
+      "gain controls3 + lists over controls3": 0.003590199996641563,
+      "auroc controls": 0.6590871689812094,
+      "gain controls + lists over controls": -0.0010696713741163988,
+      "gain combined over controls": -0.00758089704622944
+    },
+    {
+      "run": "hm_seed42",
+      "kind": "history",
+      "group": "30+",
+      "cases": 32426,
+      "share": 0.5363392768533527,
+      "miss_rate": 0.9895145870597668,
+      "auroc controls3": 0.7101903065658103,
+      "gain controls3 + lists over controls3": -0.004872016749104424,
+      "auroc controls": 0.6978064008125222,
+      "gain controls + lists over controls": -0.0008469884244916015,
+      "gain combined over controls": -0.0004790892857796658
+    },
+    {
+      "run": "hm_seed42",
+      "kind": "history",
+      "group": "4-9",
+      "cases": 6911,
+      "share": 0.11431076118958616,
+      "miss_rate": 0.9775719866878889,
+      "auroc controls3": 0.6752330067419163,
+      "gain controls3 + lists over controls3": 0.006357073282530323,
+      "auroc controls": 0.684288756469757,
+      "gain controls + lists over controls": 0.0036144693366947367,
+      "gain combined over controls": -0.0026681181840753077
+    },
+    {
+      "run": "hm_seed42",
+      "kind": "target popularity",
+      "group": "head",
+      "cases": 29300,
+      "share": 0.48463396076615173,
+      "miss_rate": 0.9680204778156997,
+      "auroc controls3": 0.6383052709967452,
+      "gain controls3 + lists over controls3": 0.0006965837126555741,
+      "auroc controls": 0.6472250042716903,
+      "gain controls + lists over controls": -0.0013241581327244623,
+      "gain combined over controls": -0.005040594509411522
+    },
+    {
+      "run": "hm_seed42",
+      "kind": "target popularity",
+      "group": "mid",
+      "cases": 18989,
+      "share": 0.3140858116378312,
+      "miss_rate": 0.9998420137974617,
+      "auroc controls3": 0.22641244425717197,
+      "gain controls3 + lists over controls3": -0.033533480810421734,
+      "auroc controls": 0.19293163383545772,
+      "gain controls + lists over controls": -0.01546753748375998,
+      "gain combined over controls": 0.024421503564029612
+    },
+    {
+      "run": "hm_seed42",
+      "kind": "target popularity",
+      "group": "tail",
+      "cases": 12169,
+      "share": 0.20128022759601708,
+      "miss_rate": 0.9999178239789629,
+      "auroc controls3": 0.042735042735042736,
+      "gain controls3 + lists over controls3": 0.02021696252465484,
+      "auroc controls": 0.03353057199211046,
+      "gain controls + lists over controls": 0.005095332018408935,
+      "gain combined over controls": -0.0011094674556213074
+    },
+    {
+      "run": "hm_seed1",
+      "kind": "history",
+      "group": "1",
+      "cases": 6653,
+      "share": 0.11004333586952926,
+      "miss_rate": 0.9759506989328123,
+      "auroc controls3": 0.6450807600492838,
+      "gain controls3 + lists over controls3": -0.00029791698752490436,
+      "auroc controls": 0.6712478823348221,
+      "gain controls + lists over controls": -0.010884799014323043,
+      "gain combined over controls": -0.01847903511473903
+    },
+    {
+      "run": "hm_seed1",
+      "kind": "history",
+      "group": "10-29",
+      "cases": 9085,
+      "share": 0.15026960865394157,
+      "miss_rate": 0.9813979086406164,
+      "auroc controls3": 0.6594175486659181,
+      "gain controls3 + lists over controls3": -0.005486446810600509,
+      "auroc controls": 0.6731704986182675,
+      "gain controls + lists over controls": -0.000985529637564042,
+      "gain combined over controls": 0.00047716889522464445
+    },
+    {
+      "run": "hm_seed1",
+      "kind": "history",
+      "group": "2-3",
+      "cases": 5383,
+      "share": 0.08903701743359026,
+      "miss_rate": 0.9810514582946313,
+      "auroc controls3": 0.609957635771597,
+      "gain controls3 + lists over controls3": 0.045044944696303046,
+      "auroc controls": 0.6531535545481211,
+      "gain controls + lists over controls": 0.011847874919708512,
+      "gain combined over controls": -0.003231154230296518
+    },
+    {
+      "run": "hm_seed1",
+      "kind": "history",
+      "group": "30+",
+      "cases": 32426,
+      "share": 0.5363392768533527,
+      "miss_rate": 0.9904706100043176,
+      "auroc controls3": 0.7357564418847632,
+      "gain controls3 + lists over controls3": -0.01433482534983066,
+      "auroc controls": 0.720511513677792,
+      "gain controls + lists over controls": -0.0004987831203326909,
+      "gain combined over controls": 0.004180004076922206
+    },
+    {
+      "run": "hm_seed1",
+      "kind": "history",
+      "group": "4-9",
+      "cases": 6911,
+      "share": 0.11431076118958616,
+      "miss_rate": 0.9778613804080452,
+      "auroc controls3": 0.695042138390327,
+      "gain controls3 + lists over controls3": -0.0036151779445131593,
+      "auroc controls": 0.6984087607618761,
+      "gain controls + lists over controls": -0.0016702547646266774,
+      "gain combined over controls": -0.003302307408116656
+    },
+    {
+      "run": "hm_seed1",
+      "kind": "target popularity",
+      "group": "head",
+      "cases": 29300,
+      "share": 0.48463396076615173,
+      "miss_rate": 0.9695221843003413,
+      "auroc controls3": 0.6412013568095588,
+      "gain controls3 + lists over controls3": 0.00027890070626335195,
+      "auroc controls": 0.6505029220318588,
+      "gain controls + lists over controls": -0.0003860064615872627,
+      "gain combined over controls": -0.005645659865470942
+    },
+    {
+      "run": "hm_seed1",
+      "kind": "target popularity",
+      "group": "mid",
+      "cases": 18989,
+      "share": 0.3140858116378312,
+      "miss_rate": 1.0,
+      "auroc controls3": NaN,
+      "gain controls3 + lists over controls3": NaN,
+      "auroc controls": NaN,
+      "gain controls + lists over controls": NaN,
+      "gain combined over controls": NaN
+    },
+    {
+      "run": "hm_seed1",
+      "kind": "target popularity",
+      "group": "tail",
+      "cases": 12169,
+      "share": 0.20128022759601708,
+      "miss_rate": 1.0,
+      "auroc controls3": NaN,
+      "gain controls3 + lists over controls3": NaN,
+      "auroc controls": NaN,
+      "gain controls + lists over controls": NaN,
+      "gain combined over controls": NaN
+    },
+    {
+      "run": "hm_seed2",
+      "kind": "history",
+      "group": "1",
+      "cases": 6653,
+      "share": 0.11004333586952926,
+      "miss_rate": 0.9714414549827146,
+      "auroc controls3": 0.6210216861975456,
+      "gain controls3 + lists over controls3": -0.013419301774473258,
+      "auroc controls": 0.6467617287067273,
+      "gain controls + lists over controls": -0.007680155052647852,
+      "gain combined over controls": -0.004960218897855695
+    },
+    {
+      "run": "hm_seed2",
+      "kind": "history",
+      "group": "10-29",
+      "cases": 9085,
+      "share": 0.15026960865394157,
+      "miss_rate": 0.9822784810126582,
+      "auroc controls3": 0.6909099197919769,
+      "gain controls3 + lists over controls3": -0.007161231768056497,
+      "auroc controls": 0.7100682505964793,
+      "gain controls + lists over controls": -0.0018061421360779928,
+      "gain combined over controls": -0.003460206408289812
+    },
+    {
+      "run": "hm_seed2",
+      "kind": "history",
+      "group": "2-3",
+      "cases": 5383,
+      "share": 0.08903701743359026,
+      "miss_rate": 0.9732491175924206,
+      "auroc controls3": 0.6114464698521771,
+      "gain controls3 + lists over controls3": 0.00034198638416993443,
+      "auroc controls": 0.621166571228606,
+      "gain controls + lists over controls": 0.0019153888570762057,
+      "gain combined over controls": -0.001350713664609482
+    },
+    {
+      "run": "hm_seed2",
+      "kind": "history",
+      "group": "30+",
+      "cases": 32426,
+      "share": 0.5363392768533527,
+      "miss_rate": 0.9900696971566028,
+      "auroc controls3": 0.7019292307763743,
+      "gain controls3 + lists over controls3": -0.0048149028081097,
+      "auroc controls": 0.6896690956255525,
+      "gain controls + lists over controls": 0.0011259988887046823,
+      "gain combined over controls": 0.0025094587776062216
+    },
+    {
+      "run": "hm_seed2",
+      "kind": "history",
+      "group": "4-9",
+      "cases": 6911,
+      "share": 0.11431076118958616,
+      "miss_rate": 0.9768485023874982,
+      "auroc controls3": 0.7206233335802102,
+      "gain controls3 + lists over controls3": -0.0002879203081024295,
+      "auroc controls": 0.7299312138942378,
+      "gain controls + lists over controls": 0.00018052881054664294,
+      "gain combined over controls": -0.0016978966079097546
+    },
+    {
+      "run": "hm_seed2",
+      "kind": "target popularity",
+      "group": "head",
+      "cases": 29300,
+      "share": 0.48463396076615173,
+      "miss_rate": 0.9667576791808874,
+      "auroc controls3": 0.642432504453502,
+      "gain controls3 + lists over controls3": -0.0001637034404797788,
+      "auroc controls": 0.6591161558278424,
+      "gain controls + lists over controls": -0.00026350581474332557,
+      "gain combined over controls": -0.001461025568980423
+    },
+    {
+      "run": "hm_seed2",
+      "kind": "target popularity",
+      "group": "mid",
+      "cases": 18989,
+      "share": 0.3140858116378312,
+      "miss_rate": 0.9998946758649745,
+      "auroc controls3": 0.2504345078211408,
+      "gain controls3 + lists over controls3": 0.046373834729025065,
+      "auroc controls": 0.07836941064939168,
+      "gain controls + lists over controls": 0.0007636804129141084,
+      "gain combined over controls": 0.009401169221045988
+    },
+    {
+      "run": "hm_seed2",
+      "kind": "target popularity",
+      "group": "tail",
+      "cases": 12169,
+      "share": 0.20128022759601708,
+      "miss_rate": 0.9999178239789629,
+      "auroc controls3": 0.8434418145956607,
+      "gain controls3 + lists over controls3": 0.022846811308349868,
+      "auroc controls": 0.5437212360289283,
+      "gain controls + lists over controls": 0.03870808678500992,
+      "gain combined over controls": -0.005999342537803987
+    },
+    {
+      "run": "hm_seed3",
+      "kind": "history",
+      "group": "1",
+      "cases": 6653,
+      "share": 0.11004333586952926,
+      "miss_rate": 0.9714414549827146,
+      "auroc controls3": 0.6412734024446851,
+      "gain controls3 + lists over controls3": 0.01715554940267272,
+      "auroc controls": 0.6509971741980667,
+      "gain controls + lists over controls": 0.010461167618101452,
+      "gain combined over controls": 0.01021116151046042
+    },
+    {
+      "run": "hm_seed3",
+      "kind": "history",
+      "group": "10-29",
+      "cases": 9085,
+      "share": 0.15026960865394157,
+      "miss_rate": 0.982168409466153,
+      "auroc controls3": 0.6626359539710804,
+      "gain controls3 + lists over controls3": -0.027142368936982075,
+      "auroc controls": 0.6705022946664397,
+      "gain controls + lists over controls": -0.009743857945135548,
+      "gain combined over controls": -0.010299710970262832
+    },
+    {
+      "run": "hm_seed3",
+      "kind": "history",
+      "group": "2-3",
+      "cases": 5383,
+      "share": 0.08903701743359026,
+      "miss_rate": 0.9778933680104032,
+      "auroc controls3": 0.6282861548874868,
+      "gain controls3 + lists over controls3": 0.0010599984674720675,
+      "auroc controls": 0.6576196968148962,
+      "gain controls + lists over controls": -0.008050560649791816,
+      "gain combined over controls": -0.007837443488033502
+    },
+    {
+      "run": "hm_seed3",
+      "kind": "history",
+      "group": "30+",
+      "cases": 32426,
+      "share": 0.5363392768533527,
+      "miss_rate": 0.9901313760562511,
+      "auroc controls3": 0.6774195730548807,
+      "gain controls3 + lists over controls3": 0.0029844499470504937,
+      "auroc controls": 0.6608180227216097,
+      "gain controls + lists over controls": 0.0021527323553228728,
+      "gain combined over controls": -0.0013323541549866702
+    },
+    {
+      "run": "hm_seed3",
+      "kind": "history",
+      "group": "4-9",
+      "cases": 6911,
+      "share": 0.11431076118958616,
+      "miss_rate": 0.9790189552886702,
+      "auroc controls3": 0.6872195663917967,
+      "gain controls3 + lists over controls3": 0.018835557095823963,
+      "auroc controls": 0.7047351361268819,
+      "gain controls + lists over controls": 0.004142415933623633,
+      "gain combined over controls": 0.004065968789179086
+    },
+    {
+      "run": "hm_seed3",
+      "kind": "target popularity",
+      "group": "head",
+      "cases": 29300,
+      "share": 0.48463396076615173,
+      "miss_rate": 0.9682252559726963,
+      "auroc controls3": 0.6353734441601453,
+      "gain controls3 + lists over controls3": 0.0008371151715165226,
+      "auroc controls": 0.6436788670285363,
+      "gain controls + lists over controls": -0.00021573903739569023,
+      "gain combined over controls": -0.0008673292381787823
+    },
+    {
+      "run": "hm_seed3",
+      "kind": "target popularity",
+      "group": "mid",
+      "cases": 18989,
+      "share": 0.3140858116378312,
+      "miss_rate": 0.9997893517299489,
+      "auroc controls3": 0.1423689755069792,
+      "gain controls3 + lists over controls3": 0.04604951277324204,
+      "auroc controls": 0.05190281801422175,
+      "gain controls + lists over controls": 0.02420331840927048,
+      "gain combined over controls": 0.021049512773242032
+    },
+    {
+      "run": "hm_seed3",
+      "kind": "target popularity",
+      "group": "tail",
+      "cases": 12169,
+      "share": 0.20128022759601708,
+      "miss_rate": 0.9999178239789629,
+      "auroc controls3": 0.28550295857988167,
+      "gain controls3 + lists over controls3": 0.07601906640368178,
+      "auroc controls": 0.20800460223537146,
+      "gain controls + lists over controls": 0.045611439842209084,
+      "gain combined over controls": 0.04520052596975674
+    },
+    {
+      "run": "hm_seed4",
+      "kind": "history",
+      "group": "1",
+      "cases": 6653,
+      "share": 0.11004333586952926,
+      "miss_rate": 0.9676837516909664,
+      "auroc controls3": 0.6005125815470643,
+      "gain controls3 + lists over controls3": -0.002319079303842675,
+      "auroc controls": 0.6079332740920551,
+      "gain controls + lists over controls": -0.007723762254636224,
+      "gain combined over controls": -0.007180115159265088
+    },
+    {
+      "run": "hm_seed4",
+      "kind": "history",
+      "group": "10-29",
+      "cases": 9085,
+      "share": 0.15026960865394157,
+      "miss_rate": 0.9820583379196478,
+      "auroc controls3": 0.6651222661842306,
+      "gain controls3 + lists over controls3": 0.002125441625649871,
+      "auroc controls": 0.6908125361861422,
+      "gain controls + lists over controls": -0.002730549561778095,
+      "gain combined over controls": -0.0034979364444133187
+    },
+    {
+      "run": "hm_seed4",
+      "kind": "history",
+      "group": "2-3",
+      "cases": 5383,
+      "share": 0.08903701743359026,
+      "miss_rate": 0.9726918075422627,
+      "auroc controls3": 0.6116660950094324,
+      "gain controls3 + lists over controls3": -0.022941644190143662,
+      "auroc controls": 0.6266240262338703,
+      "gain controls + lists over controls": -0.025780442046948737,
+      "gain combined over controls": -0.02572587476549071
+    },
+    {
+      "run": "hm_seed4",
+      "kind": "history",
+      "group": "30+",
+      "cases": 32426,
+      "share": 0.5363392768533527,
+      "miss_rate": 0.9904706100043176,
+      "auroc controls3": 0.6984563317393434,
+      "gain controls3 + lists over controls3": -0.0112016612400071,
+      "auroc controls": 0.6836031750014334,
+      "gain controls + lists over controls": -0.0028972749613997983,
+      "gain combined over controls": -0.0019076690978061528
+    },
+    {
+      "run": "hm_seed4",
+      "kind": "history",
+      "group": "4-9",
+      "cases": 6911,
+      "share": 0.11431076118958616,
+      "miss_rate": 0.9771378961076544,
+      "auroc controls3": 0.6952985733485539,
+      "gain controls3 + lists over controls3": 0.0046589701342301115,
+      "auroc controls": 0.7074141450494577,
+      "gain controls + lists over controls": -0.004632727695332961,
+      "gain combined over controls": -0.003272807022476676
+    },
+    {
+      "run": "hm_seed4",
+      "kind": "target popularity",
+      "group": "head",
+      "cases": 29300,
+      "share": 0.48463396076615173,
+      "miss_rate": 0.9663481228668942,
+      "auroc controls3": 0.6457498107645627,
+      "gain controls3 + lists over controls3": -0.005434205600165387,
+      "auroc controls": 0.6576701567942579,
+      "gain controls + lists over controls": -0.007011955610517373,
+      "gain combined over controls": -0.007651963972266529
+    },
+    {
+      "run": "hm_seed4",
+      "kind": "target popularity",
+      "group": "mid",
+      "cases": 18989,
+      "share": 0.3140858116378312,
+      "miss_rate": 0.9997366896624361,
+      "auroc controls3": 0.10544142435735357,
+      "gain controls3 + lists over controls3": 0.0044458491361145935,
+      "auroc controls": 0.05678992836072482,
+      "gain controls + lists over controls": 0.007100716392751789,
+      "gain combined over controls": 0.007443109987357775
+    },
+    {
+      "run": "hm_seed4",
+      "kind": "target popularity",
+      "group": "tail",
+      "cases": 12169,
+      "share": 0.20128022759601708,
+      "miss_rate": 0.9999178239789629,
+      "auroc controls3": 0.044543063773833005,
+      "gain controls3 + lists over controls3": 0.03402366863905325,
+      "auroc controls": 0.014546351084812623,
+      "gain controls + lists over controls": 0.023750821827744906,
+      "gain combined over controls": 0.025887573964497042
+    }
+  ],
+  "bootstrap": {
+    "hm_seed42": {
+      "controls3 + lists over controls3": [
+        -0.007348695667557986,
+        0.001567160091703197
+      ],
+      "controls + lists over controls": [
+        -0.005333341700238095,
+        0.0006207508012172541
+      ],
+      "combined over controls": [
+        -0.010185667250642075,
+        -0.0005225090864470064
+      ]
+    },
+    "hm_seed1": {
+      "controls3 + lists over controls3": [
+        -0.01734535639583012,
+        0.002790352370501188
+      ],
+      "controls + lists over controls": [
+        -0.005945068765778982,
+        0.0034671559301057094
+      ],
+      "combined over controls": [
+        -0.01130050534537729,
+        0.0008749892378519965
+      ]
+    },
+    "hm_seed2": {
+      "controls3 + lists over controls3": [
+        -0.009947016726310301,
+        0.0035881260762635693
+      ],
+      "controls + lists over controls": [
+        -0.003910434940760191,
+        0.0031573584936005804
+      ],
+      "combined over controls": [
+        -0.0052965554614468726,
+        0.003798999798595062
+      ]
+    },
+    "hm_seed3": {
+      "controls3 + lists over controls3": [
+        -0.008169731942233338,
+        0.006621646267150059
+      ],
+      "controls + lists over controls": [
+        -0.0037816337687237274,
+        0.0029360010652911077
+      ],
+      "combined over controls": [
+        -0.004582728264071417,
+        0.0017023351407068274
+      ]
+    },
+    "hm_seed4": {
+      "controls3 + lists over controls3": [
+        -0.014974798271380891,
+        0.0008207289485557889
+      ],
+      "controls + lists over controls": [
+        -0.011479123387870943,
+        -0.002714130223442222
+      ],
+      "combined over controls": [
+        -0.011944518394635922,
+        -0.0033684562029763407
+      ]
+    }
+  },
+  "popularity_bounds": [
+    8.0,
+    25.0
+  ],
+  "history_bins": [
+    "1",
+    "2-3",
+    "4-9",
+    "10-29",
+    "30+"
+  ]
+}

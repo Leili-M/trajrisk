@@ -1,0 +1,607 @@
+{
+  "rows": [
+    {
+      "run": "vg_base",
+      "kind": "history",
+      "group": "1",
+      "cases": 5864,
+      "share": 0.2225426944971537,
+      "miss_rate": 0.9355388813096862,
+      "auroc controls3": 0.5952033748242279,
+      "gain controls3 + lists over controls3": 0.054255227833426845,
+      "auroc controls": 0.62995392793971,
+      "gain controls + lists over controls": 0.03078543362903563,
+      "gain combined over controls": 0.02373188510629265
+    },
+    {
+      "run": "vg_base",
+      "kind": "history",
+      "group": "10-29",
+      "cases": 2798,
+      "share": 0.10618595825426945,
+      "miss_rate": 0.9435310936383131,
+      "auroc controls3": 0.5644538741848869,
+      "gain controls3 + lists over controls3": 0.019783275795934085,
+      "auroc controls": 0.5643387993862677,
+      "gain controls + lists over controls": 0.017558496355964737,
+      "gain combined over controls": 0.013775412351361704
+    },
+    {
+      "run": "vg_base",
+      "kind": "history",
+      "group": "2-3",
+      "cases": 8983,
+      "share": 0.3409108159392789,
+      "miss_rate": 0.9222976733830569,
+      "auroc controls3": 0.6188913751333667,
+      "gain controls3 + lists over controls3": 0.04954236001473311,
+      "auroc controls": 0.654147897346155,
+      "gain controls + lists over controls": 0.026574245235546745,
+      "gain combined over controls": 0.02542396328504748
+    },
+    {
+      "run": "vg_base",
+      "kind": "history",
+      "group": "30+",
+      "cases": 534,
+      "share": 0.02026565464895636,
+      "miss_rate": 0.947565543071161,
+      "auroc controls3": 0.5664172783738002,
+      "gain controls3 + lists over controls3": 0.014539808018068756,
+      "auroc controls": 0.6531620553359685,
+      "gain controls + lists over controls": 0.010657820440428956,
+      "gain combined over controls": 0.02463297571993206
+    },
+    {
+      "run": "vg_base",
+      "kind": "history",
+      "group": "4-9",
+      "cases": 8171,
+      "share": 0.3100948766603416,
+      "miss_rate": 0.9273038795741035,
+      "auroc controls3": 0.5872354711605074,
+      "gain controls3 + lists over controls3": 0.054506394284670634,
+      "auroc controls": 0.6522077046031117,
+      "gain controls + lists over controls": 0.009788394703268755,
+      "gain combined over controls": 0.01007012627706838
+    },
+    {
+      "run": "vg_base",
+      "kind": "target popularity",
+      "group": "head",
+      "cases": 11219,
+      "share": 0.4257685009487666,
+      "miss_rate": 0.8638916124431768,
+      "auroc controls3": 0.5779837596532467,
+      "gain controls3 + lists over controls3": 0.05245014015164107,
+      "auroc controls": 0.5994521572217353,
+      "gain controls + lists over controls": 0.037059338564255806,
+      "gain combined over controls": 0.0375400245032258
+    },
+    {
+      "run": "vg_base",
+      "kind": "target popularity",
+      "group": "mid",
+      "cases": 10526,
+      "share": 0.3994686907020873,
+      "miss_rate": 0.9691240737222117,
+      "auroc controls3": 0.555377828719658,
+      "gain controls3 + lists over controls3": 0.10799906494838363,
+      "auroc controls": 0.7471861733012601,
+      "gain controls + lists over controls": -0.02871935632253264,
+      "gain combined over controls": -0.04049557735666942
+    },
+    {
+      "run": "vg_base",
+      "kind": "target popularity",
+      "group": "tail",
+      "cases": 4605,
+      "share": 0.17476280834914612,
+      "miss_rate": 0.9991313789359392,
+      "auroc controls3": 0.30216257335361874,
+      "gain controls3 + lists over controls3": 0.22549445772658117,
+      "auroc controls": 0.4677244077374484,
+      "gain controls + lists over controls": 0.04145837861334489,
+      "gain combined over controls": 0.0364594653336231
+    },
+    {
+      "run": "vg_seed1",
+      "kind": "history",
+      "group": "1",
+      "cases": 5864,
+      "share": 0.2225426944971537,
+      "miss_rate": 0.9340040927694406,
+      "auroc controls3": 0.6017876494563359,
+      "gain controls3 + lists over controls3": 0.060417088326612634,
+      "auroc controls": 0.6367636048139295,
+      "gain controls + lists over controls": 0.028880226873101877,
+      "gain combined over controls": 0.016845875092411422
+    },
+    {
+      "run": "vg_seed1",
+      "kind": "history",
+      "group": "10-29",
+      "cases": 2798,
+      "share": 0.10618595825426945,
+      "miss_rate": 0.9421015010721944,
+      "auroc controls3": 0.5670886490942131,
+      "gain controls3 + lists over controls3": 0.006109612394387232,
+      "auroc controls": 0.5852933737986848,
+      "gain controls + lists over controls": 0.0031262294160625537,
+      "gain combined over controls": 0.00099289982952111
+    },
+    {
+      "run": "vg_seed1",
+      "kind": "history",
+      "group": "2-3",
+      "cases": 8983,
+      "share": 0.3409108159392789,
+      "miss_rate": 0.9230769230769231,
+      "auroc controls3": 0.5895262499101186,
+      "gain controls3 + lists over controls3": 0.0638437271151453,
+      "auroc controls": 0.6512369078560194,
+      "gain controls + lists over controls": 0.020247227987431282,
+      "gain combined over controls": 0.021066632319750256
+    },
+    {
+      "run": "vg_seed1",
+      "kind": "history",
+      "group": "30+",
+      "cases": 534,
+      "share": 0.02026565464895636,
+      "miss_rate": 0.9588014981273408,
+      "auroc controls3": 0.6298828125,
+      "gain controls3 + lists over controls3": -0.0035511363636362425,
+      "auroc controls": 0.6651278409090909,
+      "gain controls + lists over controls": -0.0015092329545455252,
+      "gain combined over controls": 0.007634943181818121
+    },
+    {
+      "run": "vg_seed1",
+      "kind": "history",
+      "group": "4-9",
+      "cases": 8171,
+      "share": 0.3100948766603416,
+      "miss_rate": 0.9233875902582304,
+      "auroc controls3": 0.5820112339805681,
+      "gain controls3 + lists over controls3": 0.050994988535242314,
+      "auroc controls": 0.6682823188663546,
+      "gain controls + lists over controls": 0.00015921510341565526,
+      "gain combined over controls": 0.0018083194125978475
+    },
+    {
+      "run": "vg_seed1",
+      "kind": "target popularity",
+      "group": "head",
+      "cases": 11219,
+      "share": 0.4257685009487666,
+      "miss_rate": 0.8615741153400481,
+      "auroc controls3": 0.5757640678374383,
+      "gain controls3 + lists over controls3": 0.04664909723329713,
+      "auroc controls": 0.612349977996573,
+      "gain controls + lists over controls": 0.02429659980102994,
+      "gain combined over controls": 0.026561560499298587
+    },
+    {
+      "run": "vg_seed1",
+      "kind": "target popularity",
+      "group": "mid",
+      "cases": 10526,
+      "share": 0.3994686907020873,
+      "miss_rate": 0.9684590537716131,
+      "auroc controls3": 0.5113369901028482,
+      "gain controls3 + lists over controls3": 0.12988357195704525,
+      "auroc controls": 0.7016692431881736,
+      "gain controls + lists over controls": -0.014507116163299472,
+      "gain combined over controls": -0.02815883900522631
+    },
+    {
+      "run": "vg_seed1",
+      "kind": "target popularity",
+      "group": "tail",
+      "cases": 4605,
+      "share": 0.17476280834914612,
+      "miss_rate": 0.9993485342019544,
+      "auroc controls3": 0.023033463711429815,
+      "gain controls3 + lists over controls3": 0.16079965232507606,
+      "auroc controls": 0.22171519629146746,
+      "gain controls + lists over controls": -0.0642474286542083,
+      "gain combined over controls": -0.0001448645516441971
+    },
+    {
+      "run": "vg_seed2",
+      "kind": "history",
+      "group": "1",
+      "cases": 5864,
+      "share": 0.2225426944971537,
+      "miss_rate": 0.930081855388813,
+      "auroc controls3": 0.6033504163424472,
+      "gain controls3 + lists over controls3": 0.061386585813052785,
+      "auroc controls": 0.6378527283622671,
+      "gain controls + lists over controls": 0.03178468253329392,
+      "gain combined over controls": 0.021927070755856093
+    },
+    {
+      "run": "vg_seed2",
+      "kind": "history",
+      "group": "10-29",
+      "cases": 2798,
+      "share": 0.10618595825426945,
+      "miss_rate": 0.9471050750536097,
+      "auroc controls3": 0.5911805201427843,
+      "gain controls3 + lists over controls3": 0.005420703722590514,
+      "auroc controls": 0.5713691993880674,
+      "gain controls + lists over controls": 0.012899031106578196,
+      "gain combined over controls": 0.010418154003059565
+    },
+    {
+      "run": "vg_seed2",
+      "kind": "history",
+      "group": "2-3",
+      "cases": 8983,
+      "share": 0.3409108159392789,
+      "miss_rate": 0.9211844595346766,
+      "auroc controls3": 0.614198542338744,
+      "gain controls3 + lists over controls3": 0.04776674006178838,
+      "auroc controls": 0.6523375492856778,
+      "gain controls + lists over controls": 0.016426852373393364,
+      "gain combined over controls": 0.016661375390444877
+    },
+    {
+      "run": "vg_seed2",
+      "kind": "history",
+      "group": "30+",
+      "cases": 534,
+      "share": 0.02026565464895636,
+      "miss_rate": 0.9606741573033708,
+      "auroc controls3": 0.5176830966304651,
+      "gain controls3 + lists over controls3": -0.026269377146570183,
+      "auroc controls": 0.6891302329898821,
+      "gain controls + lists over controls": -0.012345679012345623,
+      "gain combined over controls": -0.009839413348185166
+    },
+    {
+      "run": "vg_seed2",
+      "kind": "history",
+      "group": "4-9",
+      "cases": 8171,
+      "share": 0.3100948766603416,
+      "miss_rate": 0.9268143434096194,
+      "auroc controls3": 0.5701674272311377,
+      "gain controls3 + lists over controls3": 0.060549337617755605,
+      "auroc controls": 0.6548939265397622,
+      "gain controls + lists over controls": 0.006623159994117334,
+      "gain combined over controls": 0.008264928166293983
+    },
+    {
+      "run": "vg_seed2",
+      "kind": "target popularity",
+      "group": "head",
+      "cases": 11219,
+      "share": 0.4257685009487666,
+      "miss_rate": 0.8570282556377574,
+      "auroc controls3": 0.585362678846306,
+      "gain controls3 + lists over controls3": 0.03867074383723479,
+      "auroc controls": 0.6069276885788648,
+      "gain controls + lists over controls": 0.022286068500096623,
+      "gain combined over controls": 0.022512167319610477
+    },
+    {
+      "run": "vg_seed2",
+      "kind": "target popularity",
+      "group": "mid",
+      "cases": 10526,
+      "share": 0.3994686907020873,
+      "miss_rate": 0.9734942048261448,
+      "auroc controls3": 0.5102575699225544,
+      "gain controls3 + lists over controls3": 0.15523592358354388,
+      "auroc controls": 0.7602522357273551,
+      "gain controls + lists over controls": -0.01933671993516417,
+      "gain combined over controls": -0.028814448008736115
+    },
+    {
+      "run": "vg_seed2",
+      "kind": "target popularity",
+      "group": "tail",
+      "cases": 4605,
+      "share": 0.17476280834914612,
+      "miss_rate": 0.9995656894679696,
+      "auroc controls3": 0.028785574625244406,
+      "gain controls3 + lists over controls3": 0.3239191831414295,
+      "auroc controls": 0.305561590267217,
+      "gain controls + lists over controls": 0.07223549858787748,
+      "gain combined over controls": 0.1213339126656528
+    },
+    {
+      "run": "vg_seed3",
+      "kind": "history",
+      "group": "1",
+      "cases": 5864,
+      "share": 0.2225426944971537,
+      "miss_rate": 0.9367326057298773,
+      "auroc controls3": 0.6093182550886869,
+      "gain controls3 + lists over controls3": 0.0652381394011392,
+      "auroc controls": 0.634828301445162,
+      "gain controls + lists over controls": 0.043561445269966304,
+      "gain combined over controls": 0.04138469789778998
+    },
+    {
+      "run": "vg_seed3",
+      "kind": "history",
+      "group": "10-29",
+      "cases": 2798,
+      "share": 0.10618595825426945,
+      "miss_rate": 0.9453180843459614,
+      "auroc controls3": 0.5712541853540407,
+      "gain controls3 + lists over controls3": -0.010477284801759246,
+      "auroc controls": 0.5807726997541298,
+      "gain controls + lists over controls": -0.007996342834550418,
+      "gain combined over controls": -0.008226151204022925
+    },
+    {
+      "run": "vg_seed3",
+      "kind": "history",
+      "group": "2-3",
+      "cases": 8983,
+      "share": 0.3409108159392789,
+      "miss_rate": 0.9244127796949794,
+      "auroc controls3": 0.625935457759768,
+      "gain controls3 + lists over controls3": 0.03767139565438238,
+      "auroc controls": 0.6559730605191245,
+      "gain controls + lists over controls": 0.017947061727974667,
+      "gain combined over controls": 0.018732566025635444
+    },
+    {
+      "run": "vg_seed3",
+      "kind": "history",
+      "group": "30+",
+      "cases": 534,
+      "share": 0.02026565464895636,
+      "miss_rate": 0.9606741573033708,
+      "auroc controls3": 0.4650515176830966,
+      "gain controls3 + lists over controls3": 0.07639469042977809,
+      "auroc controls": 0.7592128469321452,
+      "gain controls + lists over controls": 0.013645224171539905,
+      "gain combined over controls": 0.023484637519725182
+    },
+    {
+      "run": "vg_seed3",
+      "kind": "history",
+      "group": "4-9",
+      "cases": 8171,
+      "share": 0.3100948766603416,
+      "miss_rate": 0.9276710316974667,
+      "auroc controls3": 0.5619829545200881,
+      "gain controls3 + lists over controls3": 0.06454781261579812,
+      "auroc controls": 0.6622881034336507,
+      "gain controls + lists over controls": -0.0002779154333472089,
+      "gain combined over controls": 0.0001895182352704694
+    },
+    {
+      "run": "vg_seed3",
+      "kind": "target popularity",
+      "group": "head",
+      "cases": 11219,
+      "share": 0.4257685009487666,
+      "miss_rate": 0.8621980568678135,
+      "auroc controls3": 0.5768146528613742,
+      "gain controls3 + lists over controls3": 0.04811899568677114,
+      "auroc controls": 0.6123715082151422,
+      "gain controls + lists over controls": 0.025435024124578876,
+      "gain combined over controls": 0.027656569031121125
+    },
+    {
+      "run": "vg_seed3",
+      "kind": "target popularity",
+      "group": "mid",
+      "cases": 10526,
+      "share": 0.3994686907020873,
+      "miss_rate": 0.9747292418772563,
+      "auroc controls3": 0.5291412009556055,
+      "gain controls3 + lists over controls3": 0.1338829529965263,
+      "auroc controls": 0.7537201922935995,
+      "gain controls + lists over controls": -0.016534391534391624,
+      "gain combined over controls": -0.020744844567559206
+    },
+    {
+      "run": "vg_seed3",
+      "kind": "target popularity",
+      "group": "tail",
+      "cases": 4605,
+      "share": 0.17476280834914612,
+      "miss_rate": 0.9993485342019544,
+      "auroc controls3": 0.31417499637838625,
+      "gain controls3 + lists over controls3": -0.08782413443430395,
+      "auroc controls": 0.44647254816746346,
+      "gain controls + lists over controls": -0.10053599884108361,
+      "gain combined over controls": -0.07308416630450526
+    },
+    {
+      "run": "vg_seed4",
+      "kind": "history",
+      "group": "1",
+      "cases": 5864,
+      "share": 0.2225426944971537,
+      "miss_rate": 0.9343451568894953,
+      "auroc controls3": 0.5817809677090569,
+      "gain controls3 + lists over controls3": 0.06732530109058665,
+      "auroc controls": 0.631666125442362,
+      "gain controls + lists over controls": 0.02922421619264115,
+      "gain combined over controls": 0.025193240780026604
+    },
+    {
+      "run": "vg_seed4",
+      "kind": "history",
+      "group": "10-29",
+      "cases": 2798,
+      "share": 0.10618595825426945,
+      "miss_rate": 0.9460328806290207,
+      "auroc controls3": 0.5934245190731979,
+      "gain controls3 + lists over controls3": 0.011271037811142026,
+      "auroc controls": 0.587492525588133,
+      "gain controls + lists over controls": 0.014806215708399129,
+      "gain combined over controls": 0.008924260127046169
+    },
+    {
+      "run": "vg_seed4",
+      "kind": "history",
+      "group": "2-3",
+      "cases": 8983,
+      "share": 0.3409108159392789,
+      "miss_rate": 0.9209618167650006,
+      "auroc controls3": 0.6046751438158748,
+      "gain controls3 + lists over controls3": 0.046686914670666324,
+      "auroc controls": 0.6612267464329067,
+      "gain controls + lists over controls": 0.010212076277318127,
+      "gain combined over controls": 0.008860658207677008
+    },
+    {
+      "run": "vg_seed4",
+      "kind": "history",
+      "group": "30+",
+      "cases": 534,
+      "share": 0.02026565464895636,
+      "miss_rate": 0.9625468164794008,
+      "auroc controls3": 0.5231517509727626,
+      "gain controls3 + lists over controls3": 0.01964980544747097,
+      "auroc controls": 0.6735408560311285,
+      "gain controls + lists over controls": 0.006712062256809315,
+      "gain combined over controls": 0.01935797665369643
+    },
+    {
+      "run": "vg_seed4",
+      "kind": "history",
+      "group": "4-9",
+      "cases": 8171,
+      "share": 0.3100948766603416,
+      "miss_rate": 0.9255905029984091,
+      "auroc controls3": 0.5980709409382241,
+      "gain controls3 + lists over controls3": 0.044963316909886863,
+      "auroc controls": 0.6563158938599971,
+      "gain controls + lists over controls": 0.005947410175577761,
+      "gain combined over controls": 0.0046182244584089815
+    },
+    {
+      "run": "vg_seed4",
+      "kind": "target popularity",
+      "group": "head",
+      "cases": 11219,
+      "share": 0.4257685009487666,
+      "miss_rate": 0.8621980568678135,
+      "auroc controls3": 0.5778471209053514,
+      "gain controls3 + lists over controls3": 0.046391250020562436,
+      "auroc controls": 0.6093870135580975,
+      "gain controls + lists over controls": 0.027964771441398972,
+      "gain combined over controls": 0.028858952962387496
+    },
+    {
+      "run": "vg_seed4",
+      "kind": "target popularity",
+      "group": "mid",
+      "cases": 10526,
+      "share": 0.3994686907020873,
+      "miss_rate": 0.9691240737222117,
+      "auroc controls3": 0.541931786476439,
+      "gain controls3 + lists over controls3": 0.1219343503276451,
+      "auroc controls": 0.7258805697782269,
+      "gain controls + lists over controls": -0.02130047582062089,
+      "gain combined over controls": -0.03164425810440907
+    },
+    {
+      "run": "vg_seed4",
+      "kind": "target popularity",
+      "group": "tail",
+      "cases": 4605,
+      "share": 0.17476280834914612,
+      "miss_rate": 0.9993485342019544,
+      "auroc controls3": 0.45259307547443145,
+      "gain controls3 + lists over controls3": -0.16239316239316243,
+      "auroc controls": 0.4977183833116036,
+      "gain controls + lists over controls": -0.24004056207446034,
+      "gain combined over controls": -0.18281906417499633
+    }
+  ],
+  "bootstrap": {
+    "vg_base": {
+      "controls3 + lists over controls3": [
+        0.0380139656940611,
+        0.06214766924731729
+      ],
+      "controls + lists over controls": [
+        0.016900850922917012,
+        0.03293939618393133
+      ],
+      "combined over controls": [
+        0.01500112836467142,
+        0.033159544324134864
+      ]
+    },
+    "vg_seed1": {
+      "controls3 + lists over controls3": [
+        0.04424096836166857,
+        0.0655208982576546
+      ],
+      "controls + lists over controls": [
+        0.012982493013246384,
+        0.025143823191740987
+      ],
+      "combined over controls": [
+        0.011745175283265052,
+        0.02634161340461428
+      ]
+    },
+    "vg_seed2": {
+      "controls3 + lists over controls3": [
+        0.0385803085360552,
+        0.061820322563816525
+      ],
+      "controls + lists over controls": [
+        0.012339885848348746,
+        0.02440975690998842
+      ],
+      "combined over controls": [
+        0.009866249503497671,
+        0.023302394813249146
+      ]
+    },
+    "vg_seed3": {
+      "controls3 + lists over controls3": [
+        0.03965469516920039,
+        0.06479772428512233
+      ],
+      "controls + lists over controls": [
+        0.013695347973121363,
+        0.027946811547363892
+      ],
+      "combined over controls": [
+        0.014996977997345262,
+        0.028910615080211685
+      ]
+    },
+    "vg_seed4": {
+      "controls3 + lists over controls3": [
+        0.03601268462017539,
+        0.05986131964007703
+      ],
+      "controls + lists over controls": [
+        0.010192606337718476,
+        0.025792288059976968
+      ],
+      "combined over controls": [
+        0.010388956237225928,
+        0.026471085697511856
+      ]
+    }
+  },
+  "popularity_bounds": [
+    12.0,
+    69.0
+  ],
+  "history_bins": [
+    "1",
+    "2-3",
+    "4-9",
+    "10-29",
+    "30+"
+  ]
+}
