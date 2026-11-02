@@ -78,11 +78,13 @@ def entropy(final_scores, tau, scale):
     final top-M scores on the model-validation cases), so tau means the same for every
     model. Only the top-M scores are logged, so this is a truncated entropy.
     """
-    z = (final_scores - final_scores[:, :1]) / (tau * scale)
-    p = np.exp(z)
-    p /= p.sum(axis=1, keepdims=True)
-    h = -(p * np.log(np.clip(p, 1e-300, None))).sum(axis=1)
-    return h / np.log(final_scores.shape[1])
+    s = np.asarray(final_scores, dtype=np.float64)          # float32 logs underflow to 0
+    z = (s - s[:, :1]) / (tau * scale)
+    z = np.where(np.isfinite(z), z, -np.inf)                 # -inf: item not available
+    log_p = z - np.log(np.exp(z).sum(axis=1, keepdims=True))
+    p = np.exp(log_p)
+    plogp = np.where(p > 0, p * np.where(p > 0, log_p, 0.0), 0.0)   # 0 * log 0 = 0
+    return -plogp.sum(axis=1) / np.log(s.shape[1])
 
 
 def compute_signals(items, scores, dist_to_final, final_norm, score_scale, k=10):
@@ -102,9 +104,10 @@ def compute_signals(items, scores, dist_to_final, final_norm, score_scale, k=10)
     per_rank = np.stack([rank_change(items[:, s, :k], final) for s in range(n_ck - 1)], axis=1)
     _combine(per_set, "u_set", out)
     _combine(per_rank, "u_rank", out)
-    out["u_set50_unif"] = np.stack(
-        [set_change(items[:, s, :50], items[:, -1, :50]) for s in range(n_ck - 1)], axis=1
-    ).mean(axis=1) if items.shape[2] >= 50 else np.full(len(items), np.nan)
+    if items.shape[2] >= 50:                                 # only if 50 items were logged
+        out["u_set50_unif"] = np.stack(
+            [set_change(items[:, s, :50], items[:, -1, :50]) for s in range(n_ck - 1)], axis=1
+        ).mean(axis=1)
 
     # consecutive checkpoints: gradual convergence vs repeated reversals
     cons_set = np.stack([set_change(items[:, s, :k], items[:, s + 1, :k])
@@ -127,7 +130,11 @@ def compute_signals(items, scores, dist_to_final, final_norm, score_scale, k=10)
     out["top_margin"] = -(fs[:, 0] - fs[:, 1])
     for tau in TAUS:
         out[f"entropy_t{tau:g}"] = entropy(fs, tau, score_scale)
-    return {name: np.asarray(v, dtype=np.float64) for name, v in out.items()}
+    out = {name: np.asarray(v, dtype=np.float64) for name, v in out.items()}
+    bad = [name for name, v in out.items() if not np.isfinite(v).all()]
+    if bad:
+        raise ValueError(f"Non-finite values in signals: {bad}")
+    return out
 
 
 SIGNAL_GROUPS = {

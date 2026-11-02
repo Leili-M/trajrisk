@@ -96,3 +96,13 @@ def test_reversal_detects_return():
 def test_signal_code_never_receives_labels():
     params = inspect.signature(sg.compute_signals).parameters
     assert not {"target", "targets", "labels", "target_rank", "miss"} & set(params)
+
+
+def test_entropy_float32_extreme_scores_is_finite():
+    # float32 scores with a large gap: probabilities underflow to 0 at low temperature
+    s = np.array([[50.0] + [0.0] * 49, [1.0] * 50], dtype=np.float32)
+    for tau in sg.TAUS:
+        h = sg.entropy(s, tau, scale=0.01)
+        assert np.isfinite(h).all()
+        assert h[0] == pytest.approx(0.0, abs=1e-6)          # all mass on one item
+        assert h[1] == pytest.approx(1.0)                    # uniform
