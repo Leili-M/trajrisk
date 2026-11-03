@@ -35,8 +35,8 @@ from trajrisk import preference_eval as pe
 from trajrisk.trajectory import diffrec_trajectory
 
 REPO = Path(__file__).resolve().parents[1]
-BETAS = (0.0, 0.25, 0.5, 1.0, 2.0, 4.0)
-GAMMAS = (0.0, 1.0, 10.0)
+BETAS = (0.0, 0.25, 0.5, 1.0, 2.0, 4.0, 8.0)
+GAMMAS = (0.0, 0.25, 0.5, 1.0, 2.0, 5.0, 20.0)
 
 
 def md(df):
@@ -75,15 +75,16 @@ def scenario_inputs(scen, attrs, pref):
         status = bm.hard_status(attrs, hard)
         feasible = (status == 1).all(axis=1)
         viol = (status == 0).sum(axis=1)
+        not_ok = (status != 1).sum(axis=1)            # violated or unknown constraints
         out.append({"util": bm.item_utility(pref, s["soft"]), "feasible": feasible, "viol": viol,
-                    "unknown": ~feasible & (viol == 0),
+                    "penalty": not_ok, "unknown": ~feasible & (viol == 0),
                     "w": np.array([s["soft"].get(n, 0.0) for n in pf.PREF_NAMES], dtype=float)})
     return out
 
 
 def lists_for(traj_z, seen, inp, beta, gamma, hard):
     """(C, K) lists: the same reranker at every checkpoint."""
-    return np.stack([pf.rerank(traj_z[c], inp["util"], inp["viol"], beta, gamma, seen,
+    return np.stack([pf.rerank(traj_z[c], inp["util"], inp["penalty"], beta, gamma, seen,
                                inp["feasible"] if hard else None) for c in range(len(traj_z))])
 
 
@@ -122,7 +123,7 @@ def main():
             for idx, h in dd.iterate_batches(hist, args.batch_size):
                 chunks.append(diffrec_trajectory(model, diffusion, h.to(device)).float().cpu().numpy())
         t = np.concatenate(chunks, axis=1)                          # (C, scenarios, items)
-        traj[run] = np.stack([[pf.zscore(t[c, i], seen[i]) for c in range(t.shape[0])]
+        traj[run] = np.stack([[pf.percentile(t[c, i], seen[i]) for c in range(t.shape[0])]
                               for i in range(len(scen))]).astype(np.float32)  # (scen, C, items)
         print(f"{run}: trajectory {t.shape}, {time.time() - t0:.0f} s", flush=True)
 
@@ -135,7 +136,7 @@ def main():
             for run in args.runs:
                 for i in val_idx:
                     inp = inputs[i]
-                    final = pf.rerank(traj[run][i, -1], inp["util"], inp["viol"], beta, gamma, seen[i])
+                    final = pf.rerank(traj[run][i, -1], inp["util"], inp["penalty"], beta, gamma, seen[i])
                     regs.append(bm.regret(final[final >= 0], inp["util"], inp["feasible"]))
             grid.append({"beta": beta, "gamma": gamma, "valid mean regret": float(np.nanmean(regs))})
     grid = pd.DataFrame(grid)
@@ -181,8 +182,15 @@ def main():
         single, n_fail, n = pe.single_signal_table(df, pipe)
         judge, gains = pe.judge_table(df, pipe)
         subsets, med = pe.subset_table(df, pipe)
+        corr = pe.regret_correlation_table(df, pipe)
+        flags = pe.flag_rate_table(df, pipe)
         lines += ["", f"## Pipeline: {pipe}", "",
                   f"Test detection rows: {n} ({n_fail} failures).", "",
+                  "### Agreement with list quality (test): Spearman correlation with regret", "",
+                  md(corr), "",
+                  f"### Flags at a fixed rate: each signal flags lists above its validation "
+                  f"{int(100 * pe.FLAG_QUANTILE)}th percentile (test). False alarm = flagged "
+                  "list that is suitable (regret < 0.5).", "", md(flags), "",
                   "### Single signals (test)", "", md(single), ""]
         if len(judge):
             lines += ["### Judge fitted on validation scenarios (test AUROC)", "",
@@ -190,8 +198,9 @@ def main():
                       "Paired scenario bootstrap (95% interval of the AUROC gain):", ""]
             lines += [f"- {k}: {v[0]:+.3f} [{v[1]:+.3f}, {v[2]:+.3f}]" for k, v in gains.items()]
         lines += ["", f"### Diagnostic subsets (changing = membership change > {med:.3f}, "
-                  "the validation median)", "", md(subsets)]
+                  "the validation median; flags at the fixed-rate thresholds above)", "", md(subsets)]
         js[pipe] = {"single": single.to_dict("records"), "judge": judge.to_dict("records"),
+                    "regret_correlation": corr.to_dict("records"), "flags": flags.to_dict("records"),
                     "gains": gains, "subsets": subsets.to_dict("records")}
     rep = REPO / "reports" / "preference"
     rep.mkdir(parents=True, exist_ok=True)

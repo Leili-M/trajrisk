@@ -28,14 +28,28 @@ FAIL_REGRET = 0.5                                 # prespecified failure: regret
 
 # ---------------------------------------------------------------- request-aware reranker
 def zscore(scores, seen):
-    """Standardise one score vector over the items the user has not seen."""
+    """Standardise one score vector over the items the user has not seen.
+    (First version; replaced by percentile() because the top scores lie many standard
+    deviations above the mean, so the utility term could not change the lists.)"""
     x = scores[~seen]
     sd = x.std()
     return (scores - x.mean()) / (sd if sd > 0 else 1.0)
 
 
+def percentile(scores, seen):
+    """Model score as its percentile among the unseen items (0 = worst, 1 = best),
+    on the same 0-1 scale as the soft utility. Seen items get 0 (they are masked later)."""
+    out = np.zeros(len(scores), dtype=np.float32)
+    idx = np.flatnonzero(~seen)
+    order = np.argsort(scores[idx], kind="stable")
+    out[idx[order]] = (np.arange(1, len(idx) + 1) / len(idx)).astype(np.float32)
+    return out
+
+
 def rerank(z, util, viol, beta, gamma, seen, feasible=None, k=K):
-    """Proposal formula 9: normalised model score + beta * soft utility - gamma * violations.
+    """Proposal formula 9: normalised model score + beta * soft utility - gamma * c_q.
+    c_q (`viol`) counts the hard constraints that are violated OR unknown for the item,
+    because the evaluation counts only known-feasible recipes as suitable.
 
     feasible is None: soft enforcement (violations stay possible).
     feasible given:   hard filtering (only known-feasible recipes; may return < k items).

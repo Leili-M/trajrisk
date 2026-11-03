@@ -98,3 +98,16 @@ def test_evaluation_tables_run():
     assert len(judge) == 4 and "final checks + preference over final checks" in gains
     subsets, med = pe.subset_table(df, "soft")
     assert subsets["cases"].sum() == n
+
+
+def test_percentile_scale_and_new_tables():
+    scores = np.array([5.0, 1.0, 3.0, 100.0])
+    seen = np.array([False, False, True, False])
+    p = pf.percentile(scores, seen)
+    assert p[3] == pytest.approx(1.0) and p[1] == pytest.approx(1 / 3) and p[2] == 0
+    df = fake_rows()
+    corr = pe.regret_correlation_table(df, "soft")
+    assert corr.set_index("signal").loc["u_attr", "spearman with regret"] > 0
+    flags = pe.flag_rate_table(df, "soft")
+    row = flags.set_index("signal").loc["u_attr"]
+    assert 0 < row["flag rate"] < 1 and row["regret flagged"] > row["regret not flagged"]

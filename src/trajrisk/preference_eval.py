@@ -20,6 +20,7 @@ from .preference import FINAL_CHECKS, SIGNALS_IDENTITY, SIGNALS_OTHER, SIGNALS_P
 ORIENT = {"util_final": -1.0}
 DETECTORS = SIGNALS_IDENTITY + SIGNALS_PREFERENCE + SIGNALS_OTHER + FINAL_CHECKS
 MATCHED_RECALL = 0.8
+FLAG_QUANTILE = 0.75          # fixed flag rate: lists above the validation 75th percentile
 
 
 def risk(df, col):
@@ -73,12 +74,55 @@ def single_signal_table(df, pipeline):
             continue
         t = matched_threshold(valid, col)
         flag = s >= t
+        per_run = [auc(g["failure"].astype(bool), risk(g, col)) for _, g in test.groupby("run")]
+        per_run = [v for v in per_run if not np.isnan(v)]
         rows.append({"signal": col, "auroc": auc(y, s),
-                     "auroc_mean_over_runs": np.nanmean([auc(g["failure"].astype(bool), risk(g, col))
-                                                         for _, g in test.groupby("run")]),
+                     "auroc_mean_over_runs": float(np.mean(per_run)) if per_run else np.nan,
                      "recall at matched threshold": flag[y].mean() if y.any() else np.nan,
                      "false alarms among suitable": flag[~y].mean() if (~y).any() else np.nan})
     return pd.DataFrame(rows), int(y.sum()), int(len(y))
+
+
+def regret_correlation_table(df, pipeline):
+    """Spearman correlation of every signal with the regret of the final list (test).
+    A preference-aware signal should follow list quality more closely than an
+    identity-based one."""
+    from scipy.stats import spearmanr
+    _, test = detection_rows(df, pipeline)
+    rows = []
+    for col in DETECTORS:
+        s = risk(test, col)
+        if np.nanstd(s) == 0:
+            continue
+        rows.append({"signal": col,
+                     "spearman with regret": float(spearmanr(s, test["regret"]).correlation)})
+    return pd.DataFrame(rows)
+
+
+def flag_threshold(valid, col, q=FLAG_QUANTILE):
+    return float(np.quantile(risk(valid, col), q))
+
+
+def flag_rate_table(df, pipeline):
+    """Each signal flags the lists above its validation quantile. Reported on test:
+    flag rate, share of suitable lists flagged (false-alarm rate), share of flags that
+    are false alarms, mean regret of flagged and unflagged lists, recall of failures."""
+    valid, test = detection_rows(df, pipeline)
+    y = test["failure"].astype(bool).to_numpy()
+    reg = test["regret"].to_numpy()
+    rows = []
+    for col in DETECTORS:
+        s = risk(test, col)
+        if np.nanstd(s) == 0:
+            continue
+        flag = s > flag_threshold(valid, col)
+        rows.append({"signal": col, "flag rate": flag.mean(),
+                     "suitable lists flagged": flag[~y].mean() if (~y).any() else np.nan,
+                     "flags that are false alarms": (~y[flag]).mean() if flag.any() else np.nan,
+                     "regret flagged": reg[flag].mean() if flag.any() else np.nan,
+                     "regret not flagged": reg[~flag].mean() if (~flag).any() else np.nan,
+                     "failures flagged": flag[y].mean() if y.any() else np.nan})
+    return pd.DataFrame(rows)
 
 
 def _fit(train, cols):
@@ -142,13 +186,13 @@ def subset_table(df, pipeline, signals=("u_set", "u_rank", "u_attr", "u_util")):
     fail = test["failure"].astype(bool).to_numpy()
     names = {(True, False): "changing but suitable", (True, True): "consequentially unstable",
              (False, True): "stable but unsuitable", (False, False): "stable and suitable"}
-    thr = {c: matched_threshold(valid, c) for c in signals}
+    thr = {c: flag_threshold(valid, c) for c in signals}
     rows = []
     for (ch, fl), name in names.items():
         m = (changing == ch) & (fail == fl)
         row = {"subset": name, "cases": int(m.sum()),
                "mean regret": float(test.loc[m, "regret"].mean()) if m.any() else np.nan}
         for c in signals:
-            row[f"flagged by {c}"] = float((risk(test, c)[m] >= thr[c]).mean()) if m.any() else np.nan
+            row[f"flagged by {c}"] = float((risk(test, c)[m] > thr[c]).mean()) if m.any() else np.nan
         rows.append(row)
     return pd.DataFrame(rows), med
