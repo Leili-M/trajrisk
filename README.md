@@ -108,7 +108,7 @@ Target ranks are stored in separate label files that the signal code never reads
   oracle references), reliability tables: written by `scripts/judge.py`
 - `scripts/subgroups.py --config <c> --runs <runs>` → `reports/subgroups/<dataset>[_giffcf].md`
   (history length and target popularity groups fixed in advance; paired user bootstrap)
-- `scripts/make_figures.py` → `reports/figures/risk_coverage.pdf`, `reliability.pdf`
+- `scripts/make_figures.py` → `reports/figures/risk_coverage.pdf`, `reliability.pdf`, `quality_cost.pdf`
   (from the files written by `judge.py`; the judge also saves its fitted coefficients in
   `reports/judge/<dataset>[_giffcf]_parameters.json`)
 

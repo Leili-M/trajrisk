@@ -3,7 +3,8 @@
 Reads only files written by scripts/judge.py (no model is run):
   reports/judge/<dataset>[_giffcf]_reliability/reliability_<run>.csv
   reports/judge/<dataset>[_giffcf]_risk_coverage.csv
-Writes reports/figures/reliability.pdf and reports/figures/risk_coverage.pdf.
+  reports/judge/<dataset>.json (AUROC gains with 95% t-intervals)
+Writes reports/figures/reliability.pdf, risk_coverage.pdf and quality_cost.pdf.
 
     PYTHONPATH=src python scripts/make_figures.py
 """
@@ -82,10 +83,56 @@ def risk_coverage_figure():
     plt.close(fig)
 
 
+COST_PANELS = [("amazon_video_games", "DiffRec, Video Games"), ("amazon_books", "DiffRec, Books")]
+# (gain key in reports/judge/<dataset>.json, extra model runs per request)
+COST_POINTS = {"trajectory": [("controls + lists over controls", 0)],
+               "sampling": [("controls + sampling2 over controls", 2),
+                            ("controls + sampling5 over controls", 5),
+                            ("controls + sampling10 over controls", 10)],
+               "masking": [("controls + masking over controls", 10)]}
+COST_STYLE = {"trajectory": ("#1baf7a", "-", "^", "Trajectory (lists)"),
+              "sampling": ("#2a78d6", "-", "o", "Repeated sampling (2, 5, 10)"),
+              "masking": ("#eb6834", "-", "s", "Masked history (10)")}
+
+
+def quality_cost_figure():
+    """Proposal section 9: detection quality against extra model runs per request."""
+    import json
+    fig, axes = plt.subplots(1, len(COST_PANELS), figsize=(3.4, 2.3), sharey=True)
+    for ax, (name, title) in zip(axes, COST_PANELS):
+        f = JUDGE / f"{name}.json"
+        if not f.exists():
+            ax.set_visible(False)
+            continue
+        gains = json.loads(f.read_text())["gains"]
+        for key, points in COST_POINTS.items():
+            pts = [(runs, gains[g]) for g, runs in points if g in gains]
+            if not pts:
+                continue
+            color, ls, marker, label = COST_STYLE[key]
+            x = [p[0] for p in pts]
+            m = [p[1][0] for p in pts]
+            err = [[p[1][0] - p[1][1] for p in pts], [p[1][2] - p[1][0] for p in pts]]
+            ax.errorbar(x, m, yerr=err, color=color, linestyle=ls, marker=marker,
+                        markersize=4, capsize=2, linewidth=1.4, label=label)
+        ax.axhline(0, color="#8a8983", linewidth=0.8)
+        ax.set_title(title, fontsize=8, color=INK)
+        ax.set_xlabel("Extra model runs")
+        ax.set_xticks([0, 2, 5, 10])
+        ax.grid(color=GRID, linewidth=0.5)
+    axes[0].set_ylabel("AUROC gain over controls")
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc="lower center", ncol=2, frameon=False, fontsize=6.5)
+    fig.tight_layout(rect=(0, 0.16, 1, 1))
+    fig.savefig(OUT / "quality_cost.pdf")
+    plt.close(fig)
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     reliability_figure()
     risk_coverage_figure()
+    quality_cost_figure()
     print(f"Figures written to {OUT}")
 
 
