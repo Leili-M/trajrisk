@@ -102,6 +102,12 @@ Target ranks are stored in separate label files that the signal code never reads
   (logistic regression fitted on risk-validation, evaluated once on test; controls,
   trajectory, list-only ablation, sampling and masking sets; second protocol with
   cross-validation inside test for comparison with the first experiments)
+- `scripts/transfer.py --config <c> --runs <runs>` → `reports/transfer/<dataset>[_giffcf].md`
+  (calibration transfer: the same risk model on test users seen and unseen in risk-validation;
+  Table transfer)
+- `scripts/embed_items.py --meta <meta file>` (Amazon only; MiniLM vectors of item title +
+  description) then `scripts/text_signals.py --config <c> --runs <runs>` →
+  `reports/text/<dataset>[_giffcf].md` (text baselines and semantic drift; Table text)
 
 ### P8 — Evaluation (Evaluation; Table subgroups)
 - AUROC, AUPRC with prevalence, Brier score, risk–coverage area (miss and 1−NDCG@10, random and
