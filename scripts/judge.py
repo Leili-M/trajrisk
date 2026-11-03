@@ -101,16 +101,45 @@ GAIN_PAIRS = [("controls3", "combined"), ("controls3", "controls3 + trajectory")
               ("controls + lists", "controls + lists + masking"), ("controls", "all")]
 
 
-def evaluate_run(cfg, run, sets, singles, out_dir):
+CURVE_SETS = ("controls3", "controls", "controls + lists", "combined")
+COVERAGES = np.round(np.arange(0.05, 1.0001, 0.05), 2)
+
+
+def judge_parameters(clf, cols):
+    """Saved detector parameters (proposal section 10): standardisation and coefficients."""
+    sc, lr = clf.named_steps["standardscaler"], clf.named_steps["logisticregression"]
+    return {"inputs": list(cols), "mean": sc.mean_.tolist(), "scale": sc.scale_.tolist(),
+            "coef": lr.coef_.ravel().tolist(), "intercept": float(lr.intercept_[0])}
+
+
+def coverage_points(risk, loss):
+    """Mean loss of the kept cases at fixed coverages (for the risk-coverage figure)."""
+    cov, r = je.risk_coverage(risk, loss)
+    idx = np.clip(np.searchsorted(cov, COVERAGES) , 0, len(cov) - 1)
+    return r[idx].tolist()
+
+
+def evaluate_run(cfg, run, sets, singles, out_dir, params, curves):
     fit, test = load_split(cfg, run, FIT_SPLIT), load_split(cfg, run, EVAL_SPLIT)
     res = {"cases_fit": len(fit), "cases_test": len(test),
            "miss_rate_test": float(test["miss"].mean()),
            "reference_aurc_miss": je.reference_aurc(test["miss"]),
            "reference_aurc_ndcg": je.reference_aurc(test["loss_ndcg"]), "sets": {}, "single": {},
            "cv_in_test": {}}
+    params[run] = {}
+    loss = test["loss_ndcg"].to_numpy()
+    rng = np.random.default_rng(0)
+    curves += [{"run": run, "predictors": "random", "coverage": c, "risk_ndcg": v}
+               for c, v in zip(COVERAGES, coverage_points(rng.random(len(loss)), loss))]
+    curves += [{"run": run, "predictors": "oracle", "coverage": c, "risk_ndcg": v}
+               for c, v in zip(COVERAGES, coverage_points(loss, loss))]
     for name, cols in sets.items():
-        prob, _ = je.fit_predict(fit, test, cols)
+        prob, clf = je.fit_predict(fit, test, cols)
         res["sets"][name] = je.scores(prob, test["miss"], test["loss_ndcg"])
+        params[run][name] = judge_parameters(clf, cols)
+        if name in CURVE_SETS:
+            curves += [{"run": run, "predictors": name, "coverage": c, "risk_ndcg": v}
+                       for c, v in zip(COVERAGES, coverage_points(prob, loss))]
         if name == "combined":
             je.reliability_table(prob, test["miss"]).to_csv(out_dir / f"reliability_{run}.csv",
                                                             index=False)
@@ -220,13 +249,17 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     rel_dir = out / f"{name}{suffix}_reliability"
     rel_dir.mkdir(exist_ok=True)
-    per_run = {}
+    per_run, params, curves = {}, {}, []
     for run in args.runs:
-        per_run[run] = evaluate_run(cfg, run, sets, singles, rel_dir)
+        per_run[run] = evaluate_run(cfg, run, sets, singles, rel_dir, params, curves)
         c = per_run[run]["sets"]
         print(f"{run}: AUROC controls3 {c['controls3']['auroc']:.3f}  "
               f"combined {c['combined']['auroc']:.3f}", flush=True)
     print(write_report(name, backbone, per_run, sets, out / f"{name}{suffix}"))
+    (out / f"{name}{suffix}_parameters.json").write_text(json.dumps(
+        {"fit_split": FIT_SPLIT, "model": "StandardScaler + LogisticRegression(max_iter=2000)",
+         "runs": params}, indent=2))
+    pd.DataFrame(curves).to_csv(out / f"{name}{suffix}_risk_coverage.csv", index=False)
 
 
 if __name__ == "__main__":
